@@ -1,0 +1,26 @@
+# Project Standards for "Мягкие окна СПб"
+
+## Tech Stack
+- Next.js 15+ (App Router)
+- TypeScript (Strict mode)
+- Tailwind CSS v4
+- Shadcn/UI for components
+- Lucide-react for icons
+
+## Coding Rules
+- Use Functional Components and Hooks (no Classes).
+- Favor Server Components for SEO and speed.
+- All styling must be done via Tailwind CSS.
+- Ensure 100% Mobile-first responsiveness.
+- Use `next/image` for all images with appropriate `sizes` and `priority` for LCP.
+
+## SEO & Accessibility
+- Maintain semantic HTML (header, main, section, footer).
+- Strictly one <h1> per page.
+- All interactive elements must have aria-labels.
+- Implement JSON-LD (Schema.org) for LocalBusiness.
+
+## Vibe Coding Instructions
+- Always refer to `design-reference.png` for visual style, colors, and spacing.
+- If the design is unclear, ask for clarification before coding.
+- Keep the code clean and avoid "magic numbers" in CSS.
