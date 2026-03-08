@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glavzaves - Мягкие окна в Санкт-Петербурге и Ленинградской области</title>
+  <meta name="description" content="Изготовление и монтаж мягких окон для веранд, беседок и террас. Собственное производство в Санкт-Петербурге, бесплатный замер и расчет, монтаж за 1 день.">
+  <meta name="theme-color" content="#053452">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f8fb;
+      --surface: rgba(255, 255, 255, 0.84);
+      --surface-solid: #ffffff;
+      --card: #eef4f8;
+      --text: #102032;
+      --muted: #617286;
+      --line: rgba(16, 32, 50, 0.08);
+      --primary: #1faee8;
+      --secondary: #1b5f93;
+      --accent: #053452;
+      --success: #1f9d7a;
+      --shadow: 0 24px 60px rgba(5, 52, 82, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(31, 174, 232, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(27, 95, 147, 0.1), transparent 25%),
+        var(--bg);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid rgba(31, 174, 232, 0.2);
+      border-radius: 999px;
+      background: rgba(31, 174, 232, 0.08);
+      color: var(--secondary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin: 16px 0 0;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 20px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(245, 248, 251, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 42px;
+      height: 48px;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark span {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      border-radius: 4px;
+    }
+
+    .brand-mark .l1 {
+      left: 0;
+      top: 8%;
+      bottom: 8%;
+      background: rgba(31, 174, 232, 0.86);
+    }
+
+    .brand-mark .l2 {
+      left: 10px;
+      top: 4%;
+      bottom: 4%;
+      background: rgba(27, 95, 147, 0.86);
+    }
+
+    .brand-mark .l3 {
+      left: 20px;
+      background: rgba(5, 52, 82, 0.96);
+    }
+
+    .brand-copy {
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 21px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-copy small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      font-weight: 700;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(27, 95, 147, 0.22);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--accent);
+      border: 1px solid rgba(16, 32, 50, 0.08);
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      background: #fff;
+    }
+
+    .menu-button {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--accent);
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 18px;
+    }
+
+    .mobile-menu[data-open="true"] {
+      display: block;
+    }
+
+    .mobile-menu a,
+    .mobile-menu .button {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .hero {
+      padding: 44px 0 88px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding-top: 20px;
+    }
+
+    .hero-copy p {
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .stat-card,
+    .card,
+    .service-card,
+    .quote,
+    .step-card,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card {
+      padding: 18px;
+      border-radius: var(--radius-md);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      box-shadow: 0 36px 80px rgba(5, 52, 82, 0.2);
+      isolation: isolate;
+    }
+
+    .hero-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 52, 82, 0.06), rgba(5, 52, 82, 0.42));
+      pointer-events: none;
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: min(72vw, 640px);
+      object-fit: cover;
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      max-width: 330px;
+      padding: 22px;
+      border-radius: 24px;
+      color: #fff;
+      background: rgba(5, 52, 82, 0.68);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-note strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .hero-note span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 440px;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .services-grid,
+    .advantages-grid,
+    .steps-grid,
+    .quotes-grid,
+    .contact-grid,
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .advantages-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .card,
+    .step-card,
+    .quote,
+    .contact-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+    }
+
+    .service-card h3,
+    .card h3,
+    .step-card h3,
+    .contact-card h3 {
+      margin: 0;
+      margin-top: 14px;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .service-card p,
+    .card p,
+    .step-card p,
+    .quote p,
+    .contact-card p,
+    .contact-card li {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(31, 174, 232, 0.12);
+      color: var(--secondary);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .featured-project,
+    .project-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      min-height: 100%;
+      color: #fff;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .featured-project img,
+    .project-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .featured-project::after,
+    .project-tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 52, 82, 0.06), rgba(5, 52, 82, 0.82));
+      pointer-events: none;
+    }
+
+    .featured-project {
+      min-height: 620px;
+    }
+
+    .project-copy {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1;
+    }
+
+    .project-copy span {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .project-copy h3 {
+      margin: 14px 0 0;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .project-copy p {
+      margin: 12px 0 0;
+      max-width: 460px;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.65;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-tile {
+      min-height: 300px;
+    }
+
+    .project-tile .project-copy h3 {
+      font-size: 24px;
+    }
+
+    .project-tile .project-copy p {
+      font-size: 14px;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .step-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      margin-bottom: 16px;
+    }
+
+    .production-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .quote {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .quote strong {
+      display: block;
+      margin-top: 16px;
+      font-size: 18px;
+    }
+
+    .quote em {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      color: rgba(31, 174, 232, 0.12);
+      font-size: 86px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .inline-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(31, 174, 232, 0.1), rgba(27, 95, 147, 0.08));
+      border: 1px solid rgba(31, 174, 232, 0.16);
+    }
+
+    .inline-cta p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .faq-item {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-item p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .quotes-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+    }
+
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+    }
+
+    .cta-band::before,
+    .cta-band::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      transform: rotate(18deg);
+    }
+
+    .cta-band::before {
+      width: 320px;
+      height: 320px;
+      right: -60px;
+      top: -120px;
+    }
+
+    .cta-band::after {
+      width: 220px;
+      height: 220px;
+      left: -80px;
+      bottom: -100px;
+    }
+
+    .cta-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 420px;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-card {
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .cta-list span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .form-card {
+      padding: 28px;
+      border-radius: 26px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 30px 70px rgba(5, 52, 82, 0.26);
+    }
+
+    .form-card h3 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .form-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .field {
+      margin-top: 16px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(16, 32, 50, 0.1);
+      border-radius: 14px;
+      background: #f8fbfd;
+      color: var(--text);
+      padding: 15px 16px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(31, 174, 232, 0.6);
+      box-shadow: 0 0 0 4px rgba(31, 174, 232, 0.12);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .form-note,
+    .form-status {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .form-status {
+      min-height: 22px;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .contact-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .contact-card ul {
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+      line-height: 1.7;
+    }
+
+    .contact-card address {
+      margin-top: 16px;
+      color: var(--muted);
+      font-style: normal;
+      line-height: 1.8;
+    }
+
+    .contact-card li + li {
+      margin-top: 18px;
+    }
+
+    .contact-link {
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 14px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 1080px) {
+      .services-grid,
+      .advantages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-grid,
+      .portfolio-layout,
+      .production-layout,
+      .cta-grid,
+      .contact-grid,
+      .footer-grid,
+      .quotes-grid,
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .featured-project {
+        min-height: 480px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .topbar-inner {
+        min-height: 74px;
+      }
+
+      .nav-links,
+      .nav .button {
+        display: none;
+      }
+
+      .menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-stats,
+      .services-grid,
+      .advantages-grid,
+      .project-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-frame img {
+        height: 440px;
+      }
+
+      .hero-note {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+        max-width: none;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .service-card,
+      .card,
+      .step-card,
+      .quote,
+      .contact-card,
+      .form-card {
+        padding: 24px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .brand-copy small {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#hero" aria-label="Glavzaves">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="l1"></span>
+          <span class="l2"></span>
+          <span class="l3"></span>
+        </span>
+        <span class="brand-copy">
+          <strong>Glavzaves</strong>
+          <small>Производство и монтаж мягких окон</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <div class="nav-links">
+          <a href="#services">Услуги</a>
+          <a href="#advantages">Преимущества</a>
+          <a href="#projects">Проекты</a>
+          <a href="#process">Порядок работы</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+        <a class="button" href="#lead-form">Заказать замер</a>
+        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+      </nav>
+    </div>
+    <div class="container mobile-menu" id="mobile-menu" data-open="false">
+      <a href="#services">Услуги</a>
+      <a href="#advantages">Преимущества</a>
+      <a href="#projects">Проекты</a>
+      <a href="#process">Порядок работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a class="button" href="#lead-form">Заказать замер</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Санкт-Петербург и Ленобласть</span>
+          <h1 class="title" id="hero-title">Изготовление и монтаж мягких окон для веранд, беседок и террас</h1>
+          <p class="lead">
+            Производство находится в Санкт-Петербурге. Качественная фурнитура и комплектующие позволяют ускорить процесс изготовления, а профессиональный монтаж дает аккуратный и надежный результат уже в течение одного рабочего дня.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
+            <a class="button-secondary" href="tel:+79918097134">Позвонить: +7 991 809 7134</a>
+          </div>
+          <div class="hero-stats">
+            <article class="stat-card">
+              <strong>Свое производство</strong>
+              <span>Работаем без посредников и контролируем качество на каждом этапе.</span>
+            </article>
+            <article class="stat-card">
+              <strong>Замер уже завтра</strong>
+              <span>Бесплатно замерим и рассчитаем стоимость, специалист может приехать уже на следующий день.</span>
+            </article>
+            <article class="stat-card">
+              <strong>Гарантия 2 года</strong>
+              <span>Надежные материалы и фурнитура для долговечных мягких окон.</span>
+            </article>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-frame">
+            <img src="./assets/hero-garage.png" alt="Панорамное закрытие навеса мягкими окнами" width="1536" height="1024">
+          </div>
+          <div class="hero-note">
+            <strong>Мягкие окна для частных и коммерческих объектов</strong>
+            <span>Подходят для веранд, беседок, террас, входных групп и сезонных открытых пространств.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Услуги</span>
+            <h2 class="title" id="services-title">Мягкие окна под разные типы объектов</h2>
+          </div>
+          <p>Решения для веранд, беседок, террас и других открытых пространств. Подбираем конфигурацию мягких окон под конкретный объект.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon-box">01</div>
+            <h3>Мягкие окна для веранд</h3>
+            <p>Прозрачная защита от ветра, дождя и насекомых с сохранением света и панорамного вида.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box">02</div>
+            <h3>Мягкие окна для беседок</h3>
+            <p>Закрываем летние и всесезонные беседки, чтобы пространство оставалось usable в любую погоду.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box">03</div>
+            <h3>Террасы и пристройки</h3>
+            <p>Аккуратно интегрируем решение в частный дом, террасу у фасада или отдельный навес на участке.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box">04</div>
+            <h3>Замер и монтаж</h3>
+            <p>Выезжаем на объект, готовим смету, подписываем договор и выполняем монтаж в оговоренный срок.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="advantages" aria-labelledby="advantages-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Преимущества</span>
+            <h2 class="title" id="advantages-title">Почему выбирают «Glavzaves»</h2>
+          </div>
+          <p>Собственное производство, быстрый выезд на замер и аккуратный монтаж. Работаем по Санкт‑Петербургу и Ленинградской области.</p>
+        </div>
+        <div class="advantages-grid">
+          <article class="card">
+            <div class="icon-box">С</div>
+            <h3>Свое производство</h3>
+            <p>Производство находится в Санкт-Петербурге. Качественная фурнитура и комплектующие позволяют ускорить процесс изготовления.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">З</div>
+            <h3>Оперативный выезд на замер</h3>
+            <p>Бесплатно замерим и рассчитаем стоимость, специалист может приехать уже завтра.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">1</div>
+            <h3>Установка за 1 день</h3>
+            <p>Гарантируем профессиональный, аккуратный и качественный монтаж мягких окон в течение одного рабочего дня.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">2</div>
+            <h3>Гарантия 2 года</h3>
+            <p>Надежность в деталях: качественные материалы и фурнитура для долговечных окон.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Реализованные проекты</span>
+            <h2 class="title" id="projects-title">Реальные объекты вместо стоковой галереи</h2>
+          </div>
+        </div>
+        <div class="portfolio-layout">
+          <article class="featured-project">
+            <img src="./assets/project-sunset-house.png" alt="Дом с панорамно закрытой террасой на закате" width="1536" height="1024">
+            <div class="project-copy">
+              <h3>Панорамная терраса частного дома</h3>
+              <p>Светлая фасадная терраса с мягкими окнами по периметру. Хорошо показывает ключевую ценность продукта: защита пространства без потери обзора и света.</p>
+            </div>
+          </article>
+          <div class="project-grid">
+            <article class="project-tile">
+              <img src="./assets/project-white-veranda.png" alt="Светлая веранда с белым каркасом" width="1536" height="1024">
+              <div class="project-copy">
+                <h3>Светлая веранда</h3>
+                <p>Аккуратное решение для фасадной веранды у дома.</p>
+              </div>
+            </article>
+            <article class="project-tile">
+              <img src="./assets/project-wood-house.png" alt="Двухэтажная деревянная терраса с мягкими окнами" width="1024" height="1536">
+              <div class="project-copy">
+                <h3>Двухэтажная терраса</h3>
+                <p>Панорамное закрытие в деревянной архитектуре.</p>
+              </div>
+            </article>
+            <article class="project-tile">
+              <img src="./assets/project-evening-veranda.png" alt="Веранда с теплой подсветкой и мягкими окнами" width="1024" height="1536">
+              <div class="project-copy">
+                <h3>Вечерняя веранда</h3>
+                <p>Сценарий для отдыха в межсезонье и прохладную погоду.</p>
+              </div>
+            </article>
+            <article class="project-tile">
+              <img src="./assets/project-winter-door.png" alt="Зимний объект с мягкими окнами и входной группой" width="1024" height="1536">
+              <div class="project-copy">
+                <h3>Зимняя эксплуатация</h3>
+                <p>Решение для холодного сезона и защищенной входной зоны.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="portfolio-layout" style="margin-top: 18px;">
+          <article class="featured-project">
+            <img src="./assets/project-snow-house.png" alt="Дом с мягкими окнами зимой" width="1024" height="1536">
+            <div class="project-copy">
+              <h3>Закрытие дома по периметру в зимний период</h3>
+              <p>Подходит для зимней эксплуатации и защищает открытые зоны от ветра, осадков и холода.</p>
+            </div>
+          </article>
+          <div class="project-grid">
+            <article class="project-tile">
+              <img src="./assets/project-winter-side.png" alt="Боковое закрытие террасы в зимний сезон" width="1024" height="1536">
+              <div class="project-copy">
+                <h3>Боковое закрытие</h3>
+                <p>Темный каркас и ровная геометрия для современного фасада.</p>
+              </div>
+            </article>
+            <article class="project-tile">
+              <img src="./assets/hero-garage.png" alt="Навес с мягкими окнами для техники и автомобиля" width="1536" height="1024">
+              <div class="project-copy">
+                <h3>Навес для техники</h3>
+                <p>Панорамное закрытие большого навеса под авто и квадроцикл.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="inline-cta">
+          <p>Уже понимаете, какой формат нужен вашему объекту? Отправьте заявку и получите расчет после замера без лишних переписок.</p>
+          <a class="button" href="#lead-form">Заказать замер</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Порядок работы</span>
+            <h2 class="title" id="process-title">Путь клиента от заявки до монтажа</h2>
+          </div>
+        </div>
+        <ol class="steps-grid">
+          <li class="step-card">
+            <div class="step-index">01</div>
+            <h3>Оформление заявки</h3>
+            <p>Оставляете заявку на сайте, по телефону или через мессенджер.</p>
+          </li>
+          <li class="step-card">
+            <div class="step-index">02</div>
+            <h3>Замер</h3>
+            <p>Специалист приезжает на объект, снимает размеры и уточняет задачу.</p>
+          </li>
+          <li class="step-card">
+            <div class="step-index">03</div>
+            <h3>Составление сметы</h3>
+            <p>Готовим расчет стоимости и фиксируем комплектацию под ваш объект.</p>
+          </li>
+          <li class="step-card">
+            <div class="step-index">04</div>
+            <h3>Подписание договора и оплата</h3>
+            <p>Согласовываем условия и подтверждаем запуск заказа в производство.</p>
+          </li>
+          <li class="step-card">
+            <div class="step-index">05</div>
+            <h3>Производство</h3>
+            <p>Изготавливаем комплект на собственном производстве в Санкт-Петербурге.</p>
+          </li>
+          <li class="step-card">
+            <div class="step-index">06</div>
+            <h3>Доставка и монтаж</h3>
+            <p>Привозим готовые изделия и устанавливаем их аккуратно и в срок.</p>
+          </li>
+        </ol>
+        <div class="inline-cta">
+          <p>Не хотите разбираться в деталях самостоятельно? Оставьте номер телефона, и мы подскажем оптимальную конфигурацию под ваш объект.</p>
+          <a class="button" href="#lead-form">Получить консультацию</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Отзывы</span>
+            <h2 class="title" id="reviews-title">Что говорят клиенты</h2>
+          </div>
+        </div>
+        <div class="quotes-grid">
+          <article class="quote">
+            <p>Сделка состоялась. Хочу сказать огромное спасибо за проделанную работу. Профессиональный подход, всегда на связи, приятен в общении, очень аккуратен. Рекомендую. С таким человеком приятно иметь дело.</p>
+            <strong>Мария</strong>
+            <em>Клиент</em>
+          </article>
+          <article class="quote">
+            <p>Обратился в данную фирму для изготовления мягких окон на дачу. На следующий день после разговора по телефону и составления предварительного расчета ко мне приехал мастер на замер. Когда окна были готовы, их качественно и оперативно смонтировали. Спасибо за качественно проделанную работу.</p>
+            <strong>Александр</strong>
+            <em>Клиент</em>
+          </article>
+          <article class="quote">
+            <p>Отличная работа, отличные окна. Все четко, в срок. Павел всегда на связи, обговариваются даже малейшие нюансы. Нам окна очень понравились. Мы довольны. Спасибо.</p>
+            <strong>Наталья</strong>
+            <em>Клиент</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2 class="title" id="faq-title">Частые вопросы перед заказом</h2>
+          </div>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Сколько времени занимает изготовление?</h3>
+            <p>Срок зависит от объема и конфигурации объекта. После замера и расчета мы фиксируем сроки в договоре и запускаем заказ в производство.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Можно ли устанавливать мягкие окна зимой?</h3>
+            <p>Да. В галерее уже показаны реальные зимние объекты. Главное, чтобы на месте монтажа были технические условия для безопасной установки.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Что входит в замер?</h3>
+            <p>Специалист выезжает на объект, снимает размеры, уточняет тип креплений, комплектацию и после этого готовит точную смету.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Какие объекты вы закрываете?</h3>
+            <p>Веранды, беседки, террасы, навесы, входные группы и другие открытые пространства, где нужна прозрачная защита от погоды.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" id="lead-form" aria-labelledby="lead-form-title">
+      <div class="container cta-grid">
+        <div class="cta-card">
+          <span class="eyebrow" style="color:#fff;border-color:rgba(255,255,255,0.18);background:rgba(255,255,255,0.1);">Бесплатный замер</span>
+          <h2 class="title" id="lead-form-title" style="margin-top:18px;color:#fff;">Заказать замер и расчет бесплатно</h2>
+          <p class="lead" style="max-width:560px;margin-top:18px;color:rgba(255,255,255,0.82);">
+            Оставьте заявку, и мы свяжемся с вами для замера, расчета и подбора решения под ваш объект.
+          </p>
+          <div class="cta-list">
+            <span>Ответ в течение 15 минут</span>
+            <span>Выезд на объект</span>
+            <span>Смета после замера</span>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Оставить заявку</h3>
+          <p>Заполните форму, и заявка сразу откроется для отправки в Telegram.</p>
+          <form id="quote-form">
+            <div class="field">
+              <label for="name">Имя</label>
+              <input id="name" name="name" type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="field">
+              <label for="object-type">Тип объекта</label>
+              <select id="object-type" name="objectType" required>
+                <option value="">Выберите вариант</option>
+                <option value="Веранда">Веранда</option>
+                <option value="Беседка">Беседка</option>
+                <option value="Терраса">Терраса</option>
+                <option value="Навес">Навес</option>
+                <option value="Другой объект">Другой объект</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="comment">Комментарий</label>
+              <textarea id="comment" name="comment" placeholder="Размеры, адрес или удобное время для связи"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="button" type="submit">Отправить в Telegram</button>
+              <a class="button-secondary" href="tel:+79918097134">Позвонить</a>
+            </div>
+            <div class="form-note">Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных.</div>
+            <div class="form-status" id="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Контакты</span>
+            <h2 class="title" id="contacts-title">Остались вопросы?</h2>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Связаться напрямую</h3>
+            <ul>
+              <li>Телефон: <a class="contact-link" href="tel:+79918097134">+7 991 809 7134</a></li>
+              <li>E-mail: <a class="contact-link" href="mailto:glavzaves@bk.ru">glavzaves@bk.ru</a></li>
+              <li>Telegram: <a class="contact-link" href="https://t.me/+79118097134">Написать в Telegram</a></li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <h3>Адрес и режим</h3>
+            <address>
+              Санкт-Петербург, Рижский 23к3<br>
+              Работаем по заявкам и выездам на объект.<br>
+              Замер и расчет согласовываются индивидуально.
+            </address>
+            <p>Работаем по Санкт-Петербургу и Ленинградской области.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        © 2026 Glavzaves. Производство и монтаж мягких окон в Санкт-Петербурге и Ленинградской области.
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Наверх</a>
+        <a href="tel:+79918097134">Позвонить</a>
+        <a href="mailto:glavzaves@bk.ru">Написать на почту</a>
+        <a href="https://t.me/+79118097134">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Glavzaves",
+      "description": "Производство и монтаж мягких окон в Санкт-Петербурге и Ленинградской области.",
+      "telephone": "+7 991 809 7134",
+      "email": "glavzaves@bk.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Санкт-Петербург",
+        "streetAddress": "Рижский 23к3",
+        "addressCountry": "RU"
+      },
+      "areaServed": "Санкт-Петербург и Ленинградская область"
+    }
+  </script>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const form = document.getElementById("quote-form");
+    const statusNode = document.getElementById("form-status");
+
+    toggle?.addEventListener("click", () => {
+      const isOpen = mobileMenu.getAttribute("data-open") === "true";
+      mobileMenu.setAttribute("data-open", String(!isOpen));
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get("name") || "").trim();
+      const phone = String(data.get("phone") || "").trim();
+      const objectType = String(data.get("objectType") || "").trim();
+      const comment = String(data.get("comment") || "").trim();
+
+      const message = [
+        "Добрый день, хочу заказать замер.",
+        `Имя: ${name}`,
+        `Телефон: ${phone}`,
+        `Тип объекта: ${objectType}`,
+        comment ? `Комментарий: ${comment}` : ""
+      ].filter(Boolean).join("\n");
+
+      statusNode.textContent = "Открываю Telegram с заполненной заявкой...";
+      const url = `https://t.me/share/url?url=${encodeURIComponent("https://glavzaves-okna.ru")}&text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
+
+</body>
+</html>
