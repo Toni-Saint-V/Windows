@@ -1,0 +1,58 @@
+# Project-level Codex CLI context for this repo.
+# Note: Codex CLI loads its main config from ~/.codex/config.toml; this file is a repo-local “project config”
+# you can reference when running prompts for consistent scope and constraints.
+
+[project]
+name = "Glavzaves"
+type = "static-landing"
+entrypoint = "index.html"
+assets_dir = "assets"
+
+[guardrails]
+# Keep the landing fully static (no frameworks/build steps).
+static_only = true
+# Preserve key flows/anchors.
+keep_form_and_telegram_flow = true
+keep_anchor_ids = ["hero", "services", "advantages", "projects", "process", "reviews", "faq", "lead-form", "contacts"]
+keep_dom_ids = ["menu-toggle", "mobile-menu", "quote-form", "form-status"]
+
+[passes.production_cleanup]
+focus = [
+  "Validate HTML structure (remove duplicate closing tags, fix nesting)",
+  "Remove dead/duplicate CSS, consolidate inline styles into classes",
+  "Accessibility: headings order, focus styles, aria attributes, contrast",
+  "Performance: avoid layout shifts, keep image dimensions, reduce heavy effects on mobile",
+  "SEO: titles/descriptions OK, structured data preserved"
+]
+
+[passes.ui_polish]
+focus = [
+  "Improve layout/spacing/typography hierarchy",
+  "Refine cards: services, advantages, projects tiles, steps/process",
+  "Make sections visually consistent (section-head, grids, dividers)",
+  "Polish footer and contact cards"
+]
+
+[passes.mobile_pass]
+focus = [
+  "Audit breakpoints and grid collapse",
+  "Eliminate horizontal overflow",
+  "Improve tap targets and sticky header/menu usability",
+  "Keep CTA and form usable on small screens"
+]
+
+[passes.conversion_pass]
+focus = [
+  "Strengthen primary CTA clarity (Telegram / call / form)",
+  "Add trust cues (warranty, contract, timings) without inventing facts",
+  "Reduce friction in form (microcopy, validation hints) without changing flow",
+  "Make benefits scannable"
+]
+
+[run]
+# Recommended invocation (non-interactive):
+#   codex exec --full-auto --sandbox workspace-write -C . < ./codex.glavzaves-site.prompt.md
+# If you prefer stricter execution:
+#   codex exec --sandbox workspace-write -a untrusted -C . < ./codex.glavzaves-site.prompt.md
+recommended_sandbox = "workspace-write"
+recommended_mode = "exec"
