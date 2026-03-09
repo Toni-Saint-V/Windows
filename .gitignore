@@ -1,2 +1,16 @@
 .aider*
 .playwright-cli/
+.env
+.env.local
+node_modules/
+data/
+.vercel
+.env*.local
+
+# Local artifacts
+output/
+output-playwright-*.png
+theme-*.png
+db/
+node_modules.zip
+server.zip

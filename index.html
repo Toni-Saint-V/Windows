@@ -3,30 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Glavzaves - Мягкие окна в Санкт-Петербурге и Ленинградской области</title>
-  <meta name="description" content="Изготовление и монтаж мягких окон для веранд, беседок и террас. Собственное производство в Санкт-Петербурге, бесплатный замер и расчет, монтаж за 1 день.">
-  <meta name="theme-color" content="#053452">
+  <title>Глав Завес - Мягкие окна премиального уровня в Санкт-Петербурге</title>
+  <meta name="description" content="Премиальные мягкие окна для веранд, террас, беседок и навесов в Санкт-Петербурге и Ленинградской области. Собственное производство, точный замер и аккуратный монтаж.">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0c2233">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#08131c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='14' height='48' x='10' y='8' rx='4' fill='%232a678f'/%3E%3Crect width='14' height='56' x='24' y='4' rx='4' fill='%2314364f'/%3E%3Crect width='14' height='64' x='38' y='0' rx='4' fill='%23091926'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f8fb;
+      --bg: #eef2f4;
+      --bg-strong: #e4ebef;
       --surface: rgba(255, 255, 255, 0.84);
-      --surface-solid: #ffffff;
-      --card: #eef4f8;
-      --text: #102032;
-      --muted: #617286;
-      --line: rgba(16, 32, 50, 0.08);
-      --primary: #1faee8;
-      --secondary: #1b5f93;
-      --accent: #053452;
-      --success: #1f9d7a;
-      --shadow: 0 24px 60px rgba(5, 52, 82, 0.12);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --surface-soft: #f6f8f9;
+      --surface-dark: #0c2233;
+      --surface-dark-soft: #122f45;
+      --text: #15222d;
+      --muted: #5d6b78;
+      --line: rgba(21, 34, 45, 0.09);
+      --primary: #2a678f;
+      --secondary: #14364f;
+      --accent: #091926;
+      --accent-soft: rgba(20, 54, 79, 0.08);
+      --success: #1f7a5c;
+      --shadow-sm: 0 18px 38px rgba(9, 25, 38, 0.08);
+      --shadow-md: 0 28px 70px rgba(9, 25, 38, 0.12);
+      --shadow-lg: 0 42px 96px rgba(9, 25, 38, 0.18);
+      --radius-xl: 32px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
       --container: 1180px;
+      --heading-max: 12ch;
+      --heading-max-wide: 14ch;
+      --section-copy-max: 40ch;
+      --hero-title-mobile: clamp(44px, 11.8vw, 58px);
+      --hero-title-desktop: clamp(52px, 5.2vw, 78px);
     }
 
     * {
@@ -39,12 +52,12 @@
 
     body {
       margin: 0;
-      font-family: "Inter", sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(31, 174, 232, 0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(27, 95, 147, 0.1), transparent 25%),
-        var(--bg);
+        radial-gradient(circle at top left, rgba(42, 103, 143, 0.09), transparent 30%),
+        radial-gradient(circle at top right, rgba(20, 54, 79, 0.06), transparent 24%),
+        linear-gradient(180deg, #f7f8f9 0%, var(--bg) 100%);
     }
 
     img {
@@ -65,72 +78,161 @@
     }
 
     .container {
-      width: min(100% - 32px, var(--container));
+      width: min(100% - 24px, var(--container));
       margin: 0 auto;
     }
 
     .section {
-      padding: 88px 0;
+      padding: 60px 0;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 14px;
-      border: 1px solid rgba(31, 174, 232, 0.2);
+      padding: 9px 13px;
       border-radius: 999px;
-      background: rgba(31, 174, 232, 0.08);
+      border: 1px solid rgba(20, 54, 79, 0.14);
+      background: rgba(255, 255, 255, 0.6);
       color: var(--secondary);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .title {
       margin: 16px 0 0;
-      font-size: clamp(32px, 4vw, 54px);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(38px, 7vw, 68px);
       line-height: 0.98;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.032em;
+      max-width: var(--heading-max);
+      color: var(--accent);
+      text-wrap: balance;
+      overflow-wrap: normal;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .lead {
       margin: 20px 0 0;
-      max-width: 720px;
+      max-width: 34ch;
       color: var(--muted);
-      font-size: 18px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .section-head > div {
+      display: grid;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .section-head .title {
+      margin-top: 0;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1;
+      max-width: var(--heading-max-wide);
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: var(--section-copy-max);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+      text-wrap: pretty;
+    }
+
+    #hero-title {
+      max-width: min(13ch, 100%);
+      font-size: var(--hero-title-mobile);
+      line-height: 0.9;
+      letter-spacing: -0.048em;
+      text-wrap: initial;
+    }
+
+    .hero-title-layout {
+      display: grid;
+      gap: 0.02em;
+    }
+
+    .hero-title-layout .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title-layout--desktop {
+      display: none;
+    }
+
+    .hero-title-layout--mobile {
+      display: grid;
+    }
+
+    #projects-title,
+    #smart-calculator-title,
+    #smart-object-advisor-title,
+    #lead-form-title {
+      max-width: 15ch;
     }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 30;
-      backdrop-filter: blur(16px);
-      background: rgba(245, 248, 251, 0.82);
-      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      background: rgba(247, 248, 249, 0.8);
+      border-bottom: 1px solid rgba(21, 34, 45, 0.06);
     }
 
     .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      min-height: 84px;
+      gap: 14px;
+      min-height: 68px;
+      padding: 10px 0;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      flex: 0 0 auto;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       min-width: 0;
+      flex: 1 1 auto;
     }
 
     .brand-mark {
       position: relative;
-      width: 42px;
-      height: 48px;
+      width: 38px;
+      height: 44px;
       flex: 0 0 auto;
     }
 
@@ -138,7 +240,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 14px;
+      width: 13px;
       border-radius: 4px;
     }
 
@@ -146,39 +248,36 @@
       left: 0;
       top: 8%;
       bottom: 8%;
-      background: rgba(31, 174, 232, 0.86);
+      background: rgba(42, 103, 143, 0.88);
     }
 
     .brand-mark .l2 {
-      left: 10px;
+      left: 9px;
       top: 4%;
       bottom: 4%;
-      background: rgba(27, 95, 147, 0.86);
+      background: rgba(20, 54, 79, 0.88);
     }
 
     .brand-mark .l3 {
-      left: 20px;
-      background: rgba(5, 52, 82, 0.96);
-    }
-
-    .brand-copy {
-      min-width: 0;
+      left: 18px;
+      background: rgba(9, 25, 38, 0.98);
     }
 
     .brand-copy strong {
       display: block;
-      font-size: 21px;
+      font-size: 19px;
       line-height: 1;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
     }
 
     .brand-copy small {
       display: block;
-      margin-top: 5px;
+      margin-top: 4px;
       color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -186,19 +285,92 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
+    }
+
+    .theme-toggle {
+      position: relative;
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      min-width: 104px;
+      min-height: 44px;
+      padding: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.54);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(232, 238, 242, 0.62));
+      box-shadow: 0 12px 28px rgba(9, 25, 38, 0.08);
+      backdrop-filter: blur(16px);
+      color: var(--muted);
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: "";
+      position: absolute;
+      inset: 3px calc(50% + 1px) 3px 3px;
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 246, 249, 0.78)),
+        radial-gradient(circle at top, rgba(135, 183, 216, 0.28), rgba(255, 255, 255, 0) 66%);
+      box-shadow:
+        0 10px 20px rgba(9, 25, 38, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+      transition: inset 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.35s ease, box-shadow 0.35s ease;
+      z-index: 0;
+    }
+
+    .theme-toggle[data-theme="dark"]::before {
+      inset: 3px 3px 3px calc(50% + 1px);
+      background:
+        linear-gradient(180deg, rgba(23, 47, 67, 0.96), rgba(8, 19, 28, 0.88)),
+        radial-gradient(circle at 30% 30%, rgba(135, 183, 216, 0.22), rgba(255, 255, 255, 0) 70%);
+      box-shadow:
+        0 12px 24px rgba(2, 7, 10, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .theme-toggle__option {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 36px;
+      padding: 0 10px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.25s ease;
+    }
+
+    .theme-toggle[data-theme="light"] .theme-toggle__option[data-set-theme="light"],
+    .theme-toggle[data-theme="dark"] .theme-toggle__option[data-set-theme="dark"] {
+      color: var(--accent);
     }
 
     .nav-links {
-      display: flex;
+      display: none;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
+    }
+
+    .nav-cta {
+      display: none !important;
     }
 
     .nav-links a {
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       transition: color 0.2s ease;
     }
 
@@ -213,114 +385,209 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      min-height: 54px;
       padding: 15px 22px;
       border: 0;
       border-radius: 999px;
       cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
     }
 
     .button {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      box-shadow: 0 18px 40px rgba(27, 95, 147, 0.22);
+      box-shadow: 0 18px 42px rgba(20, 54, 79, 0.22);
     }
 
     .button:hover,
-    .button:focus-visible {
+    .button:focus-visible,
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
       transform: translateY(-1px);
     }
 
     .button-secondary {
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.78);
       color: var(--accent);
-      border: 1px solid rgba(16, 32, 50, 0.08);
-    }
-
-    .button-secondary:hover,
-    .button-secondary:focus-visible {
-      background: #fff;
+      border: 1px solid rgba(21, 34, 45, 0.08);
+      box-shadow: 0 10px 24px rgba(9, 25, 38, 0.05);
     }
 
     .menu-button {
-      display: none;
-      width: 48px;
-      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 76px;
+      min-height: 46px;
+      padding: 0 16px;
       border: 1px solid var(--line);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
       color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.035em;
     }
 
     .mobile-menu {
       display: none;
-      padding: 0 0 18px;
+      padding: 10px 0 18px;
     }
 
     .mobile-menu[data-open="true"] {
-      display: block;
+      display: grid;
+      gap: 12px;
     }
 
-    .mobile-menu a,
-    .mobile-menu .button {
+    .mobile-menu__theme {
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(232, 238, 242, 0.94));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-menu__theme-copy {
+      display: grid;
+      gap: 6px;
+    }
+
+    .mobile-menu__theme-copy strong {
+      color: var(--accent);
+      font-size: 14px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-menu__theme-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .theme-toggle--drawer {
       width: 100%;
-      margin-top: 12px;
+      min-width: 100%;
+      min-height: 50px;
+      padding: 4px;
+    }
+
+    .theme-toggle--drawer .theme-toggle__option {
+      min-height: 40px;
+      font-size: 11px;
     }
 
     .hero {
-      padding: 44px 0 88px;
+      position: relative;
+      padding: 16px 0 64px;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 78%;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(42, 103, 143, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 2%;
+      right: max(-120px, calc(50% - 720px));
+      width: min(62vw, 820px);
+      height: min(62vw, 820px);
+      border-radius: 50%;
+      background: var(--ambient-hero);
+      filter: blur(28px);
+      opacity: 0.92;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 44px;
-      align-items: center;
+      gap: 24px;
     }
 
     .hero-copy {
-      padding-top: 20px;
-    }
-
-    .hero-copy p {
-      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding-top: 4px;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-trustline {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      max-width: 42ch;
+      text-wrap: pretty;
+    }
+
+    .hero-media {
+      order: 2;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 32px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .stat-card,
-    .card,
     .service-card,
-    .quote,
+    .card,
     .step-card,
+    .quote,
+    .faq-item,
     .contact-card {
       background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-sm);
     }
 
     .stat-card {
-      padding: 18px;
-      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      border-radius: 20px;
     }
 
     .stat-card strong {
       display: block;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.3;
     }
 
@@ -332,153 +599,181 @@
       line-height: 1.55;
     }
 
-    .hero-media {
-      position: relative;
-    }
-
     .hero-frame {
       position: relative;
       overflow: hidden;
-      border-radius: 36px;
-      box-shadow: 0 36px 80px rgba(5, 52, 82, 0.2);
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
       isolation: isolate;
     }
 
-    .hero-frame::after {
+    .hero-frame::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5, 52, 82, 0.06), rgba(5, 52, 82, 0.42));
+      background:
+        linear-gradient(180deg, rgba(9, 25, 38, 0.02), rgba(9, 25, 38, 0.42)),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 32%);
+      z-index: 1;
       pointer-events: none;
     }
 
     .hero-frame img {
       width: 100%;
-      height: min(72vw, 640px);
+      height: 360px;
       object-fit: cover;
     }
 
     .hero-note {
-      position: absolute;
-      right: 24px;
-      bottom: 24px;
-      max-width: 330px;
-      padding: 22px;
-      border-radius: 24px;
+      position: static;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(9, 25, 38, 0.86);
       color: #fff;
-      background: rgba(5, 52, 82, 0.68);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 18px 40px rgba(9, 25, 38, 0.2);
     }
 
     .hero-note strong {
       display: block;
-      font-size: 22px;
-      line-height: 1.1;
+      font-size: 18px;
+      line-height: 1.12;
     }
 
     .hero-note span {
       display: block;
       margin-top: 8px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 14px;
-      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      line-height: 1.55;
     }
 
-    .section-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-
-    .section-head p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.65;
+    .hero .lead {
+      max-width: 31ch;
       font-size: 16px;
+      line-height: 1.76;
+      text-wrap: pretty;
     }
 
     .services-grid,
     .advantages-grid,
     .steps-grid,
     .quotes-grid,
+    .faq-grid,
     .contact-grid,
-    .footer-grid {
+    .footer-grid,
+    .project-grid {
       display: grid;
-      gap: 18px;
-    }
-
-    .services-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .advantages-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .service-card,
     .card,
     .step-card,
     .quote,
-    .contact-card {
-      padding: 28px;
-      border-radius: var(--radius-lg);
+    .faq-item,
+    .contact-card,
+    .form-card {
+      padding: 26px 22px;
+      border-radius: 22px;
     }
 
     .service-card h3,
     .card h3,
     .step-card h3,
-    .contact-card h3 {
-      margin: 0;
-      margin-top: 14px;
-      font-size: 22px;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+    .faq-item h3,
+    .contact-card h3,
+    .form-card h3 {
+      margin: 14px 0 0;
+      font-size: 21px;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      color: var(--accent);
     }
 
     .service-card p,
     .card p,
     .step-card p,
     .quote p,
+    .faq-item p,
     .contact-card p,
-    .contact-card li {
-      margin: 14px 0 0;
+    .contact-card li,
+    .form-card p {
+      margin: 12px 0 0;
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.66;
     }
 
     .icon-box {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(31, 174, 232, 0.12);
-      color: var(--secondary);
-      font-size: 20px;
+      background: linear-gradient(180deg, rgba(42, 103, 143, 0.12), rgba(20, 54, 79, 0.08));
+      color: var(--accent);
+      font-size: 16px;
       font-weight: 800;
-      margin-bottom: 12px;
+    }
+
+    .service-card--featured,
+    .card--featured {
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    .portfolio-stack {
+      display: grid;
+      gap: 20px;
     }
 
     .portfolio-layout {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
+      gap: 16px;
+    }
+
+    #projects,
+    .tool-section,
+    .cta-band {
+      position: relative;
+      isolation: isolate;
+    }
+
+    #projects::before,
+    .tool-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--ambient-section);
+      opacity: 0.72;
+      filter: blur(10px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #projects .container,
+    .tool-section .container,
+    .cta-band .container {
+      position: relative;
+      z-index: 1;
     }
 
     .featured-project,
     .project-tile {
       position: relative;
       overflow: hidden;
-      border-radius: var(--radius-xl);
-      min-height: 100%;
+      min-height: 340px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
       color: #fff;
-      box-shadow: var(--shadow);
       isolation: isolate;
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-tile {
+      min-height: 250px;
     }
 
     .featured-project img,
@@ -493,176 +788,662 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(5, 52, 82, 0.06), rgba(5, 52, 82, 0.82));
+      background: linear-gradient(180deg, rgba(9, 25, 38, 0.04) 0%, rgba(9, 25, 38, 0.22) 40%, rgba(9, 25, 38, 0.88) 100%);
       pointer-events: none;
-    }
-
-    .featured-project {
-      min-height: 620px;
     }
 
     .project-copy {
       position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
       z-index: 1;
-    }
-
-    .project-copy span {
-      display: inline-block;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      display: grid;
+      gap: 10px;
+      max-width: min(100%, 35ch);
+      padding: 16px 16px 15px;
+      border-radius: 22px;
+      background: var(--project-copy-bg);
+      border: 1px solid var(--project-copy-line);
+      backdrop-filter: blur(14px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
 
     .project-copy h3 {
-      margin: 14px 0 0;
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1;
+      margin: 0;
+      font-size: clamp(23px, 4vw, 31px);
+      line-height: 0.98;
       letter-spacing: -0.04em;
+      text-wrap: balance;
     }
 
     .project-copy p {
-      margin: 12px 0 0;
-      max-width: 460px;
-      color: rgba(255, 255, 255, 0.82);
-      line-height: 1.65;
+      margin: 0;
+      max-width: 30ch;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+      line-height: 1.62;
     }
 
-    .project-grid {
+    .section--structure {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .section--structure::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--ambient-section);
+      opacity: 0.82;
+      filter: blur(14px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section--structure .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .structure-shell {
+      position: relative;
+      overflow: hidden;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      padding: 20px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(8, 19, 28, 0.92), rgba(7, 19, 29, 0.82)),
+        radial-gradient(circle at top right, rgba(79, 143, 185, 0.22), rgba(8, 19, 28, 0) 34%);
+      border: 1px solid rgba(135, 183, 216, 0.14);
+      box-shadow: 0 36px 86px rgba(4, 10, 14, 0.3);
+      color: #f5f8fb;
+    }
+
+    .structure-shell::before,
+    .structure-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .structure-shell::before {
+      background:
+        linear-gradient(90deg, rgba(135, 183, 216, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(135, 183, 216, 0.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.86), transparent 100%);
+      opacity: 0.26;
+    }
+
+    .structure-shell::after {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(109, 173, 214, 0.14), rgba(8, 19, 28, 0) 32%),
+        radial-gradient(circle at 82% 22%, rgba(109, 173, 214, 0.18), rgba(8, 19, 28, 0) 24%);
+      opacity: 0.9;
+    }
+
+    .structure-shell__intro,
+    .structure-layout,
+    .structure-panel,
+    .structure-stage,
+    .structure-stage__frame {
+      position: relative;
+      z-index: 1;
+    }
+
+    .structure-shell__intro {
+      display: grid;
+      gap: 14px;
+    }
+
+    .structure-kicker {
+      margin: 0;
+      max-width: 64ch;
+      color: rgba(236, 242, 246, 0.74);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    .structure-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .structure-metrics span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(135, 183, 216, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(245, 248, 251, 0.84);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .structure-layout {
+      display: grid;
       gap: 18px;
     }
 
-    .project-tile {
-      min-height: 300px;
+    .structure-stage {
+      min-width: 0;
+    }
+
+    .structure-stage__frame {
+      overflow: hidden;
+      padding: 18px;
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(12, 28, 40, 0.96), rgba(7, 19, 28, 0.92)),
+        radial-gradient(circle at top left, rgba(109, 173, 214, 0.14), rgba(7, 19, 28, 0) 30%);
+      border: 1px solid rgba(135, 183, 216, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .structure-stage__eyebrow,
+    .structure-stage__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: rgba(236, 242, 246, 0.62);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .structure-stage__eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .structure-stage__footer {
+      margin-top: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .structure-stage__footer::before {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(135, 183, 216, 0.22), rgba(135, 183, 216, 0));
+    }
+
+    .structure-illustration {
+      position: relative;
+      min-height: 360px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        linear-gradient(180deg, rgba(7, 19, 28, 0.3), rgba(4, 10, 14, 0.14));
+      border: 1px solid rgba(135, 183, 216, 0.1);
+    }
+
+    .structure-illustration::before,
+    .structure-illustration::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    .structure-illustration::before {
+      background:
+        linear-gradient(90deg, rgba(135, 183, 216, 0.09) 1px, transparent 1px),
+        linear-gradient(rgba(135, 183, 216, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 100%);
+      opacity: 0.24;
+    }
+
+    .structure-illustration::after {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(109, 173, 214, 0.08) 49%, rgba(255, 255, 255, 0) 100%);
+      animation: structureScan 5.4s ease-in-out infinite;
+      opacity: 0.46;
+    }
+
+    .structure-illustration__svg {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+    }
+
+    .structure-outline {
+      fill: rgba(255, 255, 255, 0.02);
+      stroke: rgba(214, 233, 247, 0.82);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .structure-outline--soft {
+      stroke: rgba(135, 183, 216, 0.32);
+      stroke-dasharray: 7 10;
+    }
+
+    .structure-outline--accent {
+      fill: rgba(109, 173, 214, 0.08);
+      stroke: rgba(135, 183, 216, 0.42);
+    }
+
+    .structure-connector {
+      fill: none;
+      stroke: rgba(135, 183, 216, 0.16);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 6 8;
+      opacity: 0.18;
+      transition: opacity 0.35s ease, stroke 0.35s ease, stroke-dashoffset 0.45s ease;
+    }
+
+    .structure-hotspot {
+      position: absolute;
+      z-index: 2;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    .structure-hotspot::before,
+    .structure-hotspot::after {
+      content: "";
+      position: absolute;
+      inset: 50%;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+    }
+
+    .structure-hotspot::before {
+      width: 12px;
+      height: 12px;
+      background: #f5f8fb;
+      box-shadow:
+        0 0 0 3px rgba(109, 173, 214, 0.22),
+        0 0 18px rgba(109, 173, 214, 0.34);
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .structure-hotspot::after {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(135, 183, 216, 0.28);
+      background: rgba(109, 173, 214, 0.08);
+      opacity: 0.8;
+      animation: hotspotPulse 2.8s ease-in-out infinite;
+    }
+
+    .structure-hotspot:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(109, 173, 214, 0.18);
+      border-radius: 999px;
+    }
+
+    .structure-hotspot--film {
+      top: 33%;
+      left: 49%;
+    }
+
+    .structure-hotspot--hardware {
+      top: 46%;
+      left: 69%;
+    }
+
+    .structure-hotspot--edging {
+      top: 59%;
+      left: 42%;
+    }
+
+    .structure-hotspot--mount {
+      top: 71%;
+      left: 62%;
+    }
+
+    .structure-hotspot--seal {
+      top: 43%;
+      left: 27%;
+    }
+
+    .structure-panel {
+      display: grid;
+      min-width: 0;
+    }
+
+    .structure-card[hidden] {
+      display: none;
+    }
+
+    .structure-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 14px;
+      min-height: 100%;
+      padding: 22px 20px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(14, 33, 47, 0.94), rgba(8, 20, 30, 0.96)),
+        radial-gradient(circle at top right, rgba(109, 173, 214, 0.16), rgba(8, 20, 30, 0) 34%);
+      border: 1px solid rgba(135, 183, 216, 0.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 26px 56px rgba(0, 0, 0, 0.24);
+      animation: structurePanelIn 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .structure-card::before,
+    .structure-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .structure-card::before {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 22%);
+      opacity: 0.38;
+    }
+
+    .structure-card::after {
+      background:
+        repeating-linear-gradient(180deg, rgba(135, 183, 216, 0.08) 0 1px, transparent 1px 8px);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 72%);
+      opacity: 0.24;
+    }
+
+    .structure-card__index {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 30px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(135, 183, 216, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(236, 242, 246, 0.66);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .structure-card h3 {
+      margin: 0;
+      max-width: 13ch;
+      color: #f5f8fb;
+      font-size: clamp(28px, 5vw, 38px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      text-wrap: balance;
+    }
+
+    .structure-card p {
+      margin: 0;
+      max-width: 33ch;
+      color: rgba(236, 242, 246, 0.78);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .structure-card__benefit {
+      display: grid;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(135, 183, 216, 0.14);
+    }
+
+    .structure-card__benefit span {
+      color: rgba(135, 183, 216, 0.74);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .structure-card__benefit strong {
+      color: #f5f8fb;
+      font-size: 17px;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .structure-shell[data-active-hotspot="film"] [data-hotspot-button="film"],
+    .structure-shell[data-active-hotspot="hardware"] [data-hotspot-button="hardware"],
+    .structure-shell[data-active-hotspot="edging"] [data-hotspot-button="edging"],
+    .structure-shell[data-active-hotspot="mount"] [data-hotspot-button="mount"],
+    .structure-shell[data-active-hotspot="seal"] [data-hotspot-button="seal"] {
+      z-index: 3;
+    }
+
+    .structure-shell[data-active-hotspot="film"] [data-hotspot-button="film"]::before,
+    .structure-shell[data-active-hotspot="hardware"] [data-hotspot-button="hardware"]::before,
+    .structure-shell[data-active-hotspot="edging"] [data-hotspot-button="edging"]::before,
+    .structure-shell[data-active-hotspot="mount"] [data-hotspot-button="mount"]::before,
+    .structure-shell[data-active-hotspot="seal"] [data-hotspot-button="seal"]::before {
+      transform: translate(-50%, -50%) scale(1.18);
+      background: #dff4ff;
+      box-shadow:
+        0 0 0 4px rgba(109, 173, 214, 0.26),
+        0 0 24px rgba(109, 173, 214, 0.5);
+    }
+
+    .structure-shell[data-active-hotspot="film"] [data-hotspot-button="film"]::after,
+    .structure-shell[data-active-hotspot="hardware"] [data-hotspot-button="hardware"]::after,
+    .structure-shell[data-active-hotspot="edging"] [data-hotspot-button="edging"]::after,
+    .structure-shell[data-active-hotspot="mount"] [data-hotspot-button="mount"]::after,
+    .structure-shell[data-active-hotspot="seal"] [data-hotspot-button="seal"]::after {
+      border-color: rgba(135, 183, 216, 0.48);
+      opacity: 1;
+    }
+
+    .structure-shell[data-active-hotspot="film"] [data-hotspot-connector="film"],
+    .structure-shell[data-active-hotspot="hardware"] [data-hotspot-connector="hardware"],
+    .structure-shell[data-active-hotspot="edging"] [data-hotspot-connector="edging"],
+    .structure-shell[data-active-hotspot="mount"] [data-hotspot-connector="mount"],
+    .structure-shell[data-active-hotspot="seal"] [data-hotspot-connector="seal"] {
+      opacity: 1;
+      stroke: rgba(169, 216, 245, 0.84);
+      stroke-dashoffset: -18;
+    }
+
+    @keyframes structureScan {
+      0%,
+      100% {
+        transform: translateY(-28%);
+      }
+
+      50% {
+        transform: translateY(34%);
+      }
+    }
+
+    @keyframes hotspotPulse {
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(0.94);
+        opacity: 0.48;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 0.92;
+      }
+    }
+
+    @keyframes structurePanelIn {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
     }
 
     .project-tile .project-copy h3 {
-      font-size: 24px;
+      font-size: clamp(21px, 4vw, 27px);
     }
 
-    .project-tile .project-copy p {
-      font-size: 14px;
+    #projects .section-head {
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    #projects .section-head > div {
+      gap: 14px;
+    }
+
+    #projects-title {
+      max-width: 11.2ch;
+      font-size: clamp(36px, 8.2vw, 62px);
+      line-height: 0.96;
+      letter-spacing: -0.038em;
+    }
+
+    #projects-title .title-line {
+      display: block;
+    }
+
+    #projects-title .title-line + .title-line {
+      margin-top: 0.04em;
+    }
+
+    #projects .section-head p {
+      max-width: 34ch;
+      line-height: 1.76;
+      text-wrap: pretty;
+    }
+
+    #projects .inline-cta {
+      margin-top: 22px;
+      padding: 24px 20px;
+      gap: 16px;
+    }
+
+    #projects .inline-cta p {
+      max-width: 40ch;
+    }
+
+    .inline-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 18px;
+      padding: 22px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(232, 238, 242, 0.92));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .inline-cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .steps-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 28px;
-      padding: 0;
       list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .step-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      background: var(--step-card-bg);
+    }
+
+    .step-card:nth-child(n + 4) {
+      background: var(--step-card-bg-emphasis);
+    }
+
+    .step-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 22px;
+      right: 22px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--step-card-line), transparent 80%);
+      pointer-events: none;
     }
 
     .step-index {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: var(--accent);
+      background: linear-gradient(180deg, var(--secondary), var(--accent));
       color: #fff;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.16em;
-      margin-bottom: 16px;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
 
-    .production-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 420px;
-      gap: 24px;
-      align-items: start;
+    .step-card p {
+      max-width: 25ch;
     }
 
     .quote {
       position: relative;
       overflow: hidden;
-      min-height: 100%;
+    }
+
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      color: rgba(42, 103, 143, 0.08);
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1;
     }
 
     .quote strong {
       display: block;
-      margin-top: 16px;
-      font-size: 18px;
+      margin-top: 14px;
+      font-size: 17px;
+      color: var(--accent);
     }
 
     .quote em {
       display: block;
       margin-top: 6px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       font-style: normal;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .quote::before {
-      content: "“";
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      color: rgba(31, 174, 232, 0.12);
-      font-size: 86px;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .inline-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin-top: 18px;
-      padding: 22px 24px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(31, 174, 232, 0.1), rgba(27, 95, 147, 0.08));
-      border: 1px solid rgba(31, 174, 232, 0.16);
-    }
-
-    .inline-cta p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .faq-item {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      box-shadow: var(--shadow);
-    }
-
-    .faq-item h3 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-    }
-
-    .faq-item p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .quotes-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 28px;
     }
 
     .cta-band {
@@ -677,44 +1458,70 @@
       content: "";
       position: absolute;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      transform: rotate(18deg);
+      background: rgba(255, 255, 255, 0.05);
+      filter: blur(4px);
+      pointer-events: none;
     }
 
     .cta-band::before {
-      width: 320px;
-      height: 320px;
-      right: -60px;
-      top: -120px;
+      width: min(42vw, 420px);
+      height: min(42vw, 420px);
+      right: -140px;
+      top: -180px;
+      background:
+        radial-gradient(circle, rgba(135, 183, 216, 0.22), rgba(79, 143, 185, 0.08) 42%, rgba(255, 255, 255, 0) 76%);
     }
 
     .cta-band::after {
-      width: 220px;
-      height: 220px;
-      left: -80px;
-      bottom: -100px;
+      width: min(34vw, 320px);
+      height: min(34vw, 320px);
+      left: -120px;
+      bottom: -140px;
+      background:
+        radial-gradient(circle, rgba(79, 143, 185, 0.18), rgba(20, 54, 79, 0.08) 38%, rgba(255, 255, 255, 0) 74%);
     }
 
     .cta-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 420px;
-      gap: 28px;
-      align-items: center;
+      gap: 18px;
     }
 
     .cta-card {
-      padding: 28px;
-      border-radius: 24px;
+      padding: 22px 24px 22px 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .cta-card .title {
+      color: #fff;
+      max-width: 13ch;
+    }
+
+    .cta-card .lead {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 34ch;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .cta-actions .button-secondary {
       background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.14);
+      color: #fff;
+      box-shadow: none;
     }
 
     .cta-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 10px;
       margin-top: 22px;
     }
@@ -722,59 +1529,44 @@
     .cta-list span {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      min-height: 44px;
       padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
       color: rgba(255, 255, 255, 0.82);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .form-card {
-      padding: 28px;
-      border-radius: 26px;
-      background: #fff;
-      color: var(--text);
-      box-shadow: 0 30px 70px rgba(5, 52, 82, 0.26);
-    }
-
-    .form-card h3 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-    }
-
-    .form-card p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      line-height: 1.7;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-lg);
     }
 
     .field {
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     .field label {
       display: block;
-      margin-bottom: 8px;
-      font-size: 13px;
-      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
     }
 
     .field input,
     .field select,
     .field textarea {
       width: 100%;
-      border: 1px solid rgba(16, 32, 50, 0.1);
-      border-radius: 14px;
-      background: #f8fbfd;
+      min-height: 52px;
+      padding: 14px 15px;
+      border: 1px solid rgba(21, 34, 45, 0.1);
+      border-radius: 15px;
+      background: var(--surface-soft);
       color: var(--text);
-      padding: 15px 16px;
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
@@ -782,217 +1574,1752 @@
     .field input:focus,
     .field select:focus,
     .field textarea:focus {
-      border-color: rgba(31, 174, 232, 0.6);
-      box-shadow: 0 0 0 4px rgba(31, 174, 232, 0.12);
+      border-color: rgba(42, 103, 143, 0.56);
+      box-shadow: 0 0 0 4px rgba(42, 103, 143, 0.12);
     }
 
     .field textarea {
-      min-height: 120px;
+      min-height: 110px;
       resize: vertical;
     }
 
-    .form-actions {
-      display: flex;
-      flex-wrap: wrap;
+    .form-actions,
+    .contact-actions {
+      display: grid;
       gap: 12px;
       margin-top: 18px;
     }
 
     .form-note,
-    .form-status {
-      margin-top: 14px;
+    .form-status,
+    .contact-note {
+      margin-top: 12px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.6;
     }
 
     .form-status {
-      min-height: 22px;
+      min-height: 20px;
       color: var(--success);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .contact-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: stretch;
-      gap: 18px;
-      margin-top: 28px;
+      margin-top: 8px;
+    }
+
+    .contact-card--primary {
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-md);
     }
 
     .contact-card ul {
+      margin: 18px 0 0;
       padding: 0;
-      margin: 20px 0 0;
       list-style: none;
-      line-height: 1.7;
+    }
+
+    .contact-card li {
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-card li + li {
+      margin-top: 14px;
     }
 
     .contact-card address {
       margin-top: 16px;
       color: var(--muted);
       font-style: normal;
-      line-height: 1.8;
-    }
-
-    .contact-card li + li {
-      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
     .contact-link {
-      color: var(--secondary);
-      font-weight: 700;
+      display: inline-block;
+      margin-top: 4px;
+      color: var(--accent);
+      font-weight: 800;
     }
 
     footer {
-      padding: 36px 0 48px;
-      border-top: 1px solid var(--line);
+      padding: 28px 0 32px;
+      background: linear-gradient(180deg, rgba(12, 34, 51, 0.04), rgba(12, 34, 51, 0.08));
+      border-top: 1px solid rgba(21, 34, 45, 0.06);
     }
 
     .footer-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
+      gap: 16px;
     }
 
     .footer-copy {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.7;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 14px 18px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+    .footer-copy strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 16px;
     }
 
-    @media (max-width: 1080px) {
-      .services-grid,
-      .advantages-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (min-width: 761px) {
+      .section {
+        padding: 88px 0;
       }
 
-      .hero-grid,
-      .portfolio-layout,
-      .production-layout,
-      .cta-grid,
-      .contact-grid,
-      .footer-grid,
-      .quotes-grid,
+      .container {
+        width: min(100% - 40px, var(--container));
+      }
+
+      .section-head {
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+        gap: 36px;
+        margin-bottom: 48px;
+      }
+
+      .section-head > div {
+        flex: 1 1 auto;
+        max-width: min(100%, 680px);
+      }
+
+      .lead {
+        font-size: 17px;
+      }
+
+      .hero .title {
+        font-size: clamp(48px, 4.7vw, 72px);
+        line-height: 0.88;
+        max-width: none;
+      }
+
+      #projects-title .title-line {
+        display: block;
+      }
+
+      .hero-title-layout--desktop {
+        display: grid;
+      }
+
+      .hero-title-layout--mobile {
+        display: none;
+      }
+
+      .hero-title-layout .title-line + .title-line {
+        margin-top: 0.04em;
+      }
+
+      .section-head p {
+        flex: 0 0 min(36ch, 100%);
+        padding-bottom: 8px;
+        text-align: left;
+      }
+
+      .menu-button {
+        display: none;
+      }
+
+      .topbar-actions {
+        gap: 12px;
+      }
+
+      .topbar-inner {
+        min-height: 76px;
+        gap: 28px;
+        padding: 12px 0;
+      }
+
+      .brand {
+        gap: 15px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 48px;
+      }
+
+      .brand-mark .l2 {
+        left: 10px;
+      }
+
+      .brand-mark .l3 {
+        left: 20px;
+      }
+
+      .brand-copy strong {
+        font-size: 21px;
+      }
+
+      .brand-copy small {
+        font-size: 10px;
+      }
+
+      .theme-toggle {
+        min-width: 124px;
+        min-height: 46px;
+        padding: 4px;
+      }
+
+      .theme-toggle__option {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 11px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+      }
+
+      .nav-cta {
+        display: inline-flex !important;
+      }
+
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .hero {
+        padding: 28px 0 92px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+        gap: 40px;
+        align-items: end;
+      }
+
+      .hero-media {
+        order: 0;
+      }
+
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .hero-actions .button,
+      .hero-actions .button-secondary {
+        width: auto;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .hero-frame {
+        border-radius: 40px;
+      }
+
+      .hero-frame img {
+        height: min(70vw, 640px);
+      }
+
+      .hero-note {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        left: auto;
+        max-width: 340px;
+        margin-top: 0;
+      }
+
+      .hero .lead {
+        max-width: 30ch;
+        font-size: 18px;
+      }
+
+      .services-grid,
+      .advantages-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .structure-shell {
+        gap: 28px;
+        padding: 28px;
+        border-radius: 34px;
+      }
+
+      .structure-layout {
+        grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .structure-stage__frame {
+        height: 100%;
+        padding: 22px;
+      }
+
+      .structure-illustration,
+      .structure-illustration__svg {
+        min-height: 480px;
+      }
+
+      .structure-panel {
+        align-self: stretch;
+      }
+
+      .structure-card {
+        min-height: 480px;
+        padding: 28px 26px;
+      }
+
+      .structure-card__benefit {
+        margin-top: auto;
+      }
+
       .steps-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .quotes-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .portfolio-layout {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 22px;
       }
 
       .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
       }
 
       .featured-project {
-        min-height: 480px;
+        min-height: 560px;
+      }
+
+      .project-tile {
+        min-height: 284px;
+      }
+
+      .project-copy {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 18px 18px 17px;
+      }
+
+      #projects .section-head {
+        gap: 40px;
+        margin-bottom: 54px;
+      }
+
+      #projects .section-head > div {
+        max-width: min(100%, 720px);
+      }
+
+      #projects-title {
+        max-width: 13.8ch;
+        font-size: clamp(40px, 5vw, 60px);
+      }
+
+      #projects-title .title-line--projects-city,
+      #projects-title .title-line--projects-region {
+        display: inline;
+      }
+
+      #projects-title .title-line--projects-region {
+        margin-left: 0.18ch;
+      }
+
+      #projects .section-head p {
+        flex: 0 0 min(34ch, 100%);
+        padding-bottom: 10px;
+      }
+
+      #projects .inline-cta {
+        margin-top: 28px;
+        padding: 28px 28px;
+      }
+
+      .inline-cta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 26px 28px;
+        gap: 24px;
+      }
+
+      .inline-cta .button {
+        width: auto;
+        min-width: 220px;
+      }
+
+      .cta-grid {
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .cta-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .contact-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+      }
+
+      .footer-links {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 760px) {
+    @media (min-width: 1081px) {
       .section {
-        padding: 72px 0;
-      }
-
-      .topbar-inner {
-        min-height: 74px;
-      }
-
-      .nav-links,
-      .nav .button {
-        display: none;
-      }
-
-      .menu-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero {
-        padding-top: 18px;
-      }
-
-      .hero-stats,
-      .services-grid,
-      .advantages-grid,
-      .project-grid,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-frame img {
-        height: 440px;
-      }
-
-      .hero-note {
-        right: 16px;
-        left: 16px;
-        bottom: 16px;
-        max-width: none;
-      }
-
-      .section-head {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 96px 0;
       }
 
       .service-card,
       .card,
       .step-card,
       .quote,
+      .faq-item,
       .contact-card,
-      .form-card {
-        padding: 24px;
+      .form-card,
+      .cta-card {
+        padding: 30px;
+        border-radius: 26px;
       }
 
-      .footer-links {
-        justify-content: flex-start;
+      .project-tile {
+        min-height: 334px;
       }
 
+      .project-copy {
+        max-width: min(100%, 37ch);
+      }
+    }
+
+    :root {
+      color-scheme: light;
+      --section-anchor-offset: 96px;
+      --page-bg:
+        radial-gradient(circle at top left, rgba(42, 103, 143, 0.09), transparent 30%),
+        radial-gradient(circle at top right, rgba(20, 54, 79, 0.06), transparent 24%),
+        linear-gradient(180deg, #f7f8f9 0%, var(--bg) 100%);
+      --card-border: rgba(255, 255, 255, 0.76);
+      --eyebrow-bg: rgba(255, 255, 255, 0.6);
+      --eyebrow-line: rgba(20, 54, 79, 0.14);
+      --topbar-bg: rgba(247, 248, 249, 0.8);
+      --topbar-line: rgba(21, 34, 45, 0.06);
+      --button-primary-shadow: 0 18px 42px rgba(20, 54, 79, 0.22);
+      --button-primary-shadow-hover: 0 24px 54px rgba(20, 54, 79, 0.28);
+      --button-secondary-bg: rgba(255, 255, 255, 0.78);
+      --button-secondary-line: rgba(21, 34, 45, 0.08);
+      --menu-bg: rgba(255, 255, 255, 0.82);
+      --theme-toggle-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(232, 238, 242, 0.62));
+      --theme-toggle-line: rgba(255, 255, 255, 0.54);
+      --hero-overlay:
+        radial-gradient(circle at 18% 18%, rgba(42, 103, 143, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0));
+      --ambient-hero: radial-gradient(circle at 72% 24%, rgba(135, 183, 216, 0.22), rgba(79, 143, 185, 0.1) 30%, rgba(8, 19, 28, 0) 74%);
+      --ambient-section:
+        radial-gradient(circle at 16% 14%, rgba(79, 143, 185, 0.12), transparent 30%),
+        radial-gradient(circle at 84% 20%, rgba(20, 54, 79, 0.1), transparent 26%);
+      --overlay-light:
+        linear-gradient(180deg, rgba(9, 25, 38, 0.02), rgba(9, 25, 38, 0.42)),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 32%);
+      --hero-note-bg: rgba(9, 25, 38, 0.86);
+      --hero-note-text: rgba(255, 255, 255, 0.8);
+      --icon-box-bg: linear-gradient(180deg, rgba(42, 103, 143, 0.12), rgba(20, 54, 79, 0.08));
+      --project-overlay: linear-gradient(180deg, rgba(9, 25, 38, 0.04) 0%, rgba(9, 25, 38, 0.22) 40%, rgba(9, 25, 38, 0.88) 100%);
+      --project-copy-bg: linear-gradient(180deg, rgba(9, 25, 38, 0.12), rgba(9, 25, 38, 0.56));
+      --project-copy-line: rgba(255, 255, 255, 0.16);
+      --inline-cta-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(232, 238, 242, 0.92));
+      --step-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(243, 247, 249, 0.86));
+      --step-card-bg-emphasis: linear-gradient(180deg, rgba(251, 252, 253, 0.94), rgba(236, 242, 246, 0.9));
+      --step-card-line: rgba(42, 103, 143, 0.34);
+      --footer-bg: linear-gradient(180deg, rgba(12, 34, 51, 0.04), rgba(12, 34, 51, 0.08));
+      --footer-link-bg: rgba(255, 255, 255, 0.7);
+      --field-bg: var(--surface-soft);
+      --field-line: rgba(21, 34, 45, 0.1);
+      --focus-ring: 0 0 0 4px rgba(42, 103, 143, 0.12);
+      --modal-backdrop: rgba(9, 25, 38, 0.7);
+      --modal-surface: rgba(245, 248, 250, 0.94);
+      --modal-border: rgba(255, 255, 255, 0.8);
+      --modal-shadow: 0 36px 100px rgba(9, 25, 38, 0.34);
+      --modal-glow: radial-gradient(circle, rgba(79, 143, 185, 0.28), transparent 68%);
+      --tag-bg: rgba(20, 54, 79, 0.08);
+      --tag-line: rgba(20, 54, 79, 0.14);
+      --tool-glow: radial-gradient(circle, rgba(42, 103, 143, 0.15), transparent 70%);
+      --tool-panel-bg: rgba(255, 255, 255, 0.7);
+      --tool-result-bg: linear-gradient(180deg, rgba(20, 54, 79, 0.06), rgba(42, 103, 143, 0.12));
+      --choice-bg: rgba(255, 255, 255, 0.76);
+      --choice-bg-active: rgba(42, 103, 143, 0.14);
+      --choice-line-active: rgba(42, 103, 143, 0.4);
+    }
+
+    section[id] {
+      scroll-margin-top: var(--section-anchor-offset);
+    }
+
+    body {
+      background: var(--page-bg);
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    .topbar {
+      background: var(--topbar-bg);
+      border-bottom-color: var(--topbar-line);
+    }
+
+    .eyebrow {
+      background: var(--eyebrow-bg);
+      border-color: var(--eyebrow-line);
+    }
+
+    .eyebrow--inverse {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .button {
+      box-shadow: var(--button-primary-shadow);
+    }
+
+    .button-secondary {
+      background: var(--button-secondary-bg);
+      border-color: var(--button-secondary-line);
+    }
+
+    .button,
+    .button-secondary,
+    .menu-button,
+    .mobile-menu a,
+    .footer-links a,
+    .featured-project,
+    .project-tile {
+      will-change: transform;
+    }
+
+    .menu-button,
+    .mobile-menu a {
+      background: var(--menu-bg);
+    }
+
+    .theme-toggle {
+      background: var(--theme-toggle-bg);
+      border-color: var(--theme-toggle-line);
+    }
+
+    .hero::before {
+      background: var(--hero-overlay);
+    }
+
+    .stat-card,
+    .service-card,
+    .card,
+    .step-card,
+    .quote,
+    .faq-item,
+    .contact-card,
+    .form-card,
+    .inline-cta {
+      border-color: var(--card-border);
+      transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .hero-frame::before {
+      background: var(--overlay-light);
+    }
+
+    .hero-note {
+      background: var(--hero-note-bg);
+    }
+
+    .hero-note span {
+      color: var(--hero-note-text);
+    }
+
+    .icon-box {
+      background: var(--icon-box-bg);
+    }
+
+    .featured-project,
+    .project-tile {
+      cursor: zoom-in;
+      outline: none;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+    }
+
+    .featured-project img,
+    .project-tile img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease;
+      transform-origin: center;
+    }
+
+    .featured-project::after,
+    .project-tile::after {
+      background: var(--project-overlay);
+      transition: opacity 0.35s ease;
+    }
+
+    .inline-cta {
+      background: var(--inline-cta-bg);
+    }
+
+    .form-card {
+      background: var(--surface-strong);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--field-bg);
+      border-color: var(--field-line);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      box-shadow: var(--focus-ring);
+    }
+
+    footer {
+      background: var(--footer-bg);
+    }
+
+    .footer-links a {
+      background: var(--footer-link-bg);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: var(--button-primary-shadow-hover);
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible,
+    .menu-button:hover,
+    .menu-button:focus-visible,
+    .mobile-menu a:hover,
+    .mobile-menu a:focus-visible,
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(42, 103, 143, 0.18);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .service-card:hover,
+    .service-card:focus-within,
+    .card:hover,
+    .card:focus-within,
+    .step-card:hover,
+    .step-card:focus-within,
+    .quote:hover,
+    .quote:focus-within,
+    .faq-item:hover,
+    .faq-item:focus-within,
+    .contact-card:hover,
+    .contact-card:focus-within,
+    .inline-cta:hover,
+    .inline-cta:focus-within {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(42, 103, 143, 0.18);
+    }
+
+    .featured-project:hover,
+    .featured-project:focus-visible,
+    .project-tile:hover,
+    .project-tile:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 34px 78px rgba(9, 25, 38, 0.2);
+    }
+
+    .featured-project:hover img,
+    .featured-project:focus-visible img,
+    .project-tile:hover img,
+    .project-tile:focus-visible img {
+      transform: scale(1.03);
+    }
+
+    .featured-project:hover::after,
+    .featured-project:focus-visible::after,
+    .project-tile:hover::after,
+    .project-tile:focus-visible::after {
+      opacity: 0.88;
+    }
+
+    .button:active,
+    .button-secondary:active,
+    .menu-button:active,
+    .footer-links a:active,
+    .featured-project:active,
+    .project-tile:active {
+      transform: translateY(0);
+    }
+
+    .button:focus-visible,
+    .button-secondary:focus-visible,
+    .menu-button:focus-visible,
+    .mobile-menu a:focus-visible,
+    .footer-links a:focus-visible,
+    .featured-project:focus-visible,
+    .project-tile:focus-visible,
+    .faq-question:focus-visible,
+    .choice-chip input:focus-visible + span {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tool-shell {
+      position: relative;
+      overflow: hidden;
+      padding: 24px 18px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tool-shell::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: var(--tool-glow);
+      pointer-events: none;
+    }
+
+    .tool-shell--advisor::before {
+      top: auto;
+      right: auto;
+      left: -90px;
+      bottom: -90px;
+    }
+
+    .tool-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 18px;
+    }
+
+    .tool-panel,
+    .result-card,
+    .advisor-result {
+      padding: 22px 18px;
+      border-radius: 24px;
+      background: var(--tool-panel-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(18px);
+    }
+
+    .result-card,
+    .advisor-result {
+      background: var(--tool-result-bg);
+    }
+
+    .result-card {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      min-height: 100%;
+    }
+
+    .result-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(20, 54, 79, 0.08);
+      color: var(--secondary);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .result-card strong,
+    .advisor-result strong {
+      display: block;
+      margin-top: 14px;
+      color: var(--accent);
+      font-size: clamp(28px, 5vw, 38px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .result-card strong {
+      margin-top: 4px;
+      max-width: 11ch;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.02;
+    }
+
+    .result-card p,
+    .advisor-result p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .result-card p {
+      margin: 0;
+    }
+
+    .result-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .result-highlights {
+      display: grid;
+      gap: 10px;
+      margin: 4px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .result-highlights li {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.34);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .option-field {
+      margin: 18px 0 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .option-field legend {
+      margin-bottom: 10px;
+      padding: 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .choice-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .choice-chip {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+
+    .choice-chip input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .choice-chip span {
+      display: flex;
+      align-items: center;
+      min-height: 54px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: var(--choice-bg);
+      border: 1px solid var(--field-line);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .choice-chip:hover span,
+    .choice-chip input:focus-visible + span {
+      transform: translateY(-2px);
+      border-color: rgba(42, 103, 143, 0.24);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .choice-chip input:checked + span {
+      background: var(--choice-bg-active);
+      border-color: var(--choice-line-active);
+      box-shadow: 0 16px 36px rgba(20, 54, 79, 0.1);
+    }
+
+    .advisor-result-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .advisor-result-list li {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.56);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .faq-item {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .faq-item h3 {
+      margin: 0;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 18px;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      text-align: left;
+      font-size: 21px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .faq-question::after {
+      content: "+";
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(42, 103, 143, 0.1);
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1;
+      margin-right: 4px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .faq-item[data-open="true"] .faq-question::after {
+      transform: rotate(45deg);
+      background: rgba(42, 103, 143, 0.16);
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0.72;
+      transition: grid-template-rows 0.32s ease, opacity 0.32s ease;
+    }
+
+    .faq-item[data-open="true"] .faq-answer {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .faq-answer-inner {
+      overflow: hidden;
+      padding: 0 18px 0;
+    }
+
+    .faq-item[data-open="true"] .faq-answer-inner {
+      padding: 0 18px 22px;
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    .lightbox[hidden] {
+      display: none;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: grid;
+      place-items: start center;
+      padding:
+        calc(10px + env(safe-area-inset-top, 0px))
+        10px
+        calc(16px + env(safe-area-inset-bottom, 0px));
+      overflow-y: auto;
+    }
+
+    .lightbox__backdrop {
+      position: absolute;
+      inset: 0;
+      background: var(--modal-backdrop);
+      backdrop-filter: blur(16px);
+    }
+
+    .lightbox__dialog {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 560px);
+      max-height: calc(100dvh - 20px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+      padding: 12px;
+      border-radius: 24px;
+      background: var(--modal-surface);
+      border: 1px solid var(--modal-border);
+      box-shadow: var(--modal-shadow);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      animation: lightboxReveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lightbox__dialog::before {
+      content: "";
+      position: absolute;
+      inset: -18% auto auto -8%;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: var(--modal-glow);
+      filter: blur(6px);
+      pointer-events: none;
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3;
+      min-height: 40px;
+      padding: 0 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .lightbox__layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .lightbox__media {
+      position: relative;
+      display: flex;
+    }
+
+    .lightbox__meta {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 16px 14px 14px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+    }
+
+    .lightbox__eyebrow {
+      width: max-content;
+    }
+
+    .lightbox__figure {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(79, 143, 185, 0.16), transparent 32%),
+        #08131c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .lightbox__figure img {
+      width: 100%;
+      max-height: min(42dvh, 320px);
+      padding: 8px;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .lightbox__title {
+      margin: 0;
+      font-size: clamp(24px, 7.4vw, 31px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      max-width: none;
+    }
+
+    .lightbox__description,
+    .lightbox__caption {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .lightbox__description {
+      max-width: none;
+    }
+
+    .lightbox__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .lightbox__tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-line);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      max-width: 100%;
+      white-space: normal;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .lightbox__caption {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .lightbox__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .lightbox__actions .button {
+      width: 100%;
+      min-height: 50px;
+    }
+
+    .lead-capture__dialog {
+      width: min(100%, 560px);
+    }
+
+    .lead-capture__layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 18px;
+    }
+
+    .lead-capture__summary {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .lead-capture__summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .lead-capture__form {
+      position: relative;
+      z-index: 1;
+      padding: 0 4px 4px;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @keyframes lightboxReveal {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (min-width: 761px) {
+      .topbar-actions .theme-toggle {
+        display: inline-grid;
+      }
+
+      .tool-shell {
+        padding: 30px;
+      }
+
+      .tool-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-question {
+        padding: 26px 32px 26px 24px;
+      }
+
+      .faq-answer-inner {
+        padding: 0 24px 0;
+      }
+
+      .faq-item[data-open="true"] .faq-answer-inner {
+        padding: 0 24px 26px;
+      }
+
+      .lightbox {
+        place-items: center;
+        padding: 20px;
+      }
+
+      .lightbox__dialog {
+        width: min(100%, 1200px);
+        max-height: min(100dvh - 40px, 920px);
+        padding: 20px;
+        border-radius: 32px;
+        overflow: hidden;
+      }
+
+      .lightbox__layout {
+        grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.68fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .lightbox__meta {
+        gap: 16px;
+        padding: 28px 28px 26px;
+        border-radius: 24px;
+      }
+
+      .lightbox__figure {
+        border-radius: 26px;
+      }
+
+      .lightbox__figure img {
+        max-height: min(78vh, 760px);
+        padding: 16px;
+      }
+
+      .lightbox__title {
+        font-size: clamp(30px, 5vw, 44px);
+        max-width: 11ch;
+      }
+
+      .lightbox__description {
+        max-width: 34ch;
+      }
+
+      .lightbox__tag {
+        min-height: 34px;
+        padding: 7px 12px;
+        font-size: 11px;
+      }
+
+      .lightbox__caption {
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-actions .theme-toggle {
+        display: none;
+      }
+
+      .structure-shell {
+        padding: 18px;
+      }
+
+      .structure-stage__frame {
+        padding: 16px;
+      }
+
+      .structure-stage__footer {
+        display: grid;
+        justify-items: start;
+      }
+
+      .structure-stage__footer::before {
+        width: 100%;
+      }
+
+      .structure-illustration,
+      .structure-illustration__svg {
+        min-height: 340px;
+      }
+
+      .structure-card h3 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 479px) {
       .brand-copy small {
-        white-space: normal;
+        display: none;
+      }
+
+      .brand-copy strong {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 379px) {
+      .topbar-inner {
+        gap: 10px;
+      }
+
+      .brand {
+        gap: 10px;
+      }
+
+      .topbar-actions {
+        gap: 5px;
+      }
+
+      .menu-button {
+        min-width: 72px;
+        padding: 0 14px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        color-scheme: dark;
+        --bg: #08131c;
+        --bg-strong: #0d1b26;
+        --surface: rgba(11, 23, 33, 0.84);
+        --surface-strong: rgba(12, 24, 35, 0.96);
+        --surface-soft: #10202c;
+        --text: #ecf2f6;
+        --muted: #b3c2ce;
+        --line: rgba(236, 242, 246, 0.1);
+        --primary: #4f8fb9;
+        --secondary: #2c668b;
+        --accent: #f5f8fb;
+        --accent-soft: rgba(79, 143, 185, 0.14);
+        --success: #80c2a6;
+        --shadow-sm: 0 20px 38px rgba(0, 0, 0, 0.28);
+        --shadow-md: 0 28px 72px rgba(0, 0, 0, 0.38);
+        --shadow-lg: 0 42px 96px rgba(0, 0, 0, 0.52);
+        --page-bg:
+          radial-gradient(circle at top left, rgba(79, 143, 185, 0.18), transparent 28%),
+          radial-gradient(circle at top right, rgba(20, 54, 79, 0.28), transparent 24%),
+          linear-gradient(180deg, #071119 0%, #09151f 100%);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --eyebrow-bg: rgba(79, 143, 185, 0.12);
+        --eyebrow-line: rgba(157, 193, 220, 0.18);
+        --topbar-bg: rgba(7, 16, 23, 0.84);
+        --topbar-line: rgba(255, 255, 255, 0.06);
+        --button-primary-shadow: 0 18px 42px rgba(5, 12, 18, 0.44);
+        --button-primary-shadow-hover: 0 24px 56px rgba(5, 12, 18, 0.52);
+        --button-secondary-bg: rgba(12, 24, 35, 0.82);
+        --button-secondary-line: rgba(255, 255, 255, 0.12);
+        --menu-bg: rgba(12, 24, 35, 0.86);
+        --hero-overlay:
+          radial-gradient(circle at 18% 18%, rgba(79, 143, 185, 0.22), transparent 28%),
+          linear-gradient(180deg, rgba(7, 16, 23, 0.16), rgba(7, 16, 23, 0));
+        --ambient-hero: radial-gradient(circle at 72% 24%, rgba(109, 173, 214, 0.24), rgba(24, 71, 104, 0.18) 30%, rgba(4, 10, 14, 0) 74%);
+        --ambient-section:
+          radial-gradient(circle at 16% 14%, rgba(79, 143, 185, 0.18), transparent 30%),
+          radial-gradient(circle at 84% 20%, rgba(20, 54, 79, 0.24), transparent 26%);
+        --overlay-light:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(2, 7, 10, 0.52)),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 32%);
+        --hero-note-bg: rgba(4, 10, 14, 0.9);
+        --hero-note-text: rgba(236, 242, 246, 0.74);
+        --icon-box-bg: linear-gradient(180deg, rgba(79, 143, 185, 0.18), rgba(20, 54, 79, 0.22));
+        --project-overlay: linear-gradient(180deg, rgba(4, 10, 14, 0.06) 0%, rgba(4, 10, 14, 0.32) 40%, rgba(4, 10, 14, 0.94) 100%);
+        --inline-cta-bg: linear-gradient(135deg, rgba(12, 24, 35, 0.78), rgba(15, 28, 40, 0.94));
+        --step-card-bg: linear-gradient(180deg, rgba(12, 24, 35, 0.92), rgba(8, 18, 26, 0.9));
+        --step-card-bg-emphasis: linear-gradient(180deg, rgba(16, 30, 42, 0.94), rgba(9, 19, 28, 0.92));
+        --step-card-line: rgba(135, 183, 216, 0.34);
+        --footer-bg: linear-gradient(180deg, rgba(4, 10, 14, 0.4), rgba(4, 10, 14, 0.84));
+        --footer-link-bg: rgba(12, 24, 35, 0.78);
+        --field-bg: rgba(8, 18, 26, 0.82);
+        --field-line: rgba(255, 255, 255, 0.12);
+        --focus-ring: 0 0 0 4px rgba(79, 143, 185, 0.18);
+        --modal-backdrop: rgba(2, 7, 10, 0.82);
+        --modal-surface: rgba(8, 17, 24, 0.95);
+        --modal-border: rgba(255, 255, 255, 0.12);
+        --modal-glow: radial-gradient(circle, rgba(79, 143, 185, 0.22), transparent 68%);
+        --tag-bg: rgba(79, 143, 185, 0.12);
+        --tag-line: rgba(135, 183, 216, 0.16);
+        --tool-glow: radial-gradient(circle, rgba(79, 143, 185, 0.2), transparent 70%);
+        --tool-panel-bg: rgba(11, 22, 31, 0.78);
+        --tool-result-bg: linear-gradient(180deg, rgba(20, 54, 79, 0.24), rgba(11, 22, 31, 0.92));
+        --choice-bg: rgba(11, 23, 33, 0.88);
+        --choice-bg-active: rgba(79, 143, 185, 0.18);
+        --choice-line-active: rgba(135, 183, 216, 0.32);
+      }
+
+      .nav-links a,
+      .brand-copy small,
+      .hero-trustline,
+      .section-head p,
+      .lead,
+      .inline-cta p,
+      .project-copy p,
+      .contact-card address,
+      .footer-copy,
+      .form-note,
+      .form-status,
+      .contact-note {
+        color: var(--muted);
+      }
+
+      .quote::before {
+        color: rgba(79, 143, 185, 0.12);
+      }
+
+      .cta-card {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .cta-actions .button-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .cta-list span {
+        border-color: rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .advisor-result-list li {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .lightbox__meta {
+        background: linear-gradient(180deg, rgba(11, 22, 31, 0.84), rgba(8, 18, 26, 0.94));
+        border-color: rgba(255, 255, 255, 0.08);
+      }
+
+      .lightbox__description,
+      .lightbox__caption,
+      .project-copy p {
+        color: rgba(236, 242, 246, 0.84);
+      }
+
+      .result-highlights li {
+        background: rgba(255, 255, 255, 0.04);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #08131c;
+      --bg-strong: #0d1b26;
+      --surface: rgba(11, 23, 33, 0.84);
+      --surface-strong: rgba(12, 24, 35, 0.96);
+      --surface-soft: #10202c;
+      --text: #ecf2f6;
+      --muted: #b3c2ce;
+      --line: rgba(236, 242, 246, 0.1);
+      --primary: #4f8fb9;
+      --secondary: #2c668b;
+      --accent: #f5f8fb;
+      --accent-soft: rgba(79, 143, 185, 0.14);
+      --success: #80c2a6;
+      --shadow-sm: 0 20px 38px rgba(0, 0, 0, 0.28);
+      --shadow-md: 0 28px 72px rgba(0, 0, 0, 0.38);
+      --shadow-lg: 0 42px 96px rgba(0, 0, 0, 0.52);
+      --page-bg:
+        radial-gradient(circle at top left, rgba(79, 143, 185, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(20, 54, 79, 0.28), transparent 24%),
+        linear-gradient(180deg, #071119 0%, #09151f 100%);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --eyebrow-bg: rgba(79, 143, 185, 0.12);
+      --eyebrow-line: rgba(157, 193, 220, 0.18);
+      --topbar-bg: rgba(7, 16, 23, 0.84);
+      --topbar-line: rgba(255, 255, 255, 0.06);
+      --button-primary-shadow: 0 18px 42px rgba(5, 12, 18, 0.44);
+      --button-primary-shadow-hover: 0 24px 56px rgba(5, 12, 18, 0.52);
+      --button-secondary-bg: rgba(12, 24, 35, 0.82);
+      --button-secondary-line: rgba(255, 255, 255, 0.12);
+      --menu-bg: rgba(12, 24, 35, 0.86);
+      --theme-toggle-bg: linear-gradient(135deg, rgba(10, 21, 31, 0.9), rgba(15, 30, 43, 0.72));
+      --theme-toggle-line: rgba(255, 255, 255, 0.12);
+      --hero-overlay:
+        radial-gradient(circle at 18% 18%, rgba(79, 143, 185, 0.22), transparent 28%),
+        linear-gradient(180deg, rgba(7, 16, 23, 0.16), rgba(7, 16, 23, 0));
+      --ambient-hero: radial-gradient(circle at 72% 24%, rgba(109, 173, 214, 0.24), rgba(24, 71, 104, 0.18) 30%, rgba(4, 10, 14, 0) 74%);
+      --ambient-section:
+        radial-gradient(circle at 16% 14%, rgba(79, 143, 185, 0.18), transparent 30%),
+        radial-gradient(circle at 84% 20%, rgba(20, 54, 79, 0.24), transparent 26%);
+      --overlay-light:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(2, 7, 10, 0.52)),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 32%);
+      --hero-note-bg: rgba(4, 10, 14, 0.9);
+      --hero-note-text: rgba(236, 242, 246, 0.74);
+      --icon-box-bg: linear-gradient(180deg, rgba(79, 143, 185, 0.18), rgba(20, 54, 79, 0.22));
+      --project-overlay: linear-gradient(180deg, rgba(4, 10, 14, 0.06) 0%, rgba(4, 10, 14, 0.32) 40%, rgba(4, 10, 14, 0.94) 100%);
+      --project-copy-bg: linear-gradient(180deg, rgba(4, 10, 14, 0.16), rgba(4, 10, 14, 0.62));
+      --project-copy-line: rgba(255, 255, 255, 0.12);
+      --inline-cta-bg: linear-gradient(135deg, rgba(12, 24, 35, 0.78), rgba(15, 28, 40, 0.94));
+      --step-card-bg: linear-gradient(180deg, rgba(12, 24, 35, 0.92), rgba(8, 18, 26, 0.9));
+      --step-card-bg-emphasis: linear-gradient(180deg, rgba(16, 30, 42, 0.94), rgba(9, 19, 28, 0.92));
+      --step-card-line: rgba(135, 183, 216, 0.34);
+      --footer-bg: linear-gradient(180deg, rgba(4, 10, 14, 0.4), rgba(4, 10, 14, 0.84));
+      --footer-link-bg: rgba(12, 24, 35, 0.78);
+      --field-bg: rgba(8, 18, 26, 0.82);
+      --field-line: rgba(255, 255, 255, 0.12);
+      --focus-ring: 0 0 0 4px rgba(79, 143, 185, 0.18);
+      --modal-backdrop: rgba(2, 7, 10, 0.82);
+      --modal-surface: rgba(8, 17, 24, 0.95);
+      --modal-border: rgba(255, 255, 255, 0.12);
+      --modal-glow: radial-gradient(circle, rgba(79, 143, 185, 0.22), transparent 68%);
+      --tag-bg: rgba(79, 143, 185, 0.12);
+      --tag-line: rgba(135, 183, 216, 0.16);
+      --tool-glow: radial-gradient(circle, rgba(79, 143, 185, 0.2), transparent 70%);
+      --tool-panel-bg: rgba(11, 22, 31, 0.78);
+      --tool-result-bg: linear-gradient(180deg, rgba(20, 54, 79, 0.24), rgba(11, 22, 31, 0.92));
+      --choice-bg: rgba(11, 23, 33, 0.88);
+      --choice-bg-active: rgba(79, 143, 185, 0.18);
+      --choice-line-active: rgba(135, 183, 216, 0.32);
+    }
+
+    body[data-theme="dark"] .nav-links a,
+    body[data-theme="dark"] .brand-copy small,
+    body[data-theme="dark"] .hero-trustline,
+    body[data-theme="dark"] .section-head p,
+    body[data-theme="dark"] .lead,
+    body[data-theme="dark"] .inline-cta p,
+    body[data-theme="dark"] .project-copy p,
+    body[data-theme="dark"] .contact-card address,
+    body[data-theme="dark"] .footer-copy,
+    body[data-theme="dark"] .form-note,
+    body[data-theme="dark"] .form-status,
+    body[data-theme="dark"] .contact-note,
+    body[data-theme="dark"] .mobile-menu__theme-copy p {
+      color: var(--muted);
+    }
+
+    body[data-theme="dark"] .mobile-menu__theme {
+      background: linear-gradient(135deg, rgba(12, 24, 35, 0.82), rgba(15, 28, 40, 0.96));
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body[data-theme="dark"] .quote::before {
+      color: rgba(79, 143, 185, 0.12);
+    }
+
+    body[data-theme="dark"] .cta-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    body[data-theme="dark"] .cta-actions .button-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    body[data-theme="dark"] .cta-list span {
+      border-color: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    body[data-theme="dark"] .advisor-result-list li,
+    body[data-theme="dark"] .result-highlights li {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    body[data-theme="dark"] .lightbox__meta {
+      background: linear-gradient(180deg, rgba(11, 22, 31, 0.84), rgba(8, 18, 26, 0.94));
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body[data-theme="dark"] .lightbox__description,
+    body[data-theme="dark"] .lightbox__caption,
+    body[data-theme="dark"] .project-copy p {
+      color: rgba(236, 242, 246, 0.84);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+      }
+
+      .lightbox__dialog {
+        animation: none;
       }
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#hero" aria-label="Glavzaves">
+      <a class="brand" href="#hero" aria-label="Глав Завес">
         <span class="brand-mark" aria-hidden="true">
           <span class="l1"></span>
           <span class="l2"></span>
           <span class="l3"></span>
         </span>
         <span class="brand-copy">
-          <strong>Glavzaves</strong>
-          <small>Производство и монтаж мягких окон</small>
+          <strong>Глав Завес</strong>
+          <small>Мягкие окна премиального уровня</small>
         </span>
       </a>
       <nav class="nav" aria-label="Основная навигация">
         <div class="nav-links">
-          <a href="#services">Услуги</a>
+          <a href="#services">Решения</a>
           <a href="#advantages">Преимущества</a>
           <a href="#projects">Проекты</a>
-          <a href="#process">Порядок работы</a>
+          <a href="#smart-calculator">Подбор</a>
+          <a href="#process">Этапы</a>
           <a href="#reviews">Отзывы</a>
           <a href="#contacts">Контакты</a>
         </div>
-        <a class="button" href="#lead-form">Заказать замер</a>
-        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+        <div class="topbar-actions">
+          <div class="theme-toggle" id="theme-toggle" data-theme-toggle data-theme="light" role="group" aria-label="Переключение темы">
+            <button class="theme-toggle__option" type="button" data-set-theme="light" aria-pressed="false">День</button>
+            <button class="theme-toggle__option" type="button" data-set-theme="dark" aria-pressed="false">Ночь</button>
+          </div>
+          <a class="button nav-cta" href="#lead-form">Заказать замер</a>
+          <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+        </div>
       </nav>
     </div>
     <div class="container mobile-menu" id="mobile-menu" data-open="false">
-      <a href="#services">Услуги</a>
+      <div class="mobile-menu__theme" data-testid="mobile-theme-panel">
+        <div class="mobile-menu__theme-copy">
+          <strong>Режим света</strong>
+          <p>Переключите дневное или вечернее настроение интерфейса без перегруза верхней панели.</p>
+        </div>
+        <div class="theme-toggle theme-toggle--drawer" data-theme-toggle data-theme="light" role="group" aria-label="Переключение темы">
+          <button class="theme-toggle__option" type="button" data-set-theme="light" aria-pressed="false">День</button>
+          <button class="theme-toggle__option" type="button" data-set-theme="dark" aria-pressed="false">Ночь</button>
+        </div>
+      </div>
+      <a href="#services">Решения</a>
       <a href="#advantages">Преимущества</a>
       <a href="#projects">Проекты</a>
-      <a href="#process">Порядок работы</a>
+      <a href="#smart-calculator">Подбор</a>
+      <a href="#process">Этапы</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
       <a class="button" href="#lead-form">Заказать замер</a>
@@ -1003,27 +3330,28 @@
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Санкт-Петербург и Ленобласть</span>
-          <h1 class="title" id="hero-title">Изготовление и монтаж мягких окон для веранд, беседок и террас</h1>
+          <span class="eyebrow">Санкт-Петербург и область</span>
+          <h1 class="title" id="hero-title"><span class="sr-only">Премиальные мягкие окна для веранд, террас и беседок</span><span class="hero-title-layout hero-title-layout--desktop" aria-hidden="true"><span class="title-line">Премиальные мягкие окна</span><span class="title-line">для веранд, террас</span><span class="title-line">и беседок</span></span><span class="hero-title-layout hero-title-layout--mobile" aria-hidden="true"><span class="title-line">Премиальные</span><span class="title-line">мягкие окна</span><span class="title-line">для веранд,</span><span class="title-line">террас и беседок</span></span></h1>
           <p class="lead">
-            Производство находится в Санкт-Петербурге. Качественная фурнитура и комплектующие позволяют ускорить процесс изготовления, а профессиональный монтаж дает аккуратный и надежный результат уже в течение одного рабочего дня.
+            Изготавливаем и устанавливаем мягкие окна под ключ: точный замер, чистый монтаж и аккуратный результат для частных и коммерческих объектов.
           </p>
           <div class="hero-actions">
-            <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
-            <a class="button-secondary" href="tel:+79918097134">Позвонить: +7 991 809 7134</a>
+            <a class="button" href="https://t.me/+79118097134">Получить расчет в Telegram</a>
+            <a class="button-secondary" href="#lead-form">Заказать замер</a>
           </div>
+          <div class="hero-trustline">Ответим в течение 15 минут. Можно отправить фото объекта и быстро понять стоимость.</div>
           <div class="hero-stats">
             <article class="stat-card">
-              <strong>Свое производство</strong>
-              <span>Работаем без посредников и контролируем качество на каждом этапе.</span>
+              <strong>Собственное производство</strong>
+              <span>Контролируем качество на каждом этапе заказа.</span>
             </article>
             <article class="stat-card">
-              <strong>Замер уже завтра</strong>
-              <span>Бесплатно замерим и рассчитаем стоимость, специалист может приехать уже на следующий день.</span>
+              <strong>Быстрый выезд на замер</strong>
+              <span>Согласуем удобное время и подготовим точный расчет.</span>
             </article>
             <article class="stat-card">
               <strong>Гарантия 2 года</strong>
-              <span>Надежные материалы и фурнитура для долговечных мягких окон.</span>
+              <span>Качественные материалы и надежная фурнитура.</span>
             </article>
           </div>
         </div>
@@ -1032,8 +3360,8 @@
             <img src="./assets/hero-garage.png" alt="Панорамное закрытие навеса мягкими окнами" width="1536" height="1024">
           </div>
           <div class="hero-note">
-            <strong>Мягкие окна для частных и коммерческих объектов</strong>
-            <span>Подходят для веранд, беседок, террас, входных групп и сезонных открытых пространств.</span>
+            <strong>Для домов, беседок, террас и входных групп</strong>
+            <span>Защищают пространство от ветра и осадков, сохраняя свет и обзор.</span>
           </div>
         </div>
       </div>
@@ -1043,31 +3371,31 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Услуги</span>
-            <h2 class="title" id="services-title">Мягкие окна под разные типы объектов</h2>
+            <span class="eyebrow">Решения</span>
+            <h2 class="title" id="services-title">Решения под ваш объект</h2>
           </div>
-          <p>Решения для веранд, беседок, террас и других открытых пространств. Подбираем конфигурацию мягких окон под конкретный объект.</p>
+          <p>Подбираем конфигурацию под размер, архитектуру и режим эксплуатации.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card">
+          <article class="service-card service-card--featured">
             <div class="icon-box">01</div>
-            <h3>Мягкие окна для веранд</h3>
-            <p>Прозрачная защита от ветра, дождя и насекомых с сохранением света и панорамного вида.</p>
+            <h3>Веранды</h3>
+            <p>Прозрачная защита от ветра и дождя без потери света.</p>
           </article>
           <article class="service-card">
             <div class="icon-box">02</div>
-            <h3>Мягкие окна для беседок</h3>
-            <p>Закрываем летние и всесезонные беседки, чтобы пространство оставалось usable в любую погоду.</p>
+            <h3>Беседки</h3>
+            <p>Закрываем беседки аккуратно и сохраняем открытый обзор.</p>
           </article>
           <article class="service-card">
             <div class="icon-box">03</div>
-            <h3>Террасы и пристройки</h3>
-            <p>Аккуратно интегрируем решение в частный дом, террасу у фасада или отдельный навес на участке.</p>
+            <h3>Террасы и навесы</h3>
+            <p>Чистое решение для пристроек, фасадных террас и навесов.</p>
           </article>
           <article class="service-card">
             <div class="icon-box">04</div>
             <h3>Замер и монтаж</h3>
-            <p>Выезжаем на объект, готовим смету, подписываем договор и выполняем монтаж в оговоренный срок.</p>
+            <p>Выполняем замер, расчет и монтаж в согласованные сроки.</p>
           </article>
         </div>
       </div>
@@ -1078,31 +3406,152 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Преимущества</span>
-            <h2 class="title" id="advantages-title">Почему выбирают «Glavzaves»</h2>
+            <h2 class="title" id="advantages-title">Почему выбирают Глав Завес</h2>
           </div>
-          <p>Собственное производство, быстрый выезд на замер и аккуратный монтаж. Работаем по Санкт‑Петербургу и Ленинградской области.</p>
+          <p>Четкие сроки, аккуратный монтаж и материалы, рассчитанные на реальную эксплуатацию.</p>
         </div>
         <div class="advantages-grid">
-          <article class="card">
-            <div class="icon-box">С</div>
-            <h3>Свое производство</h3>
-            <p>Производство находится в Санкт-Петербурге. Качественная фурнитура и комплектующие позволяют ускорить процесс изготовления.</p>
-          </article>
-          <article class="card">
-            <div class="icon-box">З</div>
-            <h3>Оперативный выезд на замер</h3>
-            <p>Бесплатно замерим и рассчитаем стоимость, специалист может приехать уже завтра.</p>
-          </article>
-          <article class="card">
+          <article class="card card--featured">
             <div class="icon-box">1</div>
-            <h3>Установка за 1 день</h3>
-            <p>Гарантируем профессиональный, аккуратный и качественный монтаж мягких окон в течение одного рабочего дня.</p>
+            <h3>Без посредников</h3>
+            <p>Изготавливаем заказы сами и держим стабильное качество.</p>
           </article>
           <article class="card">
             <div class="icon-box">2</div>
-            <h3>Гарантия 2 года</h3>
-            <p>Надежность в деталях: качественные материалы и фурнитура для долговечных окон.</p>
+            <h3>Точный замер</h3>
+            <p>Проводим замер на объекте и готовим понятный расчет.</p>
           </article>
+          <article class="card">
+            <div class="icon-box">3</div>
+            <h3>Чистый монтаж</h3>
+            <p>Устанавливаем быстро, аккуратно и без лишних работ.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">4</div>
+            <h3>Надежная фурнитура</h3>
+            <p>Материалы и крепления рассчитаны на ежедневную эксплуатацию.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--structure" id="structure" aria-labelledby="structure-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow eyebrow--inverse">Конструкция</span>
+            <h2 class="title" id="structure-title">Как устроено решение</h2>
+          </div>
+          <p>Наглядно показываем ключевые узлы мягких окон: от прозрачного полотна до контура примыкания и крепежа под ваш объект.</p>
+        </div>
+
+        <div class="structure-shell" data-hotspot-scheme data-active-hotspot="film" data-testid="product-structure-section">
+          <div class="structure-shell__intro">
+            <p class="structure-kicker">Секция работает как техническая схема: активная точка подсвечивает узел на иллюстрации и раскрывает краткое объяснение, почему конструкция остаётся аккуратной, герметичной и удобной в ежедневной эксплуатации.</p>
+            <div class="structure-metrics" aria-label="Ключевые свойства решения">
+              <span>5 инженерных узлов</span>
+              <span>1 активная карточка за раз</span>
+              <span>Панорамный обзор без перегруза</span>
+            </div>
+          </div>
+
+          <div class="structure-layout">
+            <div class="structure-stage">
+              <div class="structure-stage__frame">
+                <div class="structure-stage__eyebrow">
+                  <span>Интерактивная схема веранды</span>
+                  <span>Наведение / нажатие</span>
+                </div>
+
+                <div class="structure-illustration" role="group" aria-label="Схема веранды с интерактивными точками">
+                  <svg class="structure-illustration__svg" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="structure-outline" d="M88 404H656" />
+                    <path class="structure-outline" d="M132 374V208L288 112H516L602 194V374" />
+                    <path class="structure-outline" d="M288 112L336 70H486L516 112" />
+                    <path class="structure-outline structure-outline--soft" d="M164 232H570" />
+                    <path class="structure-outline structure-outline--soft" d="M224 208V374" />
+                    <path class="structure-outline structure-outline--soft" d="M352 208V374" />
+                    <path class="structure-outline structure-outline--soft" d="M478 208V374" />
+                    <path class="structure-outline structure-outline--accent" d="M164 208H570V374H164V208Z" />
+                    <path class="structure-outline" d="M224 374V166" />
+                    <path class="structure-outline" d="M478 374V166" />
+                    <path class="structure-outline" d="M570 374V228" />
+                    <path class="structure-outline" d="M164 374V248" />
+                    <path class="structure-outline structure-outline--soft" d="M306 320H424" />
+                    <path class="structure-outline structure-outline--soft" d="M84 404L54 428H632L662 404" />
+
+                    <path class="structure-connector" data-hotspot-connector="film" d="M350 218H456L516 164" />
+                    <path class="structure-connector" data-hotspot-connector="hardware" d="M492 252H588L626 224" />
+                    <path class="structure-connector" data-hotspot-connector="edging" d="M306 322H216L170 350" />
+                    <path class="structure-connector" data-hotspot-connector="mount" d="M444 368H540L592 334" />
+                    <path class="structure-connector" data-hotspot-connector="seal" d="M196 236H120L92 204" />
+                  </svg>
+
+                  <button class="structure-hotspot structure-hotspot--film is-active" type="button" data-hotspot-button="film" data-testid="structure-hotspot-film" aria-label="Показать узел: прозрачная ПВХ-плёнка" aria-controls="structure-card-film" aria-pressed="true"></button>
+                  <button class="structure-hotspot structure-hotspot--hardware" type="button" data-hotspot-button="hardware" data-testid="structure-hotspot-hardware" aria-label="Показать узел: надёжная фурнитура" aria-controls="structure-card-hardware" aria-pressed="false"></button>
+                  <button class="structure-hotspot structure-hotspot--edging" type="button" data-hotspot-button="edging" data-testid="structure-hotspot-edging" aria-label="Показать узел: эластичная окантовка" aria-controls="structure-card-edging" aria-pressed="false"></button>
+                  <button class="structure-hotspot structure-hotspot--mount" type="button" data-hotspot-button="mount" data-testid="structure-hotspot-mount" aria-label="Показать узел: крепёж под объект" aria-controls="structure-card-mount" aria-pressed="false"></button>
+                  <button class="structure-hotspot structure-hotspot--seal" type="button" data-hotspot-button="seal" data-testid="structure-hotspot-seal" aria-label="Показать узел: герметичный контур" aria-controls="structure-card-seal" aria-pressed="false"></button>
+                </div>
+
+                <div class="structure-stage__footer">
+                  <span>Система раскрывается без перезагрузки страницы</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="structure-panel" aria-live="polite">
+              <article class="structure-card is-active" id="structure-card-film" data-hotspot-card="film" data-testid="structure-card-film">
+                <span class="structure-card__index">Точка 01</span>
+                <h3>Прозрачная ПВХ-плёнка</h3>
+                <p>Основное полотно сохраняет свет и открытый обзор, но при этом уверенно держит дождь, ветер и ежедневную нагрузку на проёме.</p>
+                <div class="structure-card__benefit">
+                  <span>Эффект</span>
+                  <strong>Панорамная защита без ощущения закрытого пространства</strong>
+                </div>
+              </article>
+
+              <article class="structure-card" id="structure-card-hardware" data-hotspot-card="hardware" data-testid="structure-card-hardware" hidden aria-hidden="true">
+                <span class="structure-card__index">Точка 02</span>
+                <h3>Надёжная фурнитура</h3>
+                <p>Рабочие точки фиксации подбираются под размер секции и режим эксплуатации, чтобы полотно открывалось предсказуемо и не теряло геометрию.</p>
+                <div class="structure-card__benefit">
+                  <span>Эффект</span>
+                  <strong>Стабильная ежедневная эксплуатация без люфта и лишнего усилия</strong>
+                </div>
+              </article>
+
+              <article class="structure-card" id="structure-card-edging" data-hotspot-card="edging" data-testid="structure-card-edging" hidden aria-hidden="true">
+                <span class="structure-card__index">Точка 03</span>
+                <h3>Эластичная окантовка</h3>
+                <p>Контур принимает небольшие неровности объекта и помогает полотну прилегать аккуратно даже на сложной геометрии веранды или террасы.</p>
+                <div class="structure-card__benefit">
+                  <span>Эффект</span>
+                  <strong>Аккуратный край, меньше напряжения на узлах и чище внешний вид</strong>
+                </div>
+              </article>
+
+              <article class="structure-card" id="structure-card-mount" data-hotspot-card="mount" data-testid="structure-card-mount" hidden aria-hidden="true">
+                <span class="structure-card__index">Точка 04</span>
+                <h3>Крепёж под объект</h3>
+                <p>Тип крепления выбирается под основание — дерево, металл, кирпич или комбинированный каркас, чтобы нагрузка распределялась корректно.</p>
+                <div class="structure-card__benefit">
+                  <span>Эффект</span>
+                  <strong>Уверенная посадка конструкции именно под ваш каркас, а не “универсально для всех”</strong>
+                </div>
+              </article>
+
+              <article class="structure-card" id="structure-card-seal" data-hotspot-card="seal" data-testid="structure-card-seal" hidden aria-hidden="true">
+                <span class="structure-card__index">Точка 05</span>
+                <h3>Герметичный контур</h3>
+                <p>Линия примыкания собирает систему в единый защитный периметр: меньше продувания, меньше влаги внутри и аккуратнее поведение секций по сезону.</p>
+                <div class="structure-card__benefit">
+                  <span>Эффект</span>
+                  <strong>Более комфортный микроклимат и собранная архитектурная линия по всему проёму</strong>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1111,77 +3560,80 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Реализованные проекты</span>
-            <h2 class="title" id="projects-title">Реальные объекты вместо стоковой галереи</h2>
+            <span class="eyebrow">Проекты</span>
+            <h2 class="title" id="projects-title"><span class="title-line">Реализованные проекты</span> <span class="title-line title-line--projects-city">в Санкт-Петербурге</span> <span class="title-line title-line--projects-region">и области</span></h2>
           </div>
+          <p>Реальные объекты, где мягкие окна работают как часть архитектуры, а не как временное решение.</p>
         </div>
-        <div class="portfolio-layout">
-          <article class="featured-project">
-            <img src="./assets/project-sunset-house.png" alt="Дом с панорамно закрытой террасой на закате" width="1536" height="1024">
-            <div class="project-copy">
-              <h3>Панорамная терраса частного дома</h3>
-              <p>Светлая фасадная терраса с мягкими окнами по периметру. Хорошо показывает ключевую ценность продукта: защита пространства без потери обзора и света.</p>
+        <div class="portfolio-stack">
+          <div class="portfolio-layout">
+            <article class="featured-project" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-sunset-house.png" data-lightbox-alt="Дом с панорамно закрытой террасой на закате" data-lightbox-caption="Панорамная терраса частного дома" data-project-title="Панорамная терраса частного дома" data-project-description="Панорамное закрытие террасы с чистой фасадной линией, большим количеством света и комфортом в любую погоду." data-project-tags="Панорамный обзор|Больше света|Чистая геометрия" aria-label="Открыть проект: Панорамная терраса частного дома" data-testid="project-card-sunset">
+              <img src="./assets/project-sunset-house.png" alt="Дом с панорамно закрытой террасой на закате" width="1536" height="1024">
+              <div class="project-copy">
+                <h3>Панорамная терраса частного дома</h3>
+                <p>Закрытие террасы с сохранением света, вида и чистой архитектуры.</p>
+              </div>
+            </article>
+            <div class="project-grid">
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-white-veranda.png" data-lightbox-alt="Светлая веранда с белым каркасом" data-lightbox-caption="Светлая веранда" data-project-title="Светлая веранда" data-project-description="Светлый каркас и прозрачное закрытие без визуальной тяжести, с аккуратным фасадным видом." data-project-tags="Визуальная легкость|Аккуратный вид|Больше света" aria-label="Открыть проект: Светлая веранда" data-testid="project-card-white-veranda">
+                <img src="./assets/project-white-veranda.png" alt="Светлая веранда с белым каркасом" width="1536" height="1024">
+                <div class="project-copy">
+                  <h3>Светлая веранда</h3>
+                  <p>Аккуратное закрытие фасадной веранды.</p>
+                </div>
+              </article>
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-wood-house.png" data-lightbox-alt="Двухэтажная деревянная терраса с мягкими окнами" data-lightbox-caption="Деревянная терраса" data-project-title="Деревянная терраса" data-project-description="Панорамное решение для высокой деревянной террасы с сохранением обзора и защитой от осадков." data-project-tags="Панорамный обзор|Защита от осадков|Комфорт в межсезонье" aria-label="Открыть проект: Деревянная терраса" data-testid="project-card-wood-house">
+                <img src="./assets/project-wood-house.png" alt="Двухэтажная деревянная терраса с мягкими окнами" width="1024" height="1536">
+                <div class="project-copy">
+                  <h3>Деревянная терраса</h3>
+                  <p>Панорамное решение для частного дома.</p>
+                </div>
+              </article>
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-evening-veranda.png" data-lightbox-alt="Веранда с теплой подсветкой и мягкими окнами" data-lightbox-caption="Вечерняя веранда" data-project-title="Вечерняя веранда" data-project-description="Теплая веранда для межсезонья с мягким светом, уютом и аккуратным фасадным контуром." data-project-tags="Комфорт в межсезонье|Приватный комфорт|Аккуратный вид" aria-label="Открыть проект: Вечерняя веранда" data-testid="project-card-evening-veranda">
+                <img src="./assets/project-evening-veranda.png" alt="Веранда с теплой подсветкой и мягкими окнами" width="1024" height="1536">
+                <div class="project-copy">
+                  <h3>Вечерняя веранда</h3>
+                  <p>Комфортная веранда для межсезонья.</p>
+                </div>
+              </article>
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-winter-door.png" data-lightbox-alt="Зимний объект с мягкими окнами и входной группой" data-lightbox-caption="Входная группа" data-project-title="Входная группа" data-project-description="Защищенный вход с удобным проходом, аккуратным видом и комфортом в холодный сезон." data-project-tags="Защита от ветра|Комфорт на входе|Эксплуатация зимой" aria-label="Открыть проект: Входная группа" data-testid="project-card-winter-door">
+                <img src="./assets/project-winter-door.png" alt="Зимний объект с мягкими окнами и входной группой" width="1024" height="1536">
+                <div class="project-copy">
+                  <h3>Входная группа</h3>
+                  <p>Защищенная зона для холодного сезона.</p>
+                </div>
+              </article>
             </div>
-          </article>
-          <div class="project-grid">
-            <article class="project-tile">
-              <img src="./assets/project-white-veranda.png" alt="Светлая веранда с белым каркасом" width="1536" height="1024">
-              <div class="project-copy">
-                <h3>Светлая веранда</h3>
-                <p>Аккуратное решение для фасадной веранды у дома.</p>
-              </div>
-            </article>
-            <article class="project-tile">
-              <img src="./assets/project-wood-house.png" alt="Двухэтажная деревянная терраса с мягкими окнами" width="1024" height="1536">
-              <div class="project-copy">
-                <h3>Двухэтажная терраса</h3>
-                <p>Панорамное закрытие в деревянной архитектуре.</p>
-              </div>
-            </article>
-            <article class="project-tile">
-              <img src="./assets/project-evening-veranda.png" alt="Веранда с теплой подсветкой и мягкими окнами" width="1024" height="1536">
-              <div class="project-copy">
-                <h3>Вечерняя веранда</h3>
-                <p>Сценарий для отдыха в межсезонье и прохладную погоду.</p>
-              </div>
-            </article>
-            <article class="project-tile">
-              <img src="./assets/project-winter-door.png" alt="Зимний объект с мягкими окнами и входной группой" width="1024" height="1536">
-              <div class="project-copy">
-                <h3>Зимняя эксплуатация</h3>
-                <p>Решение для холодного сезона и защищенной входной зоны.</p>
-              </div>
-            </article>
           </div>
-        </div>
-        <div class="portfolio-layout" style="margin-top: 18px;">
-          <article class="featured-project">
-            <img src="./assets/project-snow-house.png" alt="Дом с мягкими окнами зимой" width="1024" height="1536">
-            <div class="project-copy">
-              <h3>Закрытие дома по периметру в зимний период</h3>
-              <p>Подходит для зимней эксплуатации и защищает открытые зоны от ветра, осадков и холода.</p>
+          <div class="portfolio-layout">
+            <article class="featured-project" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-snow-house.png" data-lightbox-alt="Дом с мягкими окнами зимой" data-lightbox-caption="Зимняя эксплуатация по периметру дома" data-project-title="Зимняя эксплуатация по периметру дома" data-project-description="Периметр дома закрыт от ветра и осадков без потери света и с готовностью к зимней эксплуатации." data-project-tags="Эксплуатация зимой|Защита от осадков|Больше света" aria-label="Открыть проект: Зимняя эксплуатация по периметру дома" data-testid="project-card-snow-house">
+              <img src="./assets/project-snow-house.png" alt="Дом с мягкими окнами зимой" width="1024" height="1536">
+              <div class="project-copy">
+                <h3>Зимняя эксплуатация по периметру дома</h3>
+                <p>Закрытие открытых зон для ветра, осадков и холода.</p>
+              </div>
+            </article>
+            <div class="project-grid">
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/project-winter-side.png" data-lightbox-alt="Боковое закрытие террасы в зимний сезон" data-lightbox-caption="Боковое закрытие" data-project-title="Боковое закрытие" data-project-description="Боковое закрытие для современной террасы с чистой геометрией, защитой от ветра и аккуратным видом." data-project-tags="Защита от ветра|Чистая геометрия|Аккуратный вид" aria-label="Открыть проект: Боковое закрытие" data-testid="project-card-winter-side">
+                <img src="./assets/project-winter-side.png" alt="Боковое закрытие террасы в зимний сезон" width="1024" height="1536">
+                <div class="project-copy">
+                  <h3>Боковое закрытие</h3>
+                  <p>Лаконичное решение для современного фасада.</p>
+                </div>
+              </article>
+              <article class="project-tile" tabindex="0" role="button" data-lightbox-trigger data-lightbox-src="./assets/hero-garage.png" data-lightbox-alt="Навес с мягкими окнами для техники и автомобиля" data-lightbox-caption="Просторный навес" data-project-title="Просторный навес" data-project-description="Большой навес для техники и авто с открытым обзором, защитой от осадков и сохранением света." data-project-tags="Панорамный обзор|Защита от осадков|Больше света" aria-label="Открыть проект: Просторный навес" data-testid="project-card-garage">
+                <img src="./assets/hero-garage.png" alt="Навес с мягкими окнами для техники и автомобиля" width="1536" height="1024">
+                <div class="project-copy">
+                  <h3>Просторный навес</h3>
+                  <p>Панорамное закрытие большого навеса.</p>
+                </div>
+              </article>
             </div>
-          </article>
-          <div class="project-grid">
-            <article class="project-tile">
-              <img src="./assets/project-winter-side.png" alt="Боковое закрытие террасы в зимний сезон" width="1024" height="1536">
-              <div class="project-copy">
-                <h3>Боковое закрытие</h3>
-                <p>Темный каркас и ровная геометрия для современного фасада.</p>
-              </div>
-            </article>
-            <article class="project-tile">
-              <img src="./assets/hero-garage.png" alt="Навес с мягкими окнами для техники и автомобиля" width="1536" height="1024">
-              <div class="project-copy">
-                <h3>Навес для техники</h3>
-                <p>Панорамное закрытие большого навеса под авто и квадроцикл.</p>
-              </div>
-            </article>
           </div>
         </div>
         <div class="inline-cta">
-          <p>Уже понимаете, какой формат нужен вашему объекту? Отправьте заявку и получите расчет после замера без лишних переписок.</p>
-          <a class="button" href="#lead-form">Заказать замер</a>
+          <p>Пришлите фото объекта в Telegram. Подскажем комплектацию, сориентируем по стоимости и согласуем выезд.</p>
+          <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
         </div>
       </div>
     </section>
@@ -1190,45 +3642,204 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Порядок работы</span>
-            <h2 class="title" id="process-title">Путь клиента от заявки до монтажа</h2>
+            <span class="eyebrow">Этапы</span>
+            <h2 class="title" id="process-title">Как проходит работа</h2>
           </div>
+          <p>Четкий процесс от первого фото до аккуратного монтажа.</p>
         </div>
         <ol class="steps-grid">
           <li class="step-card">
             <div class="step-index">01</div>
-            <h3>Оформление заявки</h3>
-            <p>Оставляете заявку на сайте, по телефону или через мессенджер.</p>
+            <h3>Заявка</h3>
+            <p>Получаем фото или короткое описание объекта.</p>
           </li>
           <li class="step-card">
             <div class="step-index">02</div>
             <h3>Замер</h3>
-            <p>Специалист приезжает на объект, снимает размеры и уточняет задачу.</p>
+            <p>Выезжаем, снимаем размеры и фиксируем детали.</p>
           </li>
           <li class="step-card">
             <div class="step-index">03</div>
-            <h3>Составление сметы</h3>
-            <p>Готовим расчет стоимости и фиксируем комплектацию под ваш объект.</p>
+            <h3>Расчет</h3>
+            <p>Готовим смету и подбираем комплектацию.</p>
           </li>
           <li class="step-card">
             <div class="step-index">04</div>
-            <h3>Подписание договора и оплата</h3>
-            <p>Согласовываем условия и подтверждаем запуск заказа в производство.</p>
+            <h3>Договор</h3>
+            <p>Подтверждаем сроки, стоимость и состав работ.</p>
           </li>
           <li class="step-card">
             <div class="step-index">05</div>
             <h3>Производство</h3>
-            <p>Изготавливаем комплект на собственном производстве в Санкт-Петербурге.</p>
+            <p>Изготавливаем комплект на собственном производстве.</p>
           </li>
           <li class="step-card">
             <div class="step-index">06</div>
-            <h3>Доставка и монтаж</h3>
-            <p>Привозим готовые изделия и устанавливаем их аккуратно и в срок.</p>
+            <h3>Монтаж</h3>
+            <p>Привозим комплект и монтируем аккуратно.</p>
           </li>
         </ol>
         <div class="inline-cta">
-          <p>Не хотите разбираться в деталях самостоятельно? Оставьте номер телефона, и мы подскажем оптимальную конфигурацию под ваш объект.</p>
-          <a class="button" href="#lead-form">Получить консультацию</a>
+          <p>Нужен ориентир по стоимости? Оставьте заявку или сразу отправьте фото объекта.</p>
+          <a class="button" href="#lead-form">Получить расчет</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tool-section" id="smart-calculator" aria-labelledby="smart-calculator-title" data-testid="smart-calculator">
+      <div class="container">
+        <div class="tool-shell tool-shell--calculator">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Калькулятор стоимости</span>
+              <h2 class="title" id="smart-calculator-title">Быстрый ориентир по стоимости под ваш объект</h2>
+            </div>
+            <p>Укажите базовые параметры, чтобы увидеть реалистичный диапазон. Точную стоимость фиксируем после замера.</p>
+          </div>
+          <div class="tool-grid">
+            <div class="tool-panel">
+              <form id="smart-calculator-form" data-testid="smart-calculator-form">
+                <div class="field">
+                  <label for="calculator-object-type">Тип объекта</label>
+                  <select id="calculator-object-type" name="calculatorObjectType" required>
+                    <option value="">Выберите объект</option>
+                    <option value="Веранда">Веранда</option>
+                    <option value="Беседка">Беседка</option>
+                    <option value="Терраса">Терраса</option>
+                    <option value="Навес">Навес</option>
+                    <option value="Входная группа">Входная группа</option>
+                    <option value="Другой объект">Другой объект</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="calculator-size">Размер или площадь</label>
+                  <input id="calculator-size" name="calculatorSize" type="text" placeholder="Например: 3x4 м или 12 м2" required>
+                </div>
+                <div class="field">
+                  <label for="calculator-seasonality">Сезонность</label>
+                  <select id="calculator-seasonality" name="calculatorSeasonality" required>
+                    <option value="">Выберите режим</option>
+                    <option value="Лето">Лето</option>
+                    <option value="Межсезонье">Межсезонье</option>
+                    <option value="Круглый год">Круглый год</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="calculator-installation">Нужен монтаж</label>
+                  <select id="calculator-installation" name="calculatorInstallation" required>
+                    <option value="">Выберите вариант</option>
+                    <option value="Да">Да, нужен монтаж</option>
+                    <option value="Нет">Нет, только изготовление</option>
+                  </select>
+                </div>
+                <div class="form-actions">
+                  <button class="button" type="submit">Отправить расчет</button>
+                  <a class="button-secondary" href="#lead-form">Заказать замер</a>
+                </div>
+                <div class="form-note">Если размеры указаны приблизительно, покажем реалистичный ориентир и уточним детали после замера. Если backend недоступен, откроем Telegram.</div>
+                <div class="form-status" id="calculator-status" aria-live="polite"></div>
+              </form>
+            </div>
+            <aside class="result-card" id="calculator-result" data-testid="calculator-result" aria-live="polite">
+              <span class="result-eyebrow">Калькулятор стоимости</span>
+              <strong id="calculator-result-title">Ориентир после базовых параметров</strong>
+              <p id="calculator-result-text">Выберите объект, размер, сезонность и монтаж — покажем реалистичный диапазон по бюджету.</p>
+              <p class="result-note" id="calculator-result-note">Финальная стоимость зависит от проемов, креплений, фурнитуры и сценария монтажа.</p>
+              <ul class="result-highlights" aria-label="Что учитывает ориентир по стоимости">
+                <li>Ориентир по фото и базовым размерам</li>
+                <li>Сезонность и монтаж учитываем сразу</li>
+                <li>Точную цифру фиксируем после замера</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tool-section" id="smart-object-advisor" aria-labelledby="smart-object-advisor-title" data-testid="smart-object-advisor">
+      <div class="container">
+        <div class="tool-shell tool-shell--advisor">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Подбор решения</span>
+              <h2 class="title" id="smart-object-advisor-title">Подбор сценария под задачи объекта</h2>
+            </div>
+            <p>Короткий подбор помогает быстро понять, какой сценарий комплектации подойдет именно вашему объекту и приоритету.</p>
+          </div>
+          <div class="tool-grid">
+            <div class="tool-panel">
+              <form id="smart-object-advisor-form" data-testid="smart-object-advisor-form">
+                <div class="field">
+                  <label for="advisor-object-type">Тип объекта</label>
+                  <select id="advisor-object-type" name="advisorObjectType" required>
+                    <option value="">Выберите объект</option>
+                    <option value="Веранда">Веранда</option>
+                    <option value="Беседка">Беседка</option>
+                    <option value="Терраса">Терраса</option>
+                    <option value="Навес">Навес</option>
+                    <option value="Входная группа">Входная группа</option>
+                    <option value="Другой объект">Другой объект</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="advisor-priority">Главный приоритет</label>
+                  <select id="advisor-priority" name="advisorPriority" required>
+                    <option value="">Выберите приоритет</option>
+                    <option value="Тепло и защита">Тепло и защита</option>
+                    <option value="Внешний вид">Внешний вид</option>
+                    <option value="Экономия бюджета">Экономия бюджета</option>
+                    <option value="Эксплуатация в межсезонье">Эксплуатация в межсезонье</option>
+                    <option value="Круглогодичное использование">Круглогодичное использование</option>
+                  </select>
+                </div>
+                <fieldset class="option-field">
+                  <legend>Дополнительные пожелания</legend>
+                  <div class="choice-grid">
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Максимум света">
+                      <span>Максимум света</span>
+                    </label>
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Проход с молнией">
+                      <span>Проход с молнией</span>
+                    </label>
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Съемные секции">
+                      <span>Съемные секции</span>
+                    </label>
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Окантовка в цвет фасада">
+                      <span>Окантовка в цвет фасада</span>
+                    </label>
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Усиленная фиксация">
+                      <span>Усиленная фиксация</span>
+                    </label>
+                    <label class="choice-chip">
+                      <input type="checkbox" name="advisorOptions" value="Сжатые сроки">
+                      <span>Сжатые сроки</span>
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="form-actions">
+                  <button class="button" type="submit">Отправить подбор</button>
+                  <a class="button-secondary" href="#contacts">Связаться с менеджером</a>
+                </div>
+                <div class="form-note">Подбор не заменяет замер, но помогает быстро согласовать сценарий комплектации и список опций. Если backend недоступен, откроем Telegram.</div>
+                <div class="form-status" id="advisor-status" aria-live="polite"></div>
+              </form>
+            </div>
+            <aside class="advisor-result" id="advisor-result" data-testid="advisor-result" aria-live="polite">
+              <span class="result-eyebrow">Подбор решения</span>
+              <strong id="advisor-scenario-title">Подберем решение после выбора приоритета</strong>
+              <p id="advisor-scenario-text">Выберите тип объекта, основной приоритет и пожелания. Ниже покажем рекомендованный сценарий и набор опций.</p>
+              <ul class="advisor-result-list" id="advisor-options-list">
+                <li>Панорамная прозрачность без визуальной перегрузки.</li>
+                <li>Комплектация под реальные погодные нагрузки.</li>
+                <li>Аккуратная фурнитура и монтаж под ваш режим эксплуатации.</li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -1240,22 +3851,23 @@
             <span class="eyebrow">Отзывы</span>
             <h2 class="title" id="reviews-title">Что говорят клиенты</h2>
           </div>
+          <p>Клиенты отмечают аккуратный монтаж, понятную коммуникацию и точное соблюдение сроков.</p>
         </div>
         <div class="quotes-grid">
           <article class="quote">
-            <p>Сделка состоялась. Хочу сказать огромное спасибо за проделанную работу. Профессиональный подход, всегда на связи, приятен в общении, очень аккуратен. Рекомендую. С таким человеком приятно иметь дело.</p>
+            <p>Профессиональный подход, всегда на связи и очень аккуратный монтаж. Работой полностью довольны.</p>
             <strong>Мария</strong>
-            <em>Клиент</em>
+            <em>Частный клиент</em>
           </article>
           <article class="quote">
-            <p>Обратился в данную фирму для изготовления мягких окон на дачу. На следующий день после разговора по телефону и составления предварительного расчета ко мне приехал мастер на замер. Когда окна были готовы, их качественно и оперативно смонтировали. Спасибо за качественно проделанную работу.</p>
+            <p>После первого звонка быстро согласовали замер, подготовили расчет и выполнили монтаж аккуратно и в срок.</p>
             <strong>Александр</strong>
-            <em>Клиент</em>
+            <em>Объект за городом</em>
           </article>
           <article class="quote">
-            <p>Отличная работа, отличные окна. Все четко, в срок. Павел всегда на связи, обговариваются даже малейшие нюансы. Нам окна очень понравились. Мы довольны. Спасибо.</p>
+            <p>Все четко, в срок и без лишних вопросов. Окна выглядят аккуратно и отлично работают в межсезонье.</p>
             <strong>Наталья</strong>
-            <em>Клиент</em>
+            <em>Терраса частного дома</em>
           </article>
         </div>
       </div>
@@ -1265,26 +3877,59 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">FAQ</span>
-            <h2 class="title" id="faq-title">Частые вопросы перед заказом</h2>
+            <span class="eyebrow">Частые вопросы</span>
+            <h2 class="title" id="faq-title">Что важно перед заказом</h2>
           </div>
+          <p>Коротко отвечаем на основные вопросы перед замером и расчетом.</p>
         </div>
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3>Сколько времени занимает изготовление?</h3>
-            <p>Срок зависит от объема и конфигурации объекта. После замера и расчета мы фиксируем сроки в договоре и запускаем заказ в производство.</p>
+        <div class="faq-grid" data-testid="faq-accordion">
+          <article class="faq-item" data-open="true">
+            <h3>
+              <button class="faq-question" id="faq-question-1" type="button" aria-expanded="true" aria-controls="faq-answer-1" data-accordion-trigger>
+                Сколько занимает изготовление?
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+              <div class="faq-answer-inner">
+                <p>Срок зависит от размеров, сезонной нагрузки и комплектации. После замера фиксируем его в договоре и подтверждаем этап монтажа заранее.</p>
+              </div>
+            </div>
           </article>
-          <article class="faq-item">
-            <h3>Можно ли устанавливать мягкие окна зимой?</h3>
-            <p>Да. В галерее уже показаны реальные зимние объекты. Главное, чтобы на месте монтажа были технические условия для безопасной установки.</p>
+          <article class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2" data-accordion-trigger>
+                Можно ли устанавливать зимой?
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+              <div class="faq-answer-inner">
+                <p>Да, работаем с объектами для зимней и круглогодичной эксплуатации. На замере подскажем, какой тип крепления и конфигурация лучше для вашего режима использования.</p>
+              </div>
+            </div>
           </article>
-          <article class="faq-item">
-            <h3>Что входит в замер?</h3>
-            <p>Специалист выезжает на объект, снимает размеры, уточняет тип креплений, комплектацию и после этого готовит точную смету.</p>
+          <article class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3" data-accordion-trigger>
+                Что входит в замер?
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+              <div class="faq-answer-inner">
+                <p>Выезд на объект, снятие размеров, подбор креплений, уточнение проходов и открываний, а также точный расчет стоимости под конкретную конфигурацию.</p>
+              </div>
+            </div>
           </article>
-          <article class="faq-item">
-            <h3>Какие объекты вы закрываете?</h3>
-            <p>Веранды, беседки, террасы, навесы, входные группы и другие открытые пространства, где нужна прозрачная защита от погоды.</p>
+          <article class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" id="faq-question-4" type="button" aria-expanded="false" aria-controls="faq-answer-4" data-accordion-trigger>
+                Какие объекты вы закрываете?
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+              <div class="faq-answer-inner">
+                <p>Веранды, беседки, террасы, навесы, входные группы и нестандартные открытые зоны. Если объект сложный, достаточно отправить фото, и мы предложим рабочий сценарий.</p>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -1293,20 +3938,22 @@
     <section class="section cta-band" id="lead-form" aria-labelledby="lead-form-title">
       <div class="container cta-grid">
         <div class="cta-card">
-          <span class="eyebrow" style="color:#fff;border-color:rgba(255,255,255,0.18);background:rgba(255,255,255,0.1);">Бесплатный замер</span>
-          <h2 class="title" id="lead-form-title" style="margin-top:18px;color:#fff;">Заказать замер и расчет бесплатно</h2>
-          <p class="lead" style="max-width:560px;margin-top:18px;color:rgba(255,255,255,0.82);">
-            Оставьте заявку, и мы свяжемся с вами для замера, расчета и подбора решения под ваш объект.
-          </p>
+          <span class="eyebrow eyebrow--inverse">Бесплатный замер</span>
+          <h2 class="title" id="lead-form-title">Получить расчет и выезд на замер</h2>
+          <p class="lead">Оставьте контакты или сразу напишите в Telegram. Подскажем конфигурацию, сориентируем по стоимости и согласуем выезд.</p>
+          <div class="cta-actions">
+            <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
+            <a class="button-secondary" href="tel:+79918097134">Позвонить</a>
+          </div>
           <div class="cta-list">
-            <span>Ответ в течение 15 минут</span>
-            <span>Выезд на объект</span>
-            <span>Смета после замера</span>
+            <span>Расчет по фото</span>
+            <span>Выезд по Санкт-Петербургу и области</span>
+            <span>Аккуратный монтаж</span>
           </div>
         </div>
         <div class="form-card">
           <h3>Оставить заявку</h3>
-          <p>Заполните форму, и заявка сразу откроется для отправки в Telegram.</p>
+          <p>Заполните форму, и заявка уйдет менеджеру без изменения текущего сценария сайта.</p>
           <form id="quote-form">
             <div class="field">
               <label for="name">Имя</label>
@@ -1317,7 +3964,7 @@
               <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
             </div>
             <div class="field">
-              <label for="object-type">Тип объекта</label>
+              <label for="object-type">Что нужно закрыть</label>
               <select id="object-type" name="objectType" required>
                 <option value="">Выберите вариант</option>
                 <option value="Веранда">Веранда</option>
@@ -1328,14 +3975,14 @@
               </select>
             </div>
             <div class="field">
-              <label for="comment">Комментарий</label>
-              <textarea id="comment" name="comment" placeholder="Размеры, адрес или удобное время для связи"></textarea>
+              <label for="comment">Размеры, адрес или ссылка на фото</label>
+              <textarea id="comment" name="comment" placeholder="Можно указать адрес, размеры или краткое описание"></textarea>
             </div>
             <div class="form-actions">
-              <button class="button" type="submit">Отправить в Telegram</button>
+              <button class="button" type="submit">Получить расчет</button>
               <a class="button-secondary" href="tel:+79918097134">Позвонить</a>
             </div>
-            <div class="form-note">Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных.</div>
+            <div class="form-note">Если backend недоступен, откроем Telegram с готовой заявкой.</div>
             <div class="form-status" id="form-status" aria-live="polite"></div>
           </form>
         </div>
@@ -1347,41 +3994,112 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Контакты</span>
-            <h2 class="title" id="contacts-title">Остались вопросы?</h2>
+            <h2 class="title" id="contacts-title">Контакты для быстрого ответа</h2>
           </div>
+          <p>Быстрее всего отвечаем в Telegram. Для срочного запроса можно сразу позвонить.</p>
         </div>
         <div class="contact-grid">
-          <article class="contact-card">
-            <h3>Связаться напрямую</h3>
+          <article class="contact-card contact-card--primary">
+            <h3>Связаться удобным способом</h3>
+            <p>Напишите нам в удобном формате и получите ответ по вашему объекту.</p>
             <ul>
-              <li>Телефон: <a class="contact-link" href="tel:+79918097134">+7 991 809 7134</a></li>
-              <li>E-mail: <a class="contact-link" href="mailto:glavzaves@bk.ru">glavzaves@bk.ru</a></li>
-              <li>Telegram: <a class="contact-link" href="https://t.me/+79118097134">Написать в Telegram</a></li>
+              <li>
+                Telegram
+                <a class="contact-link" href="https://t.me/+79118097134">Написать в Telegram</a>
+              </li>
+              <li>
+                Телефон
+                <a class="contact-link" href="tel:+79918097134">+7 991 809 7134</a>
+              </li>
+              <li>
+                E-mail
+                <a class="contact-link" href="mailto:glavzaves@bk.ru">glavzaves@bk.ru</a>
+              </li>
             </ul>
+            <div class="contact-actions">
+              <a class="button" href="https://t.me/+79118097134">Telegram</a>
+              <a class="button-secondary" href="tel:+79918097134">Позвонить</a>
+            </div>
+            <div class="contact-note">Пришлите фото объекта, если нужен предварительный расчет.</div>
           </article>
           <article class="contact-card">
-            <h3>Адрес и режим</h3>
+            <h3>Адрес и выезд</h3>
             <address>
               Санкт-Петербург, Рижский 23к3<br>
-              Работаем по заявкам и выездам на объект.<br>
-              Замер и расчет согласовываются индивидуально.
+              Работаем по предварительному согласованию.<br>
+              Замер и расчет согласуем под ваш объект.
             </address>
-            <p>Работаем по Санкт-Петербургу и Ленинградской области.</p>
+            <p>Выезжаем по Санкт-Петербургу и Ленинградской области.</p>
           </article>
         </div>
       </div>
     </section>
   </main>
 
+  <div class="lightbox" id="project-lightbox" data-lightbox-modal data-testid="project-lightbox" hidden aria-hidden="true">
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="project-lightbox-title" aria-describedby="project-lightbox-description">
+      <button class="button-secondary lightbox__close" type="button" data-lightbox-close aria-label="Закрыть изображение">Закрыть</button>
+      <div class="lightbox__layout">
+        <div class="lightbox__media">
+          <figure class="lightbox__figure">
+            <img id="project-lightbox-image" data-lightbox-image src="" alt="">
+          </figure>
+        </div>
+        <aside class="lightbox__meta">
+          <span class="result-eyebrow lightbox__eyebrow">Проект</span>
+          <h3 class="lightbox__title" id="project-lightbox-title" data-testid="project-lightbox-title"></h3>
+          <p class="lightbox__description" id="project-lightbox-description" data-testid="project-lightbox-description"></p>
+          <div class="lightbox__tags" id="project-lightbox-tags" data-testid="project-lightbox-tags"></div>
+          <p class="lightbox__caption" id="project-lightbox-caption"></p>
+          <div class="lightbox__actions">
+            <a class="button" id="project-lightbox-cta" data-testid="project-lightbox-cta" href="https://t.me/+79118097134">Обсудить похожее решение</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lead-capture-modal" data-testid="lead-capture-modal" hidden aria-hidden="true">
+    <div class="lightbox__backdrop" data-lead-modal-close></div>
+    <div class="lightbox__dialog lead-capture__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-capture-title" aria-describedby="lead-capture-description">
+      <button class="button-secondary lightbox__close" type="button" data-lead-modal-close aria-label="Закрыть форму заявки">Закрыть</button>
+      <div class="lead-capture__layout">
+        <div class="lead-capture__summary">
+          <span class="result-eyebrow" id="lead-capture-source-label">Заявка</span>
+          <h3 class="lightbox__title" id="lead-capture-title">Оставьте контакты для менеджера</h3>
+          <p id="lead-capture-description">Добавьте имя и телефон, чтобы отправить запрос менеджеру и сохранить lead в системе.</p>
+          <div class="lightbox__tags" id="lead-capture-context" data-testid="lead-capture-context"></div>
+        </div>
+        <form class="lead-capture__form" id="lead-capture-form" data-testid="lead-capture-form">
+          <div class="field">
+            <label for="lead-capture-name">Имя</label>
+            <input id="lead-capture-name" name="name" type="text" placeholder="Ваше имя" required>
+          </div>
+          <div class="field">
+            <label for="lead-capture-phone">Телефон</label>
+            <input id="lead-capture-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Отправить менеджеру</button>
+          </div>
+          <div class="form-note">Если backend недоступен, откроем Telegram с уже собранным текстом заявки.</div>
+          <div class="form-status" id="lead-capture-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="container footer-grid">
       <div class="footer-copy">
-        © 2026 Glavzaves. Производство и монтаж мягких окон в Санкт-Петербурге и Ленинградской области.
+        <strong>Глав Завес</strong>
+        Нужен расчет по вашему объекту? Напишите в Telegram или позвоните. © 2026 Глав Завес. Мягкие окна под ключ в Санкт-Петербурге и области.
       </div>
       <div class="footer-links">
         <a href="#hero">Наверх</a>
+        <a href="#projects">Проекты</a>
         <a href="tel:+79918097134">Позвонить</a>
-        <a href="mailto:glavzaves@bk.ru">Написать на почту</a>
         <a href="https://t.me/+79118097134">Telegram</a>
       </div>
     </div>
@@ -1391,8 +4109,8 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Glavzaves",
-      "description": "Производство и монтаж мягких окон в Санкт-Петербурге и Ленинградской области.",
+      "name": "Глав Завес",
+      "description": "Премиальные мягкие окна под ключ в Санкт-Петербурге и Ленинградской области.",
       "telephone": "+7 991 809 7134",
       "email": "glavzaves@bk.ru",
       "address": {
@@ -1405,40 +4123,1003 @@
     }
   </script>
   <script>
+    const SITE_URL = "https://glavzaves-okna.ru";
+    const LEADS_API_ENDPOINT = "/api/leads";
+    const CONTACT_STORAGE_KEY = "glavzavesLeadProfile";
+    const THEME_STORAGE_KEY = "glavzavesTheme";
+    const root = document.documentElement;
+    const body = document.body;
+    const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+    const themeButtons = document.querySelectorAll("[data-theme-toggle] [data-set-theme]");
+    const themeColorLight = document.querySelector('meta[name="theme-color"][media="(prefers-color-scheme: light)"]');
+    const themeColorDark = document.querySelector('meta[name="theme-color"][media="(prefers-color-scheme: dark)"]');
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const toggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll("a") : [];
     const form = document.getElementById("quote-form");
     const statusNode = document.getElementById("form-status");
+    const calculatorForm = document.getElementById("smart-calculator-form");
+    const calculatorStatus = document.getElementById("calculator-status");
+    const calculatorResultTitle = document.getElementById("calculator-result-title");
+    const calculatorResultText = document.getElementById("calculator-result-text");
+    const calculatorResultNote = document.getElementById("calculator-result-note");
+    const advisorForm = document.getElementById("smart-object-advisor-form");
+    const advisorStatus = document.getElementById("advisor-status");
+    const advisorScenarioTitle = document.getElementById("advisor-scenario-title");
+    const advisorScenarioText = document.getElementById("advisor-scenario-text");
+    const advisorOptionsList = document.getElementById("advisor-options-list");
+    const faqButtons = document.querySelectorAll("[data-accordion-trigger]");
+    const lightbox = document.getElementById("project-lightbox");
+    const lightboxImage = document.getElementById("project-lightbox-image");
+    const lightboxTitle = document.getElementById("project-lightbox-title");
+    const lightboxDescription = document.getElementById("project-lightbox-description");
+    const lightboxTags = document.getElementById("project-lightbox-tags");
+    const lightboxCaption = document.getElementById("project-lightbox-caption");
+    const projectLightboxCta = document.getElementById("project-lightbox-cta");
+    const leadCaptureModal = document.getElementById("lead-capture-modal");
+    const leadCaptureForm = document.getElementById("lead-capture-form");
+    const leadCaptureName = document.getElementById("lead-capture-name");
+    const leadCapturePhone = document.getElementById("lead-capture-phone");
+    const leadCaptureStatus = document.getElementById("lead-capture-status");
+    const leadCaptureSourceLabel = document.getElementById("lead-capture-source-label");
+    const leadCaptureTitle = document.getElementById("lead-capture-title");
+    const leadCaptureDescription = document.getElementById("lead-capture-description");
+    const leadCaptureContext = document.getElementById("lead-capture-context");
+    const lightboxTriggers = document.querySelectorAll("[data-lightbox-trigger]");
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    const revealTargets = document.querySelectorAll(".section-head, .service-card, .card, .structure-shell, .featured-project, .project-tile, .step-card, .quote, .faq-item, .contact-card, .inline-cta, .cta-card, .form-card, .tool-shell");
+    const hotspotSchemes = document.querySelectorAll("[data-hotspot-scheme]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let lastLightboxTrigger = null;
+    let lastLeadCaptureTrigger = null;
+    let currentProjectContext = null;
+    let pendingLeadContext = null;
+
+    function getStoredTheme() {
+      try {
+        const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+        return savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function updateThemeMeta(theme) {
+      const color = theme === "dark" ? "#08131c" : "#0c2233";
+      themeColorLight?.setAttribute("content", color);
+      themeColorDark?.setAttribute("content", color);
+    }
+
+    function syncThemeToggle(theme) {
+      if (!themeToggles.length) {
+        return;
+      }
+
+      themeToggles.forEach((toggleNode) => {
+        toggleNode.setAttribute("data-theme", theme);
+        toggleNode.querySelectorAll("[data-set-theme]").forEach((button) => {
+          const isActive = button.getAttribute("data-set-theme") === theme;
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      });
+    }
+
+    function applyTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      root.style.colorScheme = theme;
+      body.setAttribute("data-theme", theme);
+      syncThemeToggle(theme);
+      updateThemeMeta(theme);
+    }
+
+    function resolveInitialTheme() {
+      return getStoredTheme() || (systemTheme.matches ? "dark" : "light");
+    }
+
+    const calculatorPricing = {
+      "Веранда": { min: 6300, max: 8400 },
+      "Беседка": { min: 5800, max: 7800 },
+      "Терраса": { min: 6500, max: 8700 },
+      "Навес": { min: 5600, max: 7600 },
+      "Входная группа": { min: 6100, max: 8200 },
+      "Другой объект": { min: 0, max: 0 }
+    };
+
+    const seasonalityMultiplier = {
+      "Лето": 1,
+      "Межсезонье": 1.12,
+      "Круглый год": 1.24
+    };
+
+    const advisorPriorityConfig = {
+      "Тепло и защита": {
+        title: "Усиленный контур защиты",
+        description: "Подходит для объектов, где важны плотное прилегание, комфорт в ветреную и сырую погоду и надежная ежедневная эксплуатация.",
+        options: ["Усиленная фиксация", "Плотная окантовка", "Проход с молнией"]
+      },
+      "Внешний вид": {
+        title: "Панорамный аккуратный сценарий",
+        description: "Оптимален для фасадных зон, где нужно сохранить обзор, свет и чистый внешний вид без визуальной перегрузки.",
+        options: ["Максимум света", "Окантовка в цвет фасада", "Съемные секции"]
+      },
+      "Экономия бюджета": {
+        title: "Рациональная базовая комплектация",
+        description: "Помогает закрыть ключевые проемы без лишних опций, сохранив аккуратный внешний вид и рабочую защиту от осадков.",
+        options: ["Съемные секции", "Сжатые сроки", "Проход с молнией"]
+      },
+      "Эксплуатация в межсезонье": {
+        title: "Гибкий сценарий для весны и осени",
+        description: "Хорошо работает на объектах, где нужно сочетать защиту от ветра и осадков с быстрым проветриванием и удобным доступом.",
+        options: ["Проход с молнией", "Съемные секции", "Усиленная фиксация"]
+      },
+      "Круглогодичное использование": {
+        title: "Максимально стабильная конфигурация",
+        description: "Подходит для объектов, где закрытие должно уверенно работать в течение всего года и выдерживать повышенную нагрузку.",
+        options: ["Усиленная фиксация", "Плотная окантовка", "Окантовка в цвет фасада"]
+      }
+    };
+
+    function setMobileMenuState(isOpen) {
+      mobileMenu?.setAttribute("data-open", String(isOpen));
+      toggle?.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    function openTelegramShare(message) {
+      const url = `https://t.me/share/url?url=${encodeURIComponent(SITE_URL)}&text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function syncOverlayLockState() {
+      const isLocked = Boolean((lightbox && !lightbox.hidden) || (leadCaptureModal && !leadCaptureModal.hidden));
+      document.body.classList.toggle("lightbox-open", isLocked);
+    }
+
+    function getStoredContact() {
+      try {
+        const raw = window.localStorage.getItem(CONTACT_STORAGE_KEY);
+        if (!raw) {
+          return null;
+        }
+
+        const parsed = JSON.parse(raw);
+        return {
+          name: typeof parsed?.name === "string" ? parsed.name.trim() : "",
+          phone: typeof parsed?.phone === "string" ? parsed.phone.trim() : ""
+        };
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeContact(name, phone) {
+      try {
+        window.localStorage.setItem(CONTACT_STORAGE_KEY, JSON.stringify({ name, phone }));
+      } catch (error) {
+        return;
+      }
+    }
+
+    function hasValidName(name) {
+      return name.trim().length >= 2;
+    }
+
+    function hasValidPhone(phone) {
+      return phone.replace(/\D/g, "").length >= 10;
+    }
+
+    function syncContactFields(name, phone) {
+      const nameField = form?.querySelector('input[name="name"]');
+      const phoneField = form?.querySelector('input[name="phone"]');
+
+      if (nameField) {
+        nameField.value = name;
+      }
+
+      if (phoneField) {
+        phoneField.value = phone;
+      }
+    }
+
+    function getQuoteFormDraft() {
+      if (!form) {
+        return {
+          name: "",
+          phone: "",
+          objectType: "",
+          comment: ""
+        };
+      }
+
+      const data = new FormData(form);
+      return {
+        name: String(data.get("name") || "").trim(),
+        phone: String(data.get("phone") || "").trim(),
+        objectType: String(data.get("objectType") || "").trim(),
+        comment: String(data.get("comment") || "").trim()
+      };
+    }
+
+    function formatRubles(value) {
+      return `${new Intl.NumberFormat("ru-RU").format(value)} ₽`;
+    }
+
+    function roundEstimate(value) {
+      return Math.round(value / 5000) * 5000;
+    }
+
+    function parseArea(sizeText) {
+      const normalized = sizeText.toLowerCase().replace(/,/g, ".").replace(/\s+/g, " ").trim();
+      const dimensionMatch = normalized.match(/(\d+(?:\.\d+)?)\s*[xх*]\s*(\d+(?:\.\d+)?)/);
+
+      if (dimensionMatch) {
+        const width = Number.parseFloat(dimensionMatch[1]);
+        const height = Number.parseFloat(dimensionMatch[2]);
+        const area = width * height;
+        return Number.isFinite(area) && area > 0 ? area : null;
+      }
+
+      const areaMatch = normalized.match(/(\d+(?:\.\d+)?)\s*(?:м2|м²|кв)/);
+      if (areaMatch) {
+        const area = Number.parseFloat(areaMatch[1]);
+        return Number.isFinite(area) && area > 0 ? area : null;
+      }
+
+      return null;
+    }
+
+    function getCalculatorEstimate({ objectType, size, seasonality, installation }) {
+      const priceRange = calculatorPricing[objectType];
+      const area = parseArea(size);
+
+      if (!priceRange || !priceRange.min || !area || area < 1 || area > 120) {
+        return {
+          title: "Точный расчет после замера",
+          text: "Нужен замер или уточнение размеров, чтобы корректно оценить проект без риска ошибиться по стоимости.",
+          note: "Отправьте расчет в Telegram, и мы быстро уточним параметры по фото или короткому описанию.",
+          messageResult: "Точный расчет после замера"
+        };
+      }
+
+      const multiplier = seasonalityMultiplier[seasonality] || 1;
+      const installMin = installation === "Да" ? 18000 + area * 450 : 0;
+      const installMax = installation === "Да" ? 32000 + area * 650 : 0;
+      const minTotal = roundEstimate(area * priceRange.min * multiplier + installMin);
+      const maxTotal = roundEstimate(area * priceRange.max * multiplier + installMax);
+      const areaLabel = area >= 10 ? area.toFixed(1).replace(".0", "") : area.toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
+
+      return {
+        title: `Ориентир: ${formatRubles(minTotal)} - ${formatRubles(maxTotal)}`,
+        text: `Для площади около ${areaLabel} м2 и выбранного режима эксплуатации это реалистичный предварительный диапазон.`,
+        note: installation === "Да"
+          ? "Диапазон уже учитывает базовый монтаж. Точную смету подтвердим после замера и проверки геометрии проемов."
+          : "Диапазон рассчитан для изготовления комплекта без монтажа. Точную смету подтвердим после замера и проверки геометрии проемов.",
+        messageResult: `Ориентировочный диапазон: ${formatRubles(minTotal)} - ${formatRubles(maxTotal)}`
+      };
+    }
+
+    function renderCalculatorResult() {
+      if (!calculatorForm) {
+        return null;
+      }
+
+      const data = new FormData(calculatorForm);
+      const result = getCalculatorEstimate({
+        objectType: String(data.get("calculatorObjectType") || "").trim(),
+        size: String(data.get("calculatorSize") || "").trim(),
+        seasonality: String(data.get("calculatorSeasonality") || "").trim(),
+        installation: String(data.get("calculatorInstallation") || "").trim()
+      });
+
+      calculatorResultTitle.textContent = result.title;
+      calculatorResultText.textContent = result.text;
+      calculatorResultNote.textContent = result.note;
+      return result;
+    }
+
+    function getCalculatorData() {
+      if (!calculatorForm) {
+        return null;
+      }
+
+      const data = new FormData(calculatorForm);
+      const calculatorData = {
+        objectType: String(data.get("calculatorObjectType") || "").trim(),
+        size: String(data.get("calculatorSize") || "").trim(),
+        seasonality: String(data.get("calculatorSeasonality") || "").trim(),
+        installation: String(data.get("calculatorInstallation") || "").trim()
+      };
+
+      if (!calculatorData.objectType && !calculatorData.size && !calculatorData.seasonality && !calculatorData.installation) {
+        return null;
+      }
+
+      return {
+        ...calculatorData,
+        result: getCalculatorEstimate(calculatorData)
+      };
+    }
+
+    function buildAdvisorRecommendation({ objectType, priority, options }) {
+      if (!objectType || !priority) {
+        return {
+          title: "Выберите объект и главный приоритет",
+          text: "После этого покажем подходящий сценарий комплектации и набор опций под ваш объект.",
+          options: ["Панорамная прозрачность без перегруза", "Комплектация под сезонность", "Аккуратная фурнитура и монтаж"]
+        };
+      }
+
+      const config = advisorPriorityConfig[priority] || {
+        title: "Индивидуальный сценарий под объект",
+        description: "Подготовим конфигурацию после уточнения базовых задач и режима эксплуатации.",
+        options: ["Аккуратная фурнитура", "Подбор креплений", "Рекомендации по монтажу"]
+      };
+
+      const objectLabel = objectType ? objectType.toLowerCase() : "объекта";
+      const objectPrefix = {
+        "Веранда": "панорамной веранды",
+        "Беседка": "беседки",
+        "Терраса": "террасы",
+        "Навес": "навеса",
+        "Входная группа": "входной группы",
+        "Другой объект": "нестандартного объекта"
+      }[objectType] || objectLabel;
+
+      const optionsSet = new Set(config.options);
+      if (priority === "Круглогодичное использование") {
+        optionsSet.add("Усиленная фурнитура");
+      }
+      if (priority === "Экономия бюджета") {
+        optionsSet.add("Поэтапное закрытие ключевых зон");
+      }
+      if (objectType === "Навес") {
+        optionsSet.add("Защита открытых боковых проемов");
+      }
+      if (objectType === "Веранда" || objectType === "Терраса") {
+        optionsSet.add("Панорамные прозрачные полотна");
+      }
+      options.forEach((option) => optionsSet.add(option));
+
+      return {
+        title: `${config.title} для ${objectPrefix}`,
+        text: config.description,
+        options: Array.from(optionsSet).slice(0, 5)
+      };
+    }
+
+    function renderAdvisorResult() {
+      if (!advisorForm) {
+        return null;
+      }
+
+      const data = new FormData(advisorForm);
+      const selectedOptions = data.getAll("advisorOptions").map((value) => String(value));
+      const recommendation = buildAdvisorRecommendation({
+        objectType: String(data.get("advisorObjectType") || "").trim(),
+        priority: String(data.get("advisorPriority") || "").trim(),
+        options: selectedOptions
+      });
+
+      advisorScenarioTitle.textContent = recommendation.title;
+      advisorScenarioText.textContent = recommendation.text;
+      advisorOptionsList.innerHTML = recommendation.options.map((option) => `<li>${option}</li>`).join("");
+      return recommendation;
+    }
+
+    function getAdvisorData() {
+      if (!advisorForm) {
+        return null;
+      }
+
+      const data = new FormData(advisorForm);
+      const selectedOptions = data.getAll("advisorOptions").map((value) => String(value));
+      const advisorData = {
+        objectType: String(data.get("advisorObjectType") || "").trim(),
+        priority: String(data.get("advisorPriority") || "").trim(),
+        options: selectedOptions
+      };
+
+      if (!advisorData.objectType && !advisorData.priority && !advisorData.options.length) {
+        return null;
+      }
+
+      return {
+        ...advisorData,
+        recommendation: buildAdvisorRecommendation(advisorData)
+      };
+    }
+
+    function buildLeadPayload({
+      name,
+      phone,
+      objectType,
+      comment,
+      source,
+      calculatorData = null,
+      advisorData = null,
+      projectTitle = "",
+      projectTags = []
+    }) {
+      return {
+        name,
+        phone,
+        objectType,
+        comment,
+        source,
+        calculatorData,
+        advisorData,
+        projectTitle,
+        projectTags
+      };
+    }
+
+    function buildLeadMessage(payload) {
+      const lines = [
+        payload.source === "site_form" ? "Добрый день, хочу заказать замер." : "Добрый день, отправляю заявку по объекту.",
+        `Имя: ${payload.name}`,
+        `Телефон: ${payload.phone}`,
+        `Источник: ${payload.source}`
+      ];
+
+      if (payload.objectType) {
+        lines.push(`Что нужно закрыть: ${payload.objectType}`);
+      }
+
+      if (payload.comment) {
+        lines.push(`Комментарий: ${payload.comment}`);
+      }
+
+      if (payload.calculatorData) {
+        lines.push("Калькулятор:");
+        lines.push(`- Тип объекта: ${payload.calculatorData.objectType || "Не указан"}`);
+        lines.push(`- Размер: ${payload.calculatorData.size || "Не указан"}`);
+        lines.push(`- Сезонность: ${payload.calculatorData.seasonality || "Не указана"}`);
+        lines.push(`- Монтаж: ${payload.calculatorData.installation || "Не указан"}`);
+        lines.push(`- Ориентир: ${payload.calculatorData.result?.messageResult || "Точный расчет после замера"}`);
+      }
+
+      if (payload.advisorData) {
+        lines.push("Подбор:");
+        lines.push(`- Тип объекта: ${payload.advisorData.objectType || "Не указан"}`);
+        lines.push(`- Приоритет: ${payload.advisorData.priority || "Не указан"}`);
+        lines.push(`- Пожелания: ${payload.advisorData.options?.length ? payload.advisorData.options.join(", ") : "Без дополнительных пожеланий"}`);
+        lines.push(`- Сценарий: ${payload.advisorData.recommendation?.title || "Индивидуальный сценарий"}`);
+      }
+
+      if (payload.projectTitle) {
+        lines.push(`Проект: ${payload.projectTitle}`);
+      }
+
+      if (payload.projectTags?.length) {
+        lines.push(`Теги проекта: ${payload.projectTags.join(", ")}`);
+      }
+
+      return lines.join("\n");
+    }
+
+    async function postLead(payload) {
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 6000);
+
+      try {
+        const response = await fetch(LEADS_API_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`Lead request failed: ${response.status}`);
+        }
+
+        return await response.json();
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
+    }
+
+    async function submitLead({ payload, statusElement, fallbackMessage, successMessage, onSuccess }) {
+      if (!statusElement) {
+        return false;
+      }
+
+      statusElement.textContent = "Отправляю заявку менеджеру...";
+
+      try {
+        const response = await postLead(payload);
+        const leadId = response?.lead?.id;
+        statusElement.textContent = leadId ? `${successMessage} #${leadId}.` : successMessage;
+        storeContact(payload.name, payload.phone);
+        syncContactFields(payload.name, payload.phone);
+        onSuccess?.(response);
+        return true;
+      } catch (error) {
+        statusElement.textContent = "Backend недоступен. Открываю Telegram с готовой заявкой...";
+        openTelegramShare(fallbackMessage);
+        return false;
+      }
+    }
+
+    function fillLeadContextChips(chips) {
+      if (!leadCaptureContext) {
+        return;
+      }
+
+      leadCaptureContext.replaceChildren(
+        ...chips.map((chipText) => {
+          const chip = document.createElement("span");
+          chip.className = "lightbox__tag";
+          chip.textContent = chipText;
+          return chip;
+        })
+      );
+    }
+
+    function openLeadCaptureModal(context) {
+      if (!leadCaptureModal || !leadCaptureName || !leadCapturePhone) {
+        return;
+      }
+
+      pendingLeadContext = context;
+      lastLeadCaptureTrigger = context.trigger instanceof HTMLElement ? context.trigger : document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      const storedContact = getStoredContact();
+      const quoteDraft = getQuoteFormDraft();
+      const initialName = quoteDraft.name || storedContact?.name || "";
+      const initialPhone = quoteDraft.phone || storedContact?.phone || "";
+      const sourceLabels = {
+        calculator: "Калькулятор",
+        advisor: "Подбор",
+        project_viewer: "Проект",
+        site_form: "Форма"
+      };
+      const chips = [];
+
+      if (context.objectType) {
+        chips.push(context.objectType);
+      }
+
+      if (context.calculatorData?.result?.messageResult) {
+        chips.push(context.calculatorData.result.messageResult);
+      }
+
+      if (context.advisorData?.recommendation?.title) {
+        chips.push(context.advisorData.recommendation.title);
+      }
+
+      if (context.projectTitle) {
+        chips.push(context.projectTitle);
+      }
+
+      context.projectTags?.slice(0, 3).forEach((tag) => chips.push(tag));
+
+      leadCaptureSourceLabel.textContent = sourceLabels[context.source] || "Заявка";
+      leadCaptureTitle.textContent = "Оставьте контакты для менеджера";
+      leadCaptureDescription.textContent = context.description || "Добавьте имя и телефон, чтобы отправить запрос менеджеру и сохранить lead в системе.";
+      fillLeadContextChips(chips);
+      leadCaptureName.value = initialName;
+      leadCapturePhone.value = initialPhone;
+      leadCaptureStatus.textContent = "";
+      leadCaptureModal.hidden = false;
+      leadCaptureModal.setAttribute("aria-hidden", "false");
+      syncOverlayLockState();
+      window.setTimeout(() => leadCaptureName.focus(), 0);
+    }
+
+    function closeLeadCaptureModal() {
+      if (!leadCaptureModal || leadCaptureModal.hidden) {
+        return;
+      }
+
+      leadCaptureModal.hidden = true;
+      leadCaptureModal.setAttribute("aria-hidden", "true");
+      leadCaptureStatus.textContent = "";
+      pendingLeadContext = null;
+      fillLeadContextChips([]);
+      syncOverlayLockState();
+      lastLeadCaptureTrigger?.focus();
+    }
+
+    function setAccordionState(button, isOpen) {
+      const item = button.closest(".faq-item");
+      if (!item) {
+        return;
+      }
+
+      item.setAttribute("data-open", String(isOpen));
+      button.setAttribute("aria-expanded", String(isOpen));
+    }
+
+    function openLightbox(trigger) {
+      if (!lightbox || !lightboxImage || !lightboxTitle || !lightboxDescription || !lightboxTags || !lightboxCaption) {
+        return;
+      }
+
+      lastLightboxTrigger = trigger;
+      lightboxImage.src = trigger.getAttribute("data-lightbox-src") || "";
+      lightboxImage.alt = trigger.getAttribute("data-lightbox-alt") || "";
+      const projectTitle =
+        trigger.getAttribute("data-project-title") ||
+        trigger.querySelector(".project-copy h3")?.textContent?.trim() ||
+        trigger.getAttribute("data-lightbox-caption") ||
+        lightboxImage.alt;
+      const projectDescription =
+        trigger.getAttribute("data-project-description") ||
+        trigger.querySelector(".project-copy p")?.textContent?.trim() ||
+        "";
+      const projectTags = (trigger.getAttribute("data-project-tags") || "")
+        .split("|")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+        .slice(0, 4);
+      lightboxTitle.textContent = projectTitle;
+      lightboxDescription.textContent = projectDescription;
+      lightboxCaption.textContent = trigger.getAttribute("data-lightbox-caption") || lightboxImage.alt;
+      currentProjectContext = {
+        title: projectTitle,
+        description: projectDescription,
+        tags: projectTags
+      };
+      lightboxTags.replaceChildren(
+        ...projectTags.map((tag) => {
+          const chip = document.createElement("span");
+          chip.className = "lightbox__tag";
+          chip.textContent = tag;
+          return chip;
+        })
+      );
+      lightbox.hidden = false;
+      lightbox.setAttribute("aria-hidden", "false");
+      syncOverlayLockState();
+      const closeButton = lightbox.querySelector("[data-lightbox-close]");
+      closeButton?.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightbox || lightbox.hidden) {
+        return;
+      }
+
+      lightbox.hidden = true;
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("lightbox-open");
+      lightboxImage.src = "";
+      lightboxImage.alt = "";
+      lightboxTitle.textContent = "";
+      lightboxDescription.textContent = "";
+      lightboxCaption.textContent = "";
+      lightboxTags.replaceChildren();
+      currentProjectContext = null;
+      syncOverlayLockState();
+      lastLightboxTrigger?.focus();
+    }
+
+    function initHotspotScheme(section) {
+      const hotspotButtons = Array.from(section.querySelectorAll("[data-hotspot-button]"));
+      const hotspotCards = Array.from(section.querySelectorAll("[data-hotspot-card]"));
+
+      if (!hotspotButtons.length || !hotspotCards.length) {
+        return;
+      }
+
+      const setActiveHotspot = (id) => {
+        if (!id) {
+          return;
+        }
+
+        section.setAttribute("data-active-hotspot", id);
+
+        hotspotButtons.forEach((button) => {
+          const isActive = button.getAttribute("data-hotspot-button") === id;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        hotspotCards.forEach((card) => {
+          const isActive = card.getAttribute("data-hotspot-card") === id;
+          card.classList.toggle("is-active", isActive);
+          card.hidden = !isActive;
+          card.setAttribute("aria-hidden", String(!isActive));
+        });
+      };
+
+      const initialId =
+        section.getAttribute("data-active-hotspot") ||
+        hotspotButtons[0]?.getAttribute("data-hotspot-button") ||
+        "";
+
+      hotspotButtons.forEach((button) => {
+        const hotspotId = button.getAttribute("data-hotspot-button");
+        if (!hotspotId) {
+          return;
+        }
+
+        button.addEventListener("mouseenter", () => {
+          if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            setActiveHotspot(hotspotId);
+          }
+        });
+
+        button.addEventListener("focus", () => setActiveHotspot(hotspotId));
+        button.addEventListener("click", () => setActiveHotspot(hotspotId));
+      });
+
+      setActiveHotspot(initialId);
+    }
+
+    themeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextTheme = button.getAttribute("data-set-theme");
+        if (!nextTheme) {
+          return;
+        }
+
+        applyTheme(nextTheme);
+        try {
+          window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+        } catch (error) {
+          return;
+        }
+      });
+    });
+
+    systemTheme.addEventListener("change", () => {
+      if (!getStoredTheme()) {
+        applyTheme(systemTheme.matches ? "dark" : "light");
+      }
+    });
+
+    applyTheme(resolveInitialTheme());
 
     toggle?.addEventListener("click", () => {
-      const isOpen = mobileMenu.getAttribute("data-open") === "true";
-      mobileMenu.setAttribute("data-open", String(!isOpen));
-      toggle.setAttribute("aria-expanded", String(!isOpen));
+      const isOpen = mobileMenu?.getAttribute("data-open") === "true";
+      setMobileMenuState(!isOpen);
     });
 
-    form?.addEventListener("submit", (event) => {
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setMobileMenuState(false);
+      });
+    });
+
+    anchorLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (!href || href === "#" || !href.startsWith("#")) {
+          return;
+        }
+
+        const target = document.querySelector(href);
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        setMobileMenuState(false);
+        target.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+        window.history.pushState(null, "", href);
+        target.setAttribute("tabindex", "-1");
+        window.setTimeout(() => target.focus({ preventScroll: true }), reducedMotion.matches ? 0 : 280);
+      });
+    });
+
+    faqButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+        setAccordionState(button, !isOpen);
+      });
+    });
+
+    lightboxTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openLightbox(trigger));
+      trigger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(trigger);
+        }
+      });
+    });
+
+    lightbox?.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLElement && event.target.hasAttribute("data-lightbox-close")) {
+        closeLightbox();
+      }
+    });
+
+    leadCaptureModal?.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLElement && event.target.hasAttribute("data-lead-modal-close")) {
+        closeLeadCaptureModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        if (leadCaptureModal && !leadCaptureModal.hidden) {
+          closeLeadCaptureModal();
+          return;
+        }
+
+        closeLightbox();
+      }
+    });
+
+    hotspotSchemes.forEach((section) => initHotspotScheme(section));
+
+    if (reducedMotion.matches) {
+      revealTargets.forEach((element) => element.setAttribute("data-reveal", ""));
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
+    } else {
+      revealTargets.forEach((element, index) => {
+        element.setAttribute("data-reveal", "");
+        element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+      });
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+
+      revealTargets.forEach((element) => revealObserver.observe(element));
+    }
+
+    form?.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const data = new FormData(form);
+      const quoteDraft = getQuoteFormDraft();
+
+      if (!hasValidName(quoteDraft.name) || !hasValidPhone(quoteDraft.phone)) {
+        statusNode.textContent = "Укажите имя и телефон в корректном формате.";
+        return;
+      }
+
+      const payload = buildLeadPayload({
+        name: quoteDraft.name,
+        phone: quoteDraft.phone,
+        objectType: quoteDraft.objectType,
+        comment: quoteDraft.comment,
+        source: "site_form",
+        calculatorData: getCalculatorData(),
+        advisorData: getAdvisorData()
+      });
+
+      await submitLead({
+        payload,
+        statusElement: statusNode,
+        fallbackMessage: buildLeadMessage(payload),
+        successMessage: "Заявка отправлена менеджеру"
+      });
+    });
+
+    calculatorForm?.addEventListener("input", () => {
+      renderCalculatorResult();
+      if (calculatorStatus) {
+        calculatorStatus.textContent = "";
+      }
+    });
+
+    calculatorForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const result = renderCalculatorResult();
+      const calculatorData = getCalculatorData();
+      const quoteDraft = getQuoteFormDraft();
+
+      calculatorStatus.textContent = "Добавьте контакт, чтобы отправить расчет менеджеру.";
+      openLeadCaptureModal({
+        source: "calculator",
+        trigger: calculatorForm.querySelector('button[type="submit"]'),
+        objectType: calculatorData?.objectType || quoteDraft.objectType,
+        comment: result?.messageResult || "Запрос на предварительный расчет",
+        calculatorData,
+        advisorData: getAdvisorData(),
+        projectTitle: "",
+        projectTags: [],
+        description: "Сохраним ориентир из калькулятора, отправим заявку менеджеру и не потеряем параметры расчета."
+      });
+    });
+
+    advisorForm?.addEventListener("input", () => {
+      renderAdvisorResult();
+      if (advisorStatus) {
+        advisorStatus.textContent = "";
+      }
+    });
+
+    advisorForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const recommendation = renderAdvisorResult();
+      const advisorData = getAdvisorData();
+      const quoteDraft = getQuoteFormDraft();
+
+      advisorStatus.textContent = "Добавьте контакт, чтобы отправить подбор менеджеру.";
+      openLeadCaptureModal({
+        source: "advisor",
+        trigger: advisorForm.querySelector('button[type="submit"]'),
+        objectType: advisorData?.objectType || quoteDraft.objectType,
+        comment: recommendation?.title || "Запрос на подбор решения",
+        calculatorData: getCalculatorData(),
+        advisorData,
+        projectTitle: "",
+        projectTags: [],
+        description: "Сохраним ваш сценарий подбора и отправим его менеджеру вместе с контактом."
+      });
+    });
+
+    projectLightboxCta?.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const quoteDraft = getQuoteFormDraft();
+      const projectTitle = currentProjectContext?.title || lightboxTitle?.textContent?.trim() || "";
+      const projectTags = currentProjectContext?.tags || [];
+
+      closeLightbox();
+      openLeadCaptureModal({
+        source: "project_viewer",
+        trigger: projectLightboxCta,
+        objectType: quoteDraft.objectType || "Другой объект",
+        comment: projectTitle ? `Интересует похожее решение: ${projectTitle}` : "Интересует похожее решение из раздела проектов",
+        calculatorData: getCalculatorData(),
+        advisorData: getAdvisorData(),
+        projectTitle,
+        projectTags,
+        description: "Оставьте контакт, и менеджер свяжется по похожему проекту с учетом текущих параметров сайта."
+      });
+    });
+
+    leadCaptureForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!pendingLeadContext) {
+        return;
+      }
+
+      const context = pendingLeadContext;
+      const data = new FormData(leadCaptureForm);
       const name = String(data.get("name") || "").trim();
       const phone = String(data.get("phone") || "").trim();
-      const objectType = String(data.get("objectType") || "").trim();
-      const comment = String(data.get("comment") || "").trim();
 
-      const message = [
-        "Добрый день, хочу заказать замер.",
-        `Имя: ${name}`,
-        `Телефон: ${phone}`,
-        `Тип объекта: ${objectType}`,
-        comment ? `Комментарий: ${comment}` : ""
-      ].filter(Boolean).join("\n");
+      if (!hasValidName(name) || !hasValidPhone(phone)) {
+        leadCaptureStatus.textContent = "Укажите имя и телефон в корректном формате.";
+        return;
+      }
 
-      statusNode.textContent = "Открываю Telegram с заполненной заявкой...";
-      const url = `https://t.me/share/url?url=${encodeURIComponent("https://glavzaves-okna.ru")}&text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank", "noopener,noreferrer");
+      const payload = buildLeadPayload({
+        name,
+        phone,
+        objectType: context.objectType || "",
+        comment: context.comment || "",
+        source: context.source,
+        calculatorData: context.calculatorData || null,
+        advisorData: context.advisorData || null,
+        projectTitle: context.projectTitle || "",
+        projectTags: context.projectTags || []
+      });
+
+      await submitLead({
+        payload,
+        statusElement: leadCaptureStatus,
+        fallbackMessage: buildLeadMessage(payload),
+        successMessage: "Заявка отправлена менеджеру",
+        onSuccess: () => {
+          closeLeadCaptureModal();
+
+          if (context.source === "calculator" && calculatorStatus) {
+            calculatorStatus.textContent = "Расчет отправлен менеджеру.";
+          }
+
+          if (context.source === "advisor" && advisorStatus) {
+            advisorStatus.textContent = "Подбор отправлен менеджеру.";
+          }
+        }
+      });
     });
-  </script>
-</body>
-</html>
 
+    renderCalculatorResult();
+    renderAdvisorResult();
+  </script>
 </body>
 </html>
