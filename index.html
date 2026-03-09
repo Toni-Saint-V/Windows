@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -959,6 +959,391 @@
         white-space: normal;
       }
     }
+
+    /* ─── DARK THEME ─────────────────────────────── */
+    [data-theme="dark"] {
+      --bg: #08131f;
+      --surface: rgba(10,22,38,0.9);
+      --surface-solid: #0c1d32;
+      --card: #0a1929;
+      --text: #d8eaf5;
+      --muted: #6b93b4;
+      --line: rgba(255,255,255,0.07);
+      --shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    [data-theme="dark"] body {
+      background:
+        radial-gradient(circle at top left, rgba(31,174,232,0.09), transparent 30%),
+        radial-gradient(circle at top right, rgba(27,95,147,0.06), transparent 25%),
+        var(--bg);
+    }
+    [data-theme="dark"] .topbar { background: rgba(8,19,31,0.92); }
+    [data-theme="dark"] .form-card { background: var(--surface-solid); color: var(--text); }
+    [data-theme="dark"] .field input,
+    [data-theme="dark"] .field select,
+    [data-theme="dark"] .field textarea {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.09);
+      color: var(--text);
+    }
+    [data-theme="dark"] .field input::placeholder,
+    [data-theme="dark"] .field textarea::placeholder { color: var(--muted); }
+    [data-theme="dark"] .button-secondary { background: rgba(255,255,255,0.08); }
+    [data-theme="dark"] .faq-item { background: var(--surface); }
+
+    /* ─── ANIMATIONS ─────────────────────────────── */
+    @keyframes gz-slide-in {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0);    opacity: 1; }
+    }
+    @keyframes gz-fade { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ─── MOBILE NAV OVERLAY ─────────────────────── */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 45;
+      flex-direction: column;
+      background: var(--surface-solid);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .mobile-nav-overlay[data-open="true"] {
+      display: flex;
+      animation: gz-slide-in 0.28s cubic-bezier(0.32,0.72,0,1) both;
+    }
+    .mnav-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      min-height: 60px;
+      flex-shrink: 0;
+    }
+    .mnav-brand { font-size: 18px; font-weight: 800; letter-spacing: -0.04em; }
+    .mnav-close {
+      width: 44px; height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 20px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .mnav-body { flex: 1; padding: 4px 20px; overflow-y: auto; }
+    .mnav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .mnav-link::after { content: "→"; color: var(--muted); font-weight: 400; font-size: 16px; }
+    .mnav-actions { padding: 20px 0; display: flex; flex-direction: column; gap: 10px; }
+    .mnav-footer {
+      padding: 16px 20px;
+      padding-bottom: max(20px, env(safe-area-inset-bottom));
+      border-top: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+    .theme-toggle:hover { color: var(--text); }
+    .theme-icon { font-size: 20px; line-height: 1; }
+
+    /* ─── MOBILE QUICK-ACTION BAR ────────────────── */
+    .mobile-qbar { display: none; }
+    @media (max-width: 760px) {
+      .mobile-qbar {
+        display: flex;
+        align-items: stretch;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 40;
+        height: 60px;
+        padding: 0 6px;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        background: rgba(245,248,251,0.96);
+        backdrop-filter: blur(24px) saturate(1.8);
+        -webkit-backdrop-filter: blur(24px) saturate(1.8);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -4px 20px rgba(5,52,82,0.09);
+        gap: 2px;
+      }
+      [data-theme="dark"] .mobile-qbar { background: rgba(8,19,31,0.96); }
+      .qb-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        background: transparent;
+        border: 0;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color 0.15s;
+        text-decoration: none;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .qb-btn:hover, .qb-btn:active { color: var(--primary); }
+      .qb-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+      .qb-tg {
+        flex: 0 0 56px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff !important;
+        border-radius: 14px;
+        margin: 8px 4px;
+        gap: 0;
+      }
+      .qb-tg svg { width: 22px; height: 22px; }
+      body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
+    }
+
+    /* ─── BOTTOM SHEETS ──────────────────────────── */
+    .sheet-bg {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(5,32,56,0.52);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      align-items: flex-end;
+    }
+    .sheet-bg[data-open="true"] { display: flex; animation: gz-fade 0.2s ease; }
+    .sheet {
+      width: 100%;
+      max-height: 90vh;
+      background: var(--surface-solid);
+      border-radius: 28px 28px 0 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 20px;
+      padding-bottom: max(28px, env(safe-area-inset-bottom));
+      transform: translateY(100%);
+      transition: transform 0.32s cubic-bezier(0.32,0.72,0,1);
+    }
+    .sheet-bg[data-open="true"] .sheet { transform: translateY(0); }
+    .sheet-handle {
+      width: 36px; height: 4px;
+      border-radius: 999px;
+      background: var(--line);
+      margin: 10px auto 0;
+    }
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+    .sheet-title { font-size: 22px; font-weight: 800; letter-spacing: -0.04em; margin: 0; }
+    .sheet-close {
+      width: 40px; height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      font-size: 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Advisor */
+    .adv-bar { display: flex; gap: 6px; margin-bottom: 18px; }
+    .adv-pip {
+      height: 3px; flex: 1; border-radius: 999px;
+      background: var(--line);
+      transition: background 0.3s;
+    }
+    .adv-pip.lit { background: var(--primary); }
+    .adv-step { display: none; }
+    .adv-step.on { display: block; }
+    .adv-q { font-size: 16px; font-weight: 700; margin: 0 0 14px; color: var(--text); }
+    .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .adv-chip {
+      padding: 14px 10px;
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      background: transparent;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, color 0.15s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .adv-chip .ci { font-size: 20px; }
+    .adv-chip:hover, .adv-chip.sel {
+      border-color: var(--primary);
+      background: rgba(31,174,232,0.08);
+      color: var(--primary);
+    }
+    .adv-result {
+      display: none;
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(31,174,232,0.08);
+      border: 1px solid rgba(31,174,232,0.16);
+      margin-bottom: 16px;
+    }
+    .adv-result.on { display: block; }
+    .adv-result p { margin: 0 0 14px; line-height: 1.65; color: var(--text); }
+
+    /* Calculator */
+    .calc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .calc-lbl {
+      display: block;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .calc-inp {
+      width: 100%;
+      border: 1px solid rgba(16,32,50,0.1);
+      border-radius: 12px;
+      background: #f8fbfd;
+      color: var(--text);
+      padding: 13px 14px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    [data-theme="dark"] .calc-inp {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.09);
+      color: var(--text);
+    }
+    .calc-inp:focus {
+      border-color: rgba(31,174,232,0.5);
+      box-shadow: 0 0 0 3px rgba(31,174,232,0.1);
+    }
+    .calc-out {
+      display: none;
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(31,174,232,0.08);
+      border: 1px solid rgba(31,174,232,0.14);
+      margin-bottom: 16px;
+    }
+    .calc-out.on { display: block; }
+    .calc-price { font-size: 28px; font-weight: 800; letter-spacing: -0.04em; color: var(--secondary); }
+    .calc-note { margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+    /* ─── LIGHTBOX ───────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: rgba(4,20,38,0.97);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 56px 16px 16px;
+      touch-action: none;
+    }
+    .lightbox[data-open="true"] { display: flex; animation: gz-fade 0.2s ease; }
+    .lb-img {
+      max-width: 100%;
+      max-height: calc(100vh - 140px);
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+    }
+    .lb-cap {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      margin-top: 12px;
+      text-align: center;
+      max-width: 480px;
+    }
+    .lb-bar {
+      position: absolute;
+      top: 16px; left: 16px; right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .lb-counter { color: rgba(255,255,255,0.5); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+    .lb-btn {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      backdrop-filter: blur(8px);
+      flex-shrink: 0;
+    }
+    .lb-btn:hover { background: rgba(255,255,255,0.16); }
+    .lb-nav { display: flex; gap: 8px; }
+    .lb-nav-btn {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      backdrop-filter: blur(8px);
+    }
+    .lb-nav-btn:hover { background: rgba(255,255,255,0.16); }
+    .featured-project, .project-tile { cursor: zoom-in; }
+
+    /* ─── MOBILE HEADER OVERRIDES ────────────────── */
+    @media (max-width: 760px) {
+      .topbar-inner { min-height: 60px; }
+      .brand-copy small { display: none; }
+      .brand-mark { width: 30px; height: 36px; }
+      .brand-mark span { width: 10px; }
+      .brand-mark .l2 { left: 8px; }
+      .brand-mark .l3 { left: 16px; }
+      .mobile-menu { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -985,7 +1370,13 @@
           <a href="#contacts">Контакты</a>
         </div>
         <a class="button" href="#lead-form">Заказать замер</a>
-        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Меню</button>
+        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+            <line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="0" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="0" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
       </nav>
     </div>
     <div class="container mobile-menu" id="mobile-menu" data-open="false">
@@ -998,6 +1389,33 @@
       <a class="button" href="#lead-form">Заказать замер</a>
     </div>
   </header>
+
+  <!-- ─── MOBILE NAV OVERLAY ───────────────────────── -->
+  <div class="mobile-nav-overlay" id="mobile-nav" data-open="false" aria-hidden="true">
+    <div class="mnav-head">
+      <span class="mnav-brand">Glavzaves</span>
+      <button class="mnav-close" id="mnav-close" type="button" aria-label="Закрыть меню">&#x2715;</button>
+    </div>
+    <div class="mnav-body">
+      <a class="mnav-link" href="#services">Услуги</a>
+      <a class="mnav-link" href="#advantages">Преимущества</a>
+      <a class="mnav-link" href="#projects">Проекты</a>
+      <a class="mnav-link" href="#process">Порядок работы</a>
+      <a class="mnav-link" href="#reviews">Отзывы</a>
+      <a class="mnav-link" href="#contacts">Контакты</a>
+      <div class="mnav-actions">
+        <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
+        <a class="button-secondary" href="tel:+79918097134">Позвонить: +7 991 809 7134</a>
+        <a class="button-secondary" href="#lead-form">Заказать замер</a>
+      </div>
+    </div>
+    <div class="mnav-footer">
+      <button class="theme-toggle" id="theme-toggle" type="button">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-label">Тёмная тема</span>
+      </button>
+    </div>
+  </div>
 
   <main>
     <section class="hero" id="hero" aria-labelledby="hero-title">
@@ -1387,6 +1805,114 @@
     </div>
   </footer>
 
+  <!-- ─── LIGHTBOX ─────────────────────────────────── -->
+  <div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+    <div class="lb-bar">
+      <span class="lb-counter" id="lb-counter">1 / 8</span>
+      <div class="lb-nav">
+        <button class="lb-nav-btn" id="lb-prev" type="button" aria-label="Назад">&#x2190;</button>
+        <button class="lb-nav-btn" id="lb-next" type="button" aria-label="Вперёд">&#x2192;</button>
+        <button class="lb-btn" id="lb-close" type="button" aria-label="Закрыть">&#x2715;</button>
+      </div>
+    </div>
+    <img class="lb-img" id="lb-img" src="" alt="" loading="lazy">
+    <p class="lb-cap" id="lb-cap"></p>
+  </div>
+
+  <!-- ─── ADVISOR SHEET ────────────────────────────── -->
+  <div class="sheet-bg" id="advisor-bg" data-open="false" role="dialog" aria-modal="true" aria-labelledby="advisor-title">
+    <div class="sheet" id="advisor-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title" id="advisor-title">Подбор решения</h2>
+        <button class="sheet-close" id="advisor-close" type="button" aria-label="Закрыть">&#x2715;</button>
+      </div>
+      <div class="adv-bar">
+        <span class="adv-pip lit" data-pip="1"></span>
+        <span class="adv-pip" data-pip="2"></span>
+        <span class="adv-pip" data-pip="3"></span>
+      </div>
+      <div class="adv-step on" data-step="1">
+        <p class="adv-q">Какой объект нужно закрыть?</p>
+        <div class="adv-grid">
+          <button class="adv-chip" data-key="type" data-val="Веранда" type="button"><span class="ci">🏡</span>Веранда</button>
+          <button class="adv-chip" data-key="type" data-val="Беседка" type="button"><span class="ci">🌿</span>Беседка</button>
+          <button class="adv-chip" data-key="type" data-val="Терраса" type="button"><span class="ci">🌅</span>Терраса</button>
+          <button class="adv-chip" data-key="type" data-val="Навес" type="button"><span class="ci">🏗️</span>Навес</button>
+        </div>
+      </div>
+      <div class="adv-step" data-step="2">
+        <p class="adv-q">Приблизительная площадь проёма?</p>
+        <div class="adv-grid">
+          <button class="adv-chip" data-key="area" data-val="до 10 м²" type="button"><span class="ci">📐</span>До 10 м²</button>
+          <button class="adv-chip" data-key="area" data-val="10–25 м²" type="button"><span class="ci">📏</span>10–25 м²</button>
+          <button class="adv-chip" data-key="area" data-val="25–60 м²" type="button"><span class="ci">🏠</span>25–60 м²</button>
+          <button class="adv-chip" data-key="area" data-val="более 60 м²" type="button"><span class="ci">🏢</span>&gt;60 м²</button>
+        </div>
+      </div>
+      <div class="adv-step" data-step="3">
+        <div class="adv-result on" id="adv-result">
+          <p id="adv-result-text">Рекомендуем стандартную комплектацию.</p>
+          <a class="button" href="https://t.me/+79118097134">Написать в Telegram</a>
+        </div>
+        <button class="button-secondary" id="adv-restart" type="button" style="display:block;width:100%;margin-top:10px;">Начать заново</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── CALCULATOR SHEET ─────────────────────────── -->
+  <div class="sheet-bg" id="calc-bg" data-open="false" role="dialog" aria-modal="true" aria-labelledby="calc-title">
+    <div class="sheet" id="calc-sheet">
+      <div class="sheet-handle"></div>
+      <div class="sheet-header">
+        <h2 class="sheet-title" id="calc-title">Расчёт стоимости</h2>
+        <button class="sheet-close" id="calc-close" type="button" aria-label="Закрыть">&#x2715;</button>
+      </div>
+      <p style="color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 16px;">Укажите размеры проёма и количество секций — получите приблизительную оценку.</p>
+      <div class="calc-pair">
+        <div>
+          <label class="calc-lbl" for="calc-w">Ширина, м</label>
+          <input class="calc-inp" id="calc-w" type="number" min="0.5" max="20" step="0.1" placeholder="3.0">
+        </div>
+        <div>
+          <label class="calc-lbl" for="calc-h">Высота, м</label>
+          <input class="calc-inp" id="calc-h" type="number" min="0.5" max="6" step="0.1" placeholder="2.5">
+        </div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label class="calc-lbl" for="calc-n">Количество секций</label>
+        <input class="calc-inp" id="calc-n" type="number" min="1" max="20" step="1" placeholder="1" style="max-width:140px;">
+      </div>
+      <div class="calc-out" id="calc-out">
+        <div class="calc-price" id="calc-price-out">—</div>
+        <div class="calc-note">Приблизительно, без учёта материала и фурнитуры. Точная стоимость — после замера.</div>
+      </div>
+      <a class="button" href="https://t.me/+79118097134" style="display:block;text-align:center;">Получить точный расчёт в Telegram</a>
+      <div style="margin-top:10px;">
+        <a class="button-secondary" href="#lead-form" id="calc-to-form" style="display:block;text-align:center;">Оставить заявку на замер</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MOBILE QUICK-ACTION BAR ──────────────────── -->
+  <div class="mobile-qbar" role="toolbar" aria-label="Быстрые действия">
+    <a class="qb-btn" href="#projects" aria-label="Проекты">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      Проекты
+    </a>
+    <button class="qb-btn" id="qb-advisor" type="button" aria-label="Подбор решения">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Подбор
+    </button>
+    <button class="qb-btn" id="qb-calc" type="button" aria-label="Рассчитать стоимость">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="12" x2="9" y2="12"/><line x1="12" y1="12" x2="13" y2="12"/><line x1="16" y1="12" x2="17" y2="12"/><line x1="8" y1="16" x2="9" y2="16"/><line x1="12" y1="16" x2="13" y2="16"/><line x1="8" y1="20" x2="12" y2="20"/></svg>
+      Расчёт
+    </button>
+    <a class="qb-btn qb-tg" href="https://t.me/+79118097134" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.44.7-.9.44l-2.5-1.84-1.2 1.16c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.7 14.7l-2.42-.76c-.52-.16-.54-.52.12-.76l9.48-3.66c.44-.16.82.1.76.68z"/></svg>
+    </a>
+  </div>
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1405,25 +1931,199 @@
     }
   </script>
   <script>
-    const toggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const form = document.getElementById("quote-form");
-    const statusNode = document.getElementById("form-status");
+    // ─── THEME ──────────────────────────────────────
+    const html = document.documentElement;
+    (function initTheme() {
+      const saved = localStorage.getItem("gz-theme");
+      if (saved) html.dataset.theme = saved;
+      updateThemeUI();
+    })();
+    function toggleTheme() {
+      const next = html.dataset.theme === "dark" ? "light" : "dark";
+      html.dataset.theme = next;
+      localStorage.setItem("gz-theme", next);
+      updateThemeUI();
+    }
+    function updateThemeUI() {
+      const btn = document.getElementById("theme-toggle");
+      if (!btn) return;
+      const dark = html.dataset.theme === "dark";
+      btn.querySelector(".theme-icon").textContent = dark ? "☀️" : "🌙";
+      btn.querySelector(".theme-label").textContent = dark ? "Светлая тема" : "Тёмная тема";
+    }
+    document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
 
-    toggle?.addEventListener("click", () => {
-      const isOpen = mobileMenu.getAttribute("data-open") === "true";
-      mobileMenu.setAttribute("data-open", String(!isOpen));
-      toggle.setAttribute("aria-expanded", String(!isOpen));
+    // ─── MOBILE MENU ────────────────────────────────
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav  = document.getElementById("mobile-nav");
+    function openMenu() {
+      mobileNav.dataset.open = "true";
+      mobileNav.setAttribute("aria-hidden", "false");
+      menuToggle?.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+    function closeMenu() {
+      mobileNav.dataset.open = "false";
+      mobileNav.setAttribute("aria-hidden", "true");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    menuToggle?.addEventListener("click", openMenu);
+    document.getElementById("mnav-close")?.addEventListener("click", closeMenu);
+    mobileNav?.querySelectorAll(".mnav-link").forEach(a => a.addEventListener("click", closeMenu));
+
+    // ─── SHEETS ─────────────────────────────────────
+    function openSheet(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.dataset.open = "true";
+      document.body.style.overflow = "hidden";
+    }
+    function closeSheet(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.dataset.open = "false";
+      document.body.style.overflow = "";
+    }
+    document.getElementById("qb-advisor")?.addEventListener("click", () => openSheet("advisor-bg"));
+    document.getElementById("qb-calc")?.addEventListener("click",    () => openSheet("calc-bg"));
+    document.getElementById("advisor-close")?.addEventListener("click", () => closeSheet("advisor-bg"));
+    document.getElementById("calc-close")?.addEventListener("click",    () => closeSheet("calc-bg"));
+    document.getElementById("calc-to-form")?.addEventListener("click",  () => closeSheet("calc-bg"));
+    document.querySelectorAll(".sheet-bg").forEach(bg => {
+      bg.addEventListener("click", e => { if (e.target === bg) closeSheet(bg.id); });
     });
 
+    // ─── ADVISOR ────────────────────────────────────
+    const advState = { type: null, area: null };
+    function advGoStep(n) {
+      document.querySelectorAll(".adv-step").forEach(s => s.classList.remove("on"));
+      const step = document.querySelector(`.adv-step[data-step="${n}"]`);
+      if (step) step.classList.add("on");
+      document.querySelectorAll(".adv-pip").forEach((p, i) => p.classList.toggle("lit", i < n));
+    }
+    document.querySelectorAll(".adv-chip").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const key = btn.dataset.key;
+        const val = btn.dataset.val;
+        advState[key] = val;
+        btn.closest(".adv-grid")?.querySelectorAll(".adv-chip").forEach(b => b.classList.remove("sel"));
+        btn.classList.add("sel");
+        const currentStep = parseInt(btn.closest(".adv-step")?.dataset.step || "1");
+        setTimeout(() => advGoStep(currentStep + 1), 300);
+        if (currentStep === 2) {
+          const t = advState.type || "объект";
+          const a = advState.area || "";
+          const gram = ["Веранда", "Терраса"].includes(t) ? "вашей" : "вашего";
+          const text = `Для ${gram} ${t.toLowerCase()} (${a}) подойдёт стандартная комплектация с системой верхней подвески. Закажите бесплатный замер — мастер приедет уже завтра и подберёт оптимальный материал под ваш бюджет.`;
+          const el = document.getElementById("adv-result-text");
+          if (el) el.textContent = text;
+        }
+      });
+    });
+    document.getElementById("adv-restart")?.addEventListener("click", () => {
+      advState.type = null; advState.area = null;
+      document.querySelectorAll(".adv-chip").forEach(b => b.classList.remove("sel"));
+      advGoStep(1);
+    });
+
+    // ─── CALCULATOR ─────────────────────────────────
+    function calcUpdate() {
+      const w = parseFloat(document.getElementById("calc-w")?.value) || 0;
+      const h = parseFloat(document.getElementById("calc-h")?.value) || 0;
+      const n = parseInt(document.getElementById("calc-n")?.value)   || 1;
+      const area = w * h * n;
+      const out = document.getElementById("calc-out");
+      const priceEl = document.getElementById("calc-price-out");
+      if (area > 0.1 && out && priceEl) {
+        const lo = Math.ceil(area * 4500 / 500) * 500;
+        const hi = Math.ceil(area * 7500 / 500) * 500;
+        priceEl.textContent = `от ${lo.toLocaleString("ru-RU")} до ${hi.toLocaleString("ru-RU")} ₽`;
+        out.classList.add("on");
+      } else if (out) {
+        out.classList.remove("on");
+      }
+    }
+    ["calc-w", "calc-h", "calc-n"].forEach(id => {
+      document.getElementById(id)?.addEventListener("input", calcUpdate);
+    });
+
+    // ─── LIGHTBOX ───────────────────────────────────
+    const LB_ITEMS = [
+      { src: "./assets/project-sunset-house.png",   alt: "Панорамная терраса частного дома" },
+      { src: "./assets/project-white-veranda.png",  alt: "Светлая веранда" },
+      { src: "./assets/project-wood-house.png",     alt: "Двухэтажная терраса" },
+      { src: "./assets/project-evening-veranda.png",alt: "Вечерняя веранда" },
+      { src: "./assets/project-winter-door.png",    alt: "Зимняя эксплуатация" },
+      { src: "./assets/project-snow-house.png",     alt: "Закрытие дома по периметру" },
+      { src: "./assets/project-winter-side.png",    alt: "Боковое закрытие" },
+      { src: "./assets/hero-garage.png",            alt: "Навес для техники" },
+    ];
+    let lbIdx = 0;
+    function lbOpen(i) {
+      lbIdx = i;
+      lbUpdate();
+      document.getElementById("lightbox").dataset.open = "true";
+      document.body.style.overflow = "hidden";
+    }
+    function lbClose() {
+      document.getElementById("lightbox").dataset.open = "false";
+      document.body.style.overflow = "";
+    }
+    function lbUpdate() {
+      const item = LB_ITEMS[lbIdx];
+      const img = document.getElementById("lb-img");
+      const cap = document.getElementById("lb-cap");
+      const ctr = document.getElementById("lb-counter");
+      if (img) { img.src = item.src; img.alt = item.alt; }
+      if (cap) cap.textContent = item.alt;
+      if (ctr) ctr.textContent = `${lbIdx + 1} / ${LB_ITEMS.length}`;
+    }
+    document.querySelectorAll(".featured-project, .project-tile").forEach((el, i) => {
+      el.addEventListener("click", () => lbOpen(i));
+      el.setAttribute("role", "button");
+      el.setAttribute("tabindex", "0");
+      el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") lbOpen(i); });
+    });
+    document.getElementById("lb-close")?.addEventListener("click", lbClose);
+    document.getElementById("lb-prev")?.addEventListener("click", () => {
+      lbIdx = (lbIdx - 1 + LB_ITEMS.length) % LB_ITEMS.length; lbUpdate();
+    });
+    document.getElementById("lb-next")?.addEventListener("click", () => {
+      lbIdx = (lbIdx + 1) % LB_ITEMS.length; lbUpdate();
+    });
+    document.getElementById("lightbox")?.addEventListener("click", e => {
+      if (e.target.id === "lightbox") lbClose();
+    });
+    document.addEventListener("keydown", e => {
+      const lb = document.getElementById("lightbox");
+      if (lb?.dataset.open !== "true") return;
+      if (e.key === "Escape")    lbClose();
+      if (e.key === "ArrowLeft")  { lbIdx = (lbIdx - 1 + LB_ITEMS.length) % LB_ITEMS.length; lbUpdate(); }
+      if (e.key === "ArrowRight") { lbIdx = (lbIdx + 1) % LB_ITEMS.length; lbUpdate(); }
+    });
+    let lbTx = 0;
+    document.getElementById("lightbox")?.addEventListener("touchstart", e => { lbTx = e.touches[0].clientX; }, { passive: true });
+    document.getElementById("lightbox")?.addEventListener("touchend", e => {
+      const diff = lbTx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        lbIdx = diff > 0
+          ? (lbIdx + 1) % LB_ITEMS.length
+          : (lbIdx - 1 + LB_ITEMS.length) % LB_ITEMS.length;
+        lbUpdate();
+      }
+    });
+
+    // ─── FORM / TELEGRAM (unchanged) ────────────────
+    const form = document.getElementById("quote-form");
+    const statusNode = document.getElementById("form-status");
     form?.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = new FormData(form);
-      const name = String(data.get("name") || "").trim();
-      const phone = String(data.get("phone") || "").trim();
+      const name       = String(data.get("name")       || "").trim();
+      const phone      = String(data.get("phone")      || "").trim();
       const objectType = String(data.get("objectType") || "").trim();
-      const comment = String(data.get("comment") || "").trim();
-
+      const comment    = String(data.get("comment")    || "").trim();
       const message = [
         "Добрый день, хочу заказать замер.",
         `Имя: ${name}`,
@@ -1431,14 +2131,10 @@
         `Тип объекта: ${objectType}`,
         comment ? `Комментарий: ${comment}` : ""
       ].filter(Boolean).join("\n");
-
       statusNode.textContent = "Открываю Telegram с заполненной заявкой...";
       const url = `https://t.me/share/url?url=${encodeURIComponent("https://glavzaves-okna.ru")}&text=${encodeURIComponent(message)}`;
       window.open(url, "_blank", "noopener,noreferrer");
     });
   </script>
-</body>
-</html>
-
 </body>
 </html>
